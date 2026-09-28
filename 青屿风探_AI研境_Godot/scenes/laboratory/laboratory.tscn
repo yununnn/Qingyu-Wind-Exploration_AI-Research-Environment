@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dtd41scagbkdm"]
+
+[ext_resource type="Script" uid="uid://crewt7dwnf5ab" path="res://scenes/laboratory/laboratory.gd" id="1_tx4pg"]
+[ext_resource type="Texture2D" uid="uid://dfloddpuao7pd" path="res://assets/laboratory/laboratory_background.png" id="2_271nj"]
+[ext_resource type="PackedScene" uid="uid://cscjmmdue14iq" path="res://scenes/characters/professor.tscn" id="3_omwdr"]
+[ext_resource type="Script" uid="uid://cmwgmgqp0b8r4" path="res://scenes/laboratory/transition_black.gd" id="4_tp0kf"]
+[ext_resource type="PackedScene" uid="uid://bh3hwcf2knbmm" path="res://scenes/widget/communication_device/dommunication_device_ui.tscn" id="5_omwdr"]
+
+[node name="Laboratory" type="Node2D" unique_id=751390667]
+editor_description = "实验室"
+script = ExtResource("1_tx4pg")
+
+[node name="LaboratoryBackground" type="Sprite2D" parent="." unique_id=349992705]
+scale = Vector2(0.38277513, 0.38257173)
+texture = ExtResource("2_271nj")
+centered = false
+
+[node name="Professor" parent="." unique_id=608739847 instance=ExtResource("3_omwdr")]
+position = Vector2(312, 162)
+scale = Vector2(0.3, 0.3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=393391405]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=808429365]
+editor_description = "用以出现黑幕"
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+script = ExtResource("4_tp0kf")
+
+[node name="DommunicationDeviceUI" parent="CanvasLayer" unique_id=1201337149 instance=ExtResource("5_omwdr")]
+
+[connection signal="ready" from="." to="CanvasLayer/ColorRect" method="_on_laboratory_ready"]
+[connection signal="black_finished" from="CanvasLayer/ColorRect" to="Professor" method="_on_color_rect_black_finished"]

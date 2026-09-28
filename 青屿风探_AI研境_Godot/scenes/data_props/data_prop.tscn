@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://crkwrq01r68dl"]
+
+[ext_resource type="Script" uid="uid://n7i0cm32mu8w" path="res://scenes/data_props/data_prop.gd" id="1_jqu8o"]
+[ext_resource type="Material" uid="uid://cx7dfy2p0jkx0" path="res://shaders/outline/sprite_outline.tres" id="2_he6gx"]
+[ext_resource type="Texture2D" uid="uid://c706kujj1grr8" path="res://assets/farm/objects/Trees, stumps and bushes.png" id="3_he6gx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e3nr"]
+size = Vector2(20, 34)
+
+[node name="DataProp" type="Area2D" unique_id=471788689]
+scale = Vector2(4, 4)
+script = ExtResource("1_jqu8o")
+outline_material = ExtResource("2_he6gx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=280763395]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_0e3nr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1148484996]
+texture = ExtResource("3_he6gx")
+region_enabled = true
+region_rect = Rect2(-3.120617, -2.2629442, 20.415997, 34.283035)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

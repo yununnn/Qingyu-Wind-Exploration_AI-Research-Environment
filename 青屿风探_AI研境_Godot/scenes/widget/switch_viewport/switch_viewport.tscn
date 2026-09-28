@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://dtqtuky10ab20"]
+
+[ext_resource type="Texture2D" uid="uid://b28x3ty6yef8u" path="res://assets/widget/switch_viewport_buttons/button_Sheet.png" id="1_388wl"]
+[ext_resource type="Script" uid="uid://b36mf2bawew0r" path="res://scenes/widget/switch_viewport/switch_viewport.gd" id="1_pfx2o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e8xh"]
+atlas = ExtResource("1_388wl")
+region = Rect2(6, 4, 19, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51dly"]
+atlas = ExtResource("1_388wl")
+region = Rect2(68, 4, 22, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r83b0"]
+atlas = ExtResource("1_388wl")
+region = Rect2(38, 4, 19, 23)
+
+[node name="SwitchViewport" type="Control" unique_id=1526755299]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pfx2o")
+pan_distance = 640.0
+pan_duration = 0.6
+
+[node name="LeftButton" type="TextureButton" parent="." unique_id=1568819693]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.0
+offset_right = 19.0
+offset_bottom = 12.0
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(16, 0)
+offset_transform_visual_only = false
+texture_normal = SubResource("AtlasTexture_0e8xh")
+texture_pressed = SubResource("AtlasTexture_51dly")
+texture_hover = SubResource("AtlasTexture_r83b0")
+texture_focused = SubResource("AtlasTexture_r83b0")
+
+[node name="RightButton" type="TextureButton" parent="." unique_id=235561348]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -11.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-16, 0)
+offset_transform_visual_only = false
+texture_normal = SubResource("AtlasTexture_0e8xh")
+texture_pressed = SubResource("AtlasTexture_51dly")
+texture_hover = SubResource("AtlasTexture_r83b0")
+texture_focused = SubResource("AtlasTexture_r83b0")
+flip_h = true
+
+[node name="UpButton" type="TextureButton" parent="." unique_id=1222818281]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -9.5
+offset_right = 9.5
+offset_bottom = 23.0
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_rotation = 1.5707964
+offset_transform_visual_only = false
+texture_normal = SubResource("AtlasTexture_0e8xh")
+texture_pressed = SubResource("AtlasTexture_51dly")
+texture_hover = SubResource("AtlasTexture_r83b0")
+texture_focused = SubResource("AtlasTexture_r83b0")
+flip_v = true
+
+[node name="DownButton" type="TextureButton" parent="." unique_id=182137092]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -9.5
+offset_top = -23.0
+offset_right = 9.5
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_rotation = -1.5707964
+offset_transform_visual_only = false
+texture_normal = SubResource("AtlasTexture_0e8xh")
+texture_pressed = SubResource("AtlasTexture_51dly")
+texture_hover = SubResource("AtlasTexture_r83b0")
+texture_focused = SubResource("AtlasTexture_r83b0")

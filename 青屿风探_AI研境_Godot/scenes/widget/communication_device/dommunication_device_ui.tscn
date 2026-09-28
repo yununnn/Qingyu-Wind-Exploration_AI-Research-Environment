@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://bh3hwcf2knbmm"]
+
+[ext_resource type="Theme" uid="uid://c3b8a421bqpje" path="res://themes/Buttons/theme.tres" id="1_j878w"]
+[ext_resource type="Script" uid="uid://cxiveexp5luo4" path="res://scenes/widget/communication_device/dommunication_device_ui.gd" id="2_lw4kr"]
+
+[sub_resource type="Animation" id="Animation_38pdc"]
+length = 0.9
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_position_ratio:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_position_ratio:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:offset_transform_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_qpby8"]
+resource_name = "new_animation"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(-0.983, 0, 0, 0.26666668, -0.0037495494, 0.23, -0.33333334, 0.00917621, 0.23333329, -0.012978122, 0, -0.1566717, -0.0023579206, 0.08543399, -0.19455007),
+"times": PackedFloat32Array(0, 0.6, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_position_ratio:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(-2.09, 0, 0, 0.10000001, 0.34833333, 0, -0.34496775, -0.01024985, 0.2105689, 0.0009263648, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:offset_transform_position_ratio:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(-5.745, 0, 0, 0.10000001, 0.96999997, 0.075, -0.26666668, -0.01551041, 0.18852735, -0.000130862, 0, -0.1800952, 0.00023043476, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p6783"]
+_data = {
+&"RESET": SubResource("Animation_38pdc"),
+&"pop_up": SubResource("Animation_qpby8")
+}
+
+[node name="DommunicationDeviceUI" type="Control" unique_id=1201337149]
+editor_description = "通讯设备UI"
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_j878w")
+script = ExtResource("2_lw4kr")
+
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=801515308]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -25.0
+offset_right = 60.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_pivot_ratio = Vector2(0, 0.5)
+
+[node name="Button" type="Button" parent="BoxContainer" unique_id=1228066630]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+text = "前往农场"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer" unique_id=1946276040]
+libraries/ = SubResource("AnimationLibrary_p6783")

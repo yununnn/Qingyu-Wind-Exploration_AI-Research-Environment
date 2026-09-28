@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dl42vagfjkobh"]
+
+[ext_resource type="Script" uid="uid://c2six4nqnjxkj" path="res://scenes/fram/camera_2d.gd" id="1_ov074"]
+
+[node name="Farm" type="Node2D" unique_id=1807801828]
+editor_description = "农场"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=134910182]
+anchor_mode = 0
+script = ExtResource("1_ov074")
+
+[node name="Test" type="ColorRect" parent="." unique_id=479124526]
+offset_right = 3818.0
+offset_bottom = 1444.0
+color = Color(0.8177478, 0.7774102, 0.5669994, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=364289053]
+offset_left = 159.0
+offset_top = 179.0
+offset_right = 413.0
+offset_bottom = 381.0
+color = Color(0.98712283, 0.7616109, 0.6761976, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=739770898]
+offset_left = 2337.0
+offset_top = 304.0
+offset_right = 2591.0
+offset_bottom = 506.0
+color = Color(0.98712283, 0.7616109, 0.6761976, 1)
