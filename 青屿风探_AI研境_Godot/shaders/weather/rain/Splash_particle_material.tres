@@ -1,8 +1,9 @@
 [gd_resource type="ParticleProcessMaterial" format=3 uid="uid://b747yx54bs3xg"]
 
 [sub_resource type="Curve" id="Curve_6ermj"]
-_data = [Vector2(0, 0), 0.0, 10.0, 1, 1, Vector2(0.1, 1), 10.0, 0.0, 1, 1, Vector2(0.55, 1), 0.0, -2.2222223, 1, 1, Vector2(1, 0), -2.2222223, 0.0, 1, 1]
-point_count = 4
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+metadata/_snap_enabled = true
 
 [sub_resource type="CurveTexture" id="CurveTexture_fjkmr"]
 curve = SubResource("Curve_6ermj")

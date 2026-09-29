@@ -32,7 +32,6 @@ tile_map_data = PackedByteArray("AAAnAAEADgABAAMAAAAnAAIADgABAAQAAAAnAAMADgABAAQ
 tile_set = ExtResource("2_687ui")
 
 [node name="Rain" parent="." unique_id=65213332 instance=ExtResource("7_84toc")]
-visible = false
 position = Vector2(2, -33)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=883787791]

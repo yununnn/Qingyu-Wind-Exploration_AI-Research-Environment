@@ -1,0 +1,22 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://dnxtv6yaw1n4g"]
+
+[sub_resource type="Curve" id="Curve_5ocxd"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), 0.0, 0.0, 0, 0]
+point_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="CurveTexture" id="CurveTexture_tv3u3"]
+curve = SubResource("Curve_5ocxd")
+
+[resource]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 0.19999999
+scale_max = 0.7
+alpha_curve = SubResource("CurveTexture_tv3u3")
+anim_speed_min = 1.1999999
+anim_speed_max = 1.1999999
+turbulence_enabled = true
+turbulence_noise_strength = 13.65
+sub_emitter_mode = 4
+sub_emitter_amount_at_start = 4
