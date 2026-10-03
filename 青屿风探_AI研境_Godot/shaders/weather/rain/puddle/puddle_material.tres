@@ -1,20 +1,29 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://droj8j7uqkjem"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bxp6qkg6attcq"]
 
 [ext_resource type="Shader" uid="uid://bhxo0tdcux0il" path="res://shaders/weather/rain/puddle/puddle.gdshader" id="1_uvmby"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_uvmby"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_84toc"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3rjan"]
-noise = SubResource("FastNoiseLite_uvmby")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mhalm"]
+noise = SubResource("FastNoiseLite_84toc")
 seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sdj2e"]
+fractal_lacunarity = 1.59
+fractal_gain = 0.445
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0ccrj"]
+noise = SubResource("FastNoiseLite_sdj2e")
 
 [resource]
 shader = ExtResource("1_uvmby")
-shader_parameter/threshold = 0.4490000213275
-shader_parameter/edge_width = 0.010000000475
-shader_parameter/outer_width = 0.0030000001425
-shader_parameter/edge_noise = SubResource("NoiseTexture2D_3rjan")
-shader_parameter/noise_scale = Vector2(4, 4)
-shader_parameter/flow_speed = Vector2(0.2, 0.2)
-shader_parameter/moving_threshold = 0.30000001425
-shader_parameter/moving_edge_width = 0.50000002375
+shader_parameter/puddle_noise = SubResource("NoiseTexture2D_0ccrj")
+shader_parameter/threshold = 0.72800003458
+shader_parameter/border_margin = 0.1710000081225
+shader_parameter/border_irregularity = 0.0
+shader_parameter/edge_width = 0.0350000016625
+shader_parameter/puddle_color = Color(0.1484, 0.26464665, 0.28, 0.61960787)
+shader_parameter/noise_boost = 0.0
+shader_parameter/distortion_noise = SubResource("NoiseTexture2D_mhalm")
+shader_parameter/distortion_speed = Vector2(0.05, 0.05)
+shader_parameter/distortion_strength = 0.0050000002375

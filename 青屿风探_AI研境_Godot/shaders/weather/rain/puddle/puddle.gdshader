@@ -1,108 +1,156 @@
 shader_type canvas_item;
 
-// 原始噪波：控制整体形状与白边
 /**
- * 原始噪波的切层起点。
- * 灰度低于此值的区域透明，露出下面的地图。
- * 数值越大，黑色覆盖区域越小。
+ * 积水形状
+ */
+group_uniforms PuddleShape;
+/**
+ * 积水形状纹理
+ * 使用噪波纹理来生成积水的形状。
+ */
+uniform sampler2D puddle_noise : repeat_disable, filter_nearest;
+/**
+ * 形状阈值
+ * 数值越大，积水形状越小。
  */
 uniform float threshold : hint_range(0.0, 1.0) = 0.5;
+/**
+ * 水坑与图片边缘的安全距离
+ * 数值越大，水坑越不会靠近 Sprite2D 的边界
+ */
+uniform float border_margin : hint_range(0.0, 0.5) = 0.08;
 
 /**
- * 整条白边的灰度区间宽度，包含固定外圈和移动内圈。
- * 数值越大，白边通常越宽；不是固定的像素宽度。
+ * 图片边缘的不规则程度
  */
-uniform float edge_width : hint_range(0.0, 0.1) = 0.03;
-
-// 固定白色外圈的宽度，占用白边总宽度的一部分
-/**
- * 始终保持白色的外圈宽度。
- * 移动内圈宽度为 edge_width 减去 outer_width。
- * 大于等于 edge_width 时，整条白边固定为白色。
- */
-uniform float outer_width : hint_range(0.0, 0.1) = 0.01;
-
-// 额外的移动噪波
-/**
- * 用于内圈流动纹理的灰度噪波。
- * 可指定 NoiseTexture2D，并在 Noise 中创建 FastNoiseLite。
- * 建议开启 Seamless，减少重复采样时的接缝。
- */
-uniform sampler2D edge_noise : repeat_enable, filter_nearest;
+uniform float border_irregularity : hint_range(0.0, 0.1) = 0.03;
 
 /**
- * 移动噪波的 UV 缩放。
- * X、Y 分别控制横向和纵向的重复次数。
- * 数值越大，纹理越细碎。
+ * 积水边缘
  */
-uniform vec2 noise_scale = vec2(4.0, 4.0);
+group_uniforms PuddleEdge;
+/**
+ * 边缘宽度
+ */
+uniform float edge_width : hint_range(0.0, 0.1) = 0.02;
+
 
 /**
- * 移动噪波每秒的采样坐标偏移。
- * X 控制横向，Y 控制纵向；设为 0 时该方向停止。
- * 正值使显示纹理向负方向移动，负值则反向。
+ * 水面反射
  */
-uniform vec2 flow_speed = vec2(0.05, 0.02);
-
-// 移动噪波：独立控制切层位置与宽度
+group_uniforms PuddleReflection;
 /**
- * 移动噪波的切层起点。
- * 与 moving_edge_width 一起决定保留的灰度区间。
- * 调整此值可选取移动噪波中的不同层。
+ * 屏幕纹理
  */
-uniform float moving_threshold : hint_range(0.0, 1.0) = 0.2;
-
+uniform sampler2D screen_texture : hint_screen_texture, filter_nearest;
 /**
- * 移动噪波保留的灰度区间宽度。
- * 保留范围为 moving_threshold 到两者之和，不包含上限。
- * 设为 0 时移动内圈全黑，固定外圈仍为白色。
- * 建议与 moving_threshold 的和不超过 1.0。
+ * 反射颜色
  */
-uniform float moving_edge_width : hint_range(0.0, 1.0) = 0.3;
+uniform vec4 puddle_color : source_color;
+/**
+ * 噪波增强
+ * 用于加深水面的深度
+ */
+uniform float noise_boost : hint_range(0.0, 10) = 0.0;
+/**
+ * 水面扰动噪波纹理
+ */
+uniform sampler2D distortion_noise : repeat_enable;
+/**
+ * 扰动速度
+ */
+uniform vec2 distortion_speed = vec2(0.1, 0.1);
+/**
+ * 扰动强度
+ */
+uniform float distortion_strength : hint_range(0.0, 0.05) = 0.01;
+
 
 void fragment() {
-	// 灰度噪波的 RGB 相同，取一个通道即可
-	float noise_value = texture(TEXTURE, UV).r;
+    // uv坐标
+    vec2 uv = UV;
 
-	// 超过第一个阈值：白边 + 黑色区域
-	float mask = step(threshold, noise_value);
+    // 获取噪波值
+    // float noise_value = texture(puddle_noise, uv).r;
+    // 获取原始噪波
+    float raw_noise = texture(puddle_noise, uv).r;
 
-	// 超过第二个阈值：黑色区域
-	float inside = step(threshold + edge_width, noise_value);
 
-	// 两个区域相减，只留下中间的白边
-	float edge = mask - inside;
+    // ------------------------------------------------
+    // 计算当前 UV 到 Sprite2D 四条边的最近距离
+    // ------------------------------------------------
 
-	// 从白边中分出固定外圈，宽度不超过白边总宽度
-	float inner_start = step(
-		threshold + min(outer_width, edge_width),
-		noise_value
-	);
-	float outer_edge = mask - inner_start;
+    // 左右边缘距离
+    float edge_x = min(uv.x, 1.0 - uv.x);
 
-	// 剩余的内圈用于显示移动噪波
-	float inner_edge = edge - outer_edge;
+    // 上下边缘距离
+    float edge_y = min(uv.y, 1.0 - uv.y);
 
-	// 随时间移动的采样坐标
-	vec2 flow_uv = UV * noise_scale + TIME * flow_speed;
-	float moving_noise = texture(edge_noise, flow_uv).r;
+    // 当前像素距离图片最近边缘的距离
+    float edge_distance = min(edge_x, edge_y);
 
-	// 移动噪波同样使用两个阈值
-	float moving_mask = step(moving_threshold, moving_noise);
-	float moving_inside = step(
-		moving_threshold + moving_edge_width,
-		moving_noise
-	);
 
-	// 两个区域相减，只留下移动噪波中选定的一层
-	float moving_edge = moving_mask - moving_inside;
+    // ------------------------------------------------
+    // 让边界宽度产生不规则变化
+    // ------------------------------------------------
 
-	// 将移动噪波切成黑白，限制在白边内
-	// 只影响内圈，固定外圈始终保持白色
-	inner_edge *= moving_edge;
+    // 将噪波从 0~1 转换成 -1~1
+    float edge_noise = raw_noise * 2.0 - 1.0;
 
-	// 合并固定白色外圈和带移动噪波的内圈
-	edge = outer_edge + inner_edge;
+    // 每个位置拥有不同的边缘宽度
+    float irregular_margin =
+        border_margin
+        + edge_noise * border_irregularity;
 
-	COLOR = vec4(vec3(edge), mask);
+    // 防止出现 0 或负数
+    irregular_margin = max(irregular_margin, 0.001);
+
+
+    // ------------------------------------------------
+    // 生成边缘遮罩
+    // 图片最边缘 = 0
+    // 向内部逐渐变成 = 1
+    // ------------------------------------------------
+
+    float border_mask = smoothstep(
+        0.0,
+        irregular_margin,
+        edge_distance
+    );
+
+
+    // ------------------------------------------------
+    // 修改最终用于生成水坑的噪波
+    // ------------------------------------------------
+
+    float noise_value = raw_noise * border_mask;
+    
+    // 通过step生成积水形状
+    float shape = step(threshold, noise_value);
+    // 内切一层轮廓，此为边缘
+    float edge = step(threshold - edge_width, noise_value);
+    
+    // 配合噪波与TIME计算扰动纹理
+    vec4 distortion_texture = texture(distortion_noise, uv + TIME * distortion_speed);
+        // 扰动强度控制
+    distortion_texture = distortion_texture * distortion_strength;
+    // 处理后的地面扰动纹理
+    vec3 ground_texture = texture(screen_texture, SCREEN_UV + distortion_texture.xy).rgb;
+    
+    float edge_uv = uv.x * uv.y * (1.0 - uv.x) * (1.0 - uv.y) * 100.0;
+
+    // 积水纹理
+    if (shape == 1.0) {
+        COLOR = vec4(ground_texture + puddle_color.rgb, 1.0);
+    } 
+    // 边缘纹理
+    else if (edge == 1.0) {
+        COLOR = vec4(1, 1, 1, puddle_color.a);
+    }
+    // 其他区域透明
+    else {
+        COLOR = vec4(0, 0, 0, 0);
+    }
+
+
 }

@@ -8,14 +8,14 @@ signal black_finished
 
 
 ## 由黑转亮
-func _black_to_light(speed : float) -> void:
+func _black_to_light() -> void:
 	# 一开始完全黑
 	color = Color(0, 0, 0, 1)
 	
 	# 创建渐变动画
 	var tween := create_tween()
 
-	# 2 秒内透明度从 1 变成 0
+	# speed 秒内透明度从 1 变成 0
 	tween.tween_property(
 		self,
 		"color",
@@ -30,4 +30,4 @@ func _black_to_light(speed : float) -> void:
 	black_finished.emit()
 
 func _on_laboratory_ready() -> void:
-	_black_to_light(speed)
+	_black_to_light()

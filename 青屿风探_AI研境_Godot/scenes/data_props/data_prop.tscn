@@ -8,7 +8,6 @@
 size = Vector2(20, 34)
 
 [node name="DataProp" type="Area2D" unique_id=471788689]
-scale = Vector2(4, 4)
 script = ExtResource("1_jqu8o")
 outline_material = ExtResource("2_he6gx")
 
