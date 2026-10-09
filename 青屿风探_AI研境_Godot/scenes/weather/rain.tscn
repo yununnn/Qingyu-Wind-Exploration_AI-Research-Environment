@@ -2,18 +2,9 @@
 
 [ext_resource type="Material" uid="uid://cbir6irc8saw5" path="res://shaders/weather/rain/rain_particle_material.tres" id="1_nkg2j"]
 [ext_resource type="Material" uid="uid://b747yx54bs3xg" path="res://shaders/weather/rain/Splash_particle_material.tres" id="2_f8bl5"]
-[ext_resource type="Texture2D" uid="uid://dbcjs2eqt358x" path="res://assets/water/ripple/ripple.png" id="2_m72jr"]
-[ext_resource type="Shader" uid="uid://b8coojmo72gkb" path="res://shaders/weather/rain/ripple/ripple.gdshader" id="2_ua0to"]
-[ext_resource type="Material" uid="uid://dnxtv6yaw1n4g" path="res://shaders/weather/rain/ripple/ripple_particle_material.tres" id="3_m72jr"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_61r3b"]
 blend_mode = 1
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3rjan"]
-shader = ExtResource("2_ua0to")
-shader_parameter/particles_anim_h_frames = 4
-shader_parameter/particles_anim_v_frames = 1
-shader_parameter/particles_anim_loop = false
 
 [node name="Rain" type="Node2D" unique_id=65213332]
 editor_description = "雨"
@@ -23,23 +14,12 @@ editor_description = "雨粒子"
 material = SubResource("CanvasItemMaterial_61r3b")
 position = Vector2(-37, -20)
 amount = 1000
-sub_emitter = NodePath("../GPUParticles2D_Ripple")
+sub_emitter = NodePath("../GPUParticles2D_Splash")
 lifetime = 0.5
 preprocess = 0.5
 fixed_fps = 240
 visibility_rect = Rect2(0, 0, 2000, 500)
 process_material = ExtResource("1_nkg2j")
-
-[node name="GPUParticles2D_Ripple" type="GPUParticles2D" parent="." unique_id=493976966]
-editor_description = "水波纹粒子"
-material = SubResource("ShaderMaterial_3rjan")
-emitting = false
-amount = 1600
-sub_emitter = NodePath("../GPUParticles2D_Splash")
-texture = ExtResource("2_m72jr")
-lifetime = 0.8
-visibility_rect = Rect2(-100, -100, 10000, 500)
-process_material = ExtResource("3_m72jr")
 
 [node name="GPUParticles2D_Splash" type="GPUParticles2D" parent="." unique_id=837925644]
 editor_description = "雨溅起水花粒子"

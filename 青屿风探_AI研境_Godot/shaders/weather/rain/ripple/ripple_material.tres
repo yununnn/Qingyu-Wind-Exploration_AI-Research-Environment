@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://shaders/weather/rain/ripple/ripple.gdshader" id="1_shader"]
+
+[resource]
+resource_name = "像素椭圆水波纹外观"
+shader = ExtResource("1_shader")
+shader_parameter/ripple_color = Color(0.9, 0.95, 1, 0.85)
