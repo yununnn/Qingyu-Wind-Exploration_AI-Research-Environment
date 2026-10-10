@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://754086yhcxft"]
 
 [ext_resource type="Material" path="res://shaders/weather/rain/ripple/ripple_material.tres" id="1_appearance"]
-[ext_resource type="Material" path="res://shaders/weather/rain/ripple/ripple_particle_material.tres" id="2_process"]
+[ext_resource type="Material" uid="uid://vemsrp7yrsrs" path="res://shaders/weather/rain/ripple/ripple_particle_material.tres" id="2_process"]
 [ext_resource type="Texture2D" uid="uid://b7djf5rthaegq" path="res://assets/water/ripple/ripple.png" id="3_texture"]
 
 [node name="Ripple" type="GPUParticles2D" unique_id=109034651]

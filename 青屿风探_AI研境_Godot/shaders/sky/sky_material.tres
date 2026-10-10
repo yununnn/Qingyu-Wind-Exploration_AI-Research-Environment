@@ -1,0 +1,27 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ddwp8pyiydqoh"]
+
+[ext_resource type="Shader" uid="uid://bn7qnphrtsw7k" path="res://shaders/sky/sky.gdshader" id="1_sky"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_clouds"]
+seed = 94
+frequency = 0.0071
+fractal_lacunarity = 2.2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_clouds"]
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_clouds")
+seamless = true
+
+[resource]
+resource_local_to_scene = true
+resource_name = "像素阴天天空"
+shader = ExtResource("1_sky")
+shader_parameter/sky_color = Color(0.133333, 0.152941, 0.247059, 1)
+shader_parameter/cloud_shadow_color = Color(0.34902, 0.360784, 0.419608, 1)
+shader_parameter/cloud_color = Color(0.552941, 0.572549, 0.6, 1)
+shader_parameter/cloud_noise = SubResource("NoiseTexture2D_clouds")
+shader_parameter/cloud_scale = Vector2(1.2, 0.8)
+shader_parameter/cloud_speed = Vector2(-0.008, -0.004)
+shader_parameter/cloud_threshold = 0.7999999895690301
+shader_parameter/canvas_size = Vector2(640, 360)
+shader_parameter/pixel_size = 1.0

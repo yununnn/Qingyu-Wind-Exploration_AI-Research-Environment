@@ -1,7 +1,7 @@
 [gd_resource type="ParticleProcessMaterial" format=3 uid="uid://vemsrp7yrsrs"]
 
 [resource]
-resource_name = "水波纹：矩形区域随机发射，原地扩散"
+resource_name = "水波纹粒子材质"
 particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(320, 180, 0)

@@ -38,13 +38,16 @@ curve_y = SubResource("Curve_f8bl5")
 curve_z = SubResource("Curve_m72jr")
 
 [resource]
+resource_name = "雨水粒子材质"
 lifetime_randomness = 0.4
 particle_flag_disable_z = true
+emission_shape_offset = Vector3(976.165, 0, 0)
+emission_shape_scale = Vector3(1.8, 1, 1)
 emission_shape = 3
-emission_box_extents = Vector3(2200, 1, 0)
-angle_min = -154.99998
-angle_max = -149.99998
-gravity = Vector3(1400, 3000, 0)
+emission_box_extents = Vector3(640, 1, 0)
+angle_min = -149.99998
+angle_max = -139.99998
+gravity = Vector3(1800, 3000, 0)
 scale_max = 2.0
 scale_over_velocity_curve = SubResource("CurveXYZTexture_7gjd1")
 color = Color(0.95686275, 1, 1, 1)

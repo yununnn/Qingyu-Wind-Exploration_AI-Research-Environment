@@ -9,7 +9,7 @@ metadata/_snap_enabled = true
 curve = SubResource("Curve_6ermj")
 
 [resource]
-resource_name = "水花：碰撞触发 + 向上初速度 + 重力拉回"
+resource_name = "水花粒子材质"
 particle_flag_disable_z = true
 direction = Vector3(0, -1, 0)
 spread = 30.0

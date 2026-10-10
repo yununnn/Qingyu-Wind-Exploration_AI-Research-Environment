@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d10tqy1opg24v"]
+
+[ext_resource type="Material" uid="uid://ddwp8pyiydqoh" path="res://shaders/sky/sky_material.tres" id="1_sky"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_canvas"]
+
+[node name="Sky" type="Sprite2D" unique_id=1290018216]
+editor_description = "640×360 像素阴天天空：深蓝灰底色、分层灰云、缓慢漂移。可直接放入倒影 SubViewport，位于树木倒影下方。调整绘制尺寸时，同时调整 Scale 和材质中的 canvas_size。"
+z_index = -100
+texture_filter = 1
+material = ExtResource("1_sky")
+scale = Vector2(640, 360)
+texture = SubResource("CanvasTexture_canvas")
+centered = false

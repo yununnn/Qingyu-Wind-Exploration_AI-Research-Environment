@@ -1,6 +1,6 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://co6povvfs6mr"]
 
-[ext_resource type="Shader" path="res://shaders/weather/rain/ripple/ripple.gdshader" id="1_shader"]
+[ext_resource type="Shader" uid="uid://4nt7elojs44s" path="res://shaders/weather/rain/ripple/ripple.gdshader" id="1_shader"]
 
 [resource]
 resource_name = "像素椭圆水波纹外观"
