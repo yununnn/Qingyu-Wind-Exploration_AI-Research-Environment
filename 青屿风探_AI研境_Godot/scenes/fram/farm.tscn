@@ -7,12 +7,54 @@
 [ext_resource type="PackedScene" uid="uid://crkwrq01r68dl" path="res://scenes/data_props/data_prop.tscn" id="3_mhalm"]
 [ext_resource type="PackedScene" uid="uid://dq2qekltpm3s4" path="res://scenes/weather/weather_rain.tscn" id="5_84toc"]
 [ext_resource type="PackedScene" uid="uid://dqdau3uq0n3eq" path="res://scenes/weather/puddle.tscn" id="6_mhalm"]
+[ext_resource type="Shader" uid="uid://bn7qnphrtsw7k" path="res://shaders/sky/sky.gdshader" id="8_0ccrj"]
+[ext_resource type="Shader" uid="uid://24w3m3s3mt45" path="res://shaders/weather/rain/tree/tree.gdshader" id="9_3xjet"]
+[ext_resource type="Texture2D" uid="uid://c706kujj1grr8" path="res://assets/farm/objects/Trees, stumps and bushes.png" id="9_je5cs"]
 
 [sub_resource type="Environment" id="Environment_0e3nr"]
 background_mode = 3
 glow_enabled = true
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_5ocxd"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_clouds"]
+seed = 94
+frequency = 0.0071
+fractal_lacunarity = 2.2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_clouds"]
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_clouds")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6hsba"]
+resource_local_to_scene = true
+resource_name = "像素阴天天空"
+shader = ExtResource("8_0ccrj")
+shader_parameter/sky_color = Color(0.30008724, 0.33539155, 0.50134057, 1)
+shader_parameter/cloud_shadow_color = Color(0.34902, 0.360784, 0.419608, 1)
+shader_parameter/cloud_color = Color(0.552941, 0.572549, 0.6, 1)
+shader_parameter/cloud_noise = SubResource("NoiseTexture2D_clouds")
+shader_parameter/cloud_scale = Vector2(1.2, 0.8)
+shader_parameter/cloud_speed = Vector2(-0.004, -0.002)
+shader_parameter/cloud_threshold = 0.7999999895690301
+shader_parameter/canvas_size = Vector2(640, 360)
+shader_parameter/pixel_size = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ry2vk"]
+shader = ExtResource("9_3xjet")
+shader_parameter/tree_height = 31.0
+shader_parameter/root_y = 12.0
+shader_parameter/right_bend = 12.0
+shader_parameter/rebound_ratio = 0.15
+shader_parameter/cycle_seconds = 1.4
+shader_parameter/refraction_pixels = 1.0
+shader_parameter/waterline_width = 1.0
+shader_parameter/waterline_color = Color(0.72, 0.79, 0.67, 1)
+shader_parameter/underwater_color = Color(0.42, 0.6, 0.62, 1)
+shader_parameter/underwater_tint = 0.16
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e3nr"]
+atlas = ExtResource("9_je5cs")
+region = Rect2(20, 0, 24, 31)
 
 [node name="Farm" type="Node2D" unique_id=1807801828]
 editor_description = "农场"
@@ -54,21 +96,15 @@ position = Vector2(387, 163)
 [node name="SwitchViewport" parent="CanvasLayer" unique_id=1526755299 instance=ExtResource("2_8qp0c")]
 scale = Vector2(1, 0.99584776)
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1852571371]
-visible = false
-offset_right = 640.0
-offset_bottom = 359.0
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1009715830]
-handle_input_locally = false
-size = Vector2i(640, 359)
-render_target_update_mode = 0
-
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=1456258330]
-position = Vector2(318.25, 177.74998)
-scale = Vector2(637.5, 356.49997)
-texture = SubResource("CanvasTexture_5ocxd")
-
 [node name="Puddle" parent="." unique_id=788995391 instance=ExtResource("6_mhalm")]
-position = Vector2(245, 36)
+
+[node name="Sky" parent="Puddle/CanvasLayer/SubViewportReflection" parent_id_path=PackedInt32Array(788995391, 1276117742) index="0" unique_id=1051594638]
+material = SubResource("ShaderMaterial_6hsba")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Puddle/Tree" parent_id_path=PackedInt32Array(788995391, 1734155396) index="4" unique_id=1038083221]
+material = SubResource("ShaderMaterial_ry2vk")
+position = Vector2(40, 56)
+scale = Vector2(1, 1.0325181)
+texture = SubResource("AtlasTexture_0e3nr")
+
+[editable path="Puddle"]

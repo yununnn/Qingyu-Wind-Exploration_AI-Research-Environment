@@ -2,32 +2,30 @@
 
 [ext_resource type="Shader" uid="uid://bhxo0tdcux0il" path="res://shaders/weather/rain/puddle/puddle.gdshader" id="1_uvmby"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_84toc"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mhalm"]
-noise = SubResource("FastNoiseLite_84toc")
-seamless = true
-
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_sdj2e"]
-frequency = 0.0052
+frequency = 0.014
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0ccrj"]
+width = 2200
+height = 360
 noise = SubResource("FastNoiseLite_sdj2e")
 
 [resource]
 resource_name = "水坑材质"
 shader = ExtResource("1_uvmby")
 shader_parameter/puddle_noise = SubResource("NoiseTexture2D_0ccrj")
-shader_parameter/threshold = 0.3250000154375
-shader_parameter/border_margin = 0.1630000077425
-shader_parameter/border_irregularity = 0.0730000034675
-shader_parameter/edge_width = 0.02
-shader_parameter/edge_noise_strength = 0.02
-shader_parameter/edge_noise_speed = Vector2(0.08, 0.08)
-shader_parameter/reflection_strength = 0.47200002242
-shader_parameter/reflection_fade_range = 0.0950000045125
-shader_parameter/distortion_noise = SubResource("NoiseTexture2D_mhalm")
-shader_parameter/distortion_speed = Vector2(0.05, 0.05)
-shader_parameter/distortion_strength = 0.010000000475
-shader_parameter/reflection_uv_origin = Vector2(0, 0)
-shader_parameter/reflection_uv_size = Vector2(1, 1)
+shader_parameter/threshold = 0.4800000228
+shader_parameter/border_margin = 0.0
+shader_parameter/border_irregularity = 0.0
+shader_parameter/area_irregularity = 15.0
+shader_parameter/depth_scale = 20.0
+shader_parameter/edge_width = 1.5
+shader_parameter/edge_noise_strength = 0.75
+shader_parameter/edge_noise_speed = Vector2(0.005, 0.005)
+shader_parameter/edge_opacity = 0.26
+shader_parameter/ripple_distortion = 1.5
+shader_parameter/ripple_opacity = 0.38
+shader_parameter/water_time = 0.0
+shader_parameter/water_color = Color(0.41960785, 0.6, 0.61960787, 1)
+shader_parameter/water_opacity = 0.30000001425
+shader_parameter/refraction_pixels = 1.0

@@ -1,204 +1,272 @@
 shader_type canvas_item;
+render_mode unshaded;
 
-// -------------------- 积水形状 --------------------
+
+// ==================== 水域形状 ====================
 
 group_uniforms PuddleShape;
 
-/** 使用红通道生成积水形状。 */
+/**
+ * 形状噪波，使用 R 通道。
+ */
 uniform sampler2D puddle_noise : repeat_enable, filter_nearest;
 
-/** 形状阈值；越大，保留下来的积水区域越少。 */
+/**
+ * 水位阈值；越大，有水的区域越少。
+ */
 uniform float threshold : hint_range(0.0, 1.0) = 0.5;
 
-/** 图片边界限制区域的宽度，单位为 UV。 */
+/**
+ * 整张纹理边缘的限制宽度，单位为 UV。
+ */
 uniform float border_margin : hint_range(0.0, 0.5) = 0.08;
 
-/** 使用噪波改变边界限制区域的宽度，使边界更不规则。 */
+/**
+ * 纹理边缘限制宽度的不规则程度。
+ */
 uniform float border_irregularity : hint_range(0.0, 0.1) = 0.03;
 
+/**
+ * 多边形并集遮罩：R = 边缘距离 / 64，A = 范围内外。
+ */
+uniform sampler2D water_mask : repeat_disable, filter_nearest;
 
-// -------------------- 积水轮廓 --------------------
+/**
+ * 多边形边界静态向内偏移的程度，单位为像素。
+ */
+uniform float area_irregularity : hint_range(0.0, 32.0, 0.5) = 6.0;
+
+/**
+ * 噪波差值转水深的倍率，由脚本同步。
+ */
+uniform float depth_scale = 20.0;
+
+
+// ==================== 统一岸线 ====================
 
 group_uniforms PuddleEdge;
 
-/** 内部轮廓使用的噪波阈值差，不是固定的像素宽度。 */
-uniform float edge_width : hint_range(0.0, 0.1) = 0.02;
+/**
+ * 最终水域距离场：R = 到实际岸线的距离 / 64，由脚本生成。
+ */
+uniform sampler2D shore_distance : repeat_disable, filter_nearest;
 
-/** 轮廓阈值的动态偏移幅度，使轮廓向水坑内部变化。 */
-uniform float edge_noise_strength : hint_range(0.0, 0.1) = 0.02;
+/**
+ * 所有岸线共同的向内宽度，单位为像素。
+ */
+uniform float edge_width : hint_range(0.0, 16.0, 0.5) = 1.5;
 
-/** 轮廓噪波的移动速度，单位为 UV/秒。 */
-uniform vec2 edge_noise_speed = vec2(0.05, 0.05);
+/**
+ * 亮边宽度的扰动幅度，单位为像素，不移动水域边界。
+ */
+uniform float edge_noise_strength : hint_range(0.0, 8.0, 0.25) = 0.75;
+
+/**
+ * 轮廓噪波移动速度，单位为 UV/秒。
+ */
+uniform vec2 edge_noise_speed = vec2(0.02, 0.01);
+
+/**
+ * 岸线亮色强度；0 隐藏亮边。
+ */
+uniform float edge_opacity : hint_range(0.0, 1.0) = 0.26;
 
 
-// -------------------- 水面波纹 --------------------
+// ==================== 水面波纹 ====================
 
 group_uniforms Ripple;
 
-/** 使用 Alpha 通道控制白色波纹的叠加强度。 */
+/**
+ * 波纹视口纹理，使用 Alpha 通道。
+ */
 uniform sampler2D ripple_texture : repeat_disable, filter_nearest;
 
-
-// -------------------- 倒影与扰动 --------------------
-
-group_uniforms PuddleReflection;
-
-/** 倒影视口输出的纹理。 */
-uniform sampler2D reflection_texture : repeat_disable, filter_nearest;
-
-/** 水坑绘制前已经渲染的屏幕画面，用于显示水底。 */
-uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
+/**
+ * 波纹引起的地面折射强度。
+ */
+uniform float ripple_distortion : hint_range(0.0, 6.0) = 1.5;
 
 /**
- * 水坑内部的倒影占比。
+ * 波纹亮色强度，不影响波纹折射。
  */
-uniform float reflection_strength : hint_range(0.0, 1.0) = 0.95;
+uniform float ripple_opacity : hint_range(0.0, 1.0) = 0.38;
+
+
+// ==================== 水色与折射 ====================
+
+group_uniforms WaterSurface;
 
 /**
- * 倒影从边缘到内部的过渡范围，单位为噪波值差。
+ * 水面绘制前的屏幕，由 BackBufferCopy 提供。
  */
-uniform float reflection_fade_range : hint_range(0.001, 0.3) = 0.08;
+uniform sampler2D ground_screen : hint_screen_texture, repeat_disable, filter_nearest;
 
-/** 使用灰度噪波生成水平方向和垂直方向的采样偏移。 */
-uniform sampler2D distortion_noise : repeat_enable;
+/**
+ * 脚本传入的动画时间，单位为秒。
+ */
+uniform float water_time = 0.0;
 
-/** 扰动噪波的移动速度，单位为 UV/秒。 */
-uniform vec2 distortion_speed = vec2(0.1, 0.1);
+/**
+ * 水面染色，仅使用 RGB。
+ */
+uniform vec4 water_color : source_color = vec4(0.42, 0.60, 0.62, 1.0);
 
-/** 扰动幅度，单位为水坑自身的 UV。 */
-uniform float distortion_strength : hint_range(0.0, 0.05) = 0.01;
+/**
+ * 水色混合强度，不控制最终 Alpha。
+ */
+uniform float water_opacity : hint_range(0.0, 1.0) = 0.22;
 
-/** 水坑左上角在倒影纹理中的归一化坐标。 */
-uniform vec2 reflection_uv_origin = vec2(0.0);
+/**
+ * 缓慢流动的地面折射幅度，单位为世界像素。
+ */
+uniform float refraction_pixels : hint_range(0.0, 6.0) = 1.0;
 
-/** 水坑宽高占倒影纹理宽高的比例。 */
-uniform vec2 reflection_uv_size = vec2(1.0);
+
+// ==================== 顶点数据 ====================
+
+// 世界位置，用于计算水内流动。
+varying vec2 world_position;
+
+// 世界坐标到屏幕方向的变换，包含相机缩放和旋转。
+varying vec2 canvas_x;
+varying vec2 canvas_y;
 
 
-// 生成受图片边界限制的形状噪波。
+// ==================== 形状计算 ====================
+
+// 生成受纹理边缘限制的水坑噪波。
 float create_puddle_noise(vec2 uv) {
-    float raw_noise = texture(puddle_noise, uv).r;
+	float raw_noise = texture(puddle_noise, uv).r;
 
-    // 当前 UV 到图片四条边的最近距离。
-    vec2 edge_distance = min(uv, vec2(1.0) - uv);
-    float nearest_edge = min(edge_distance.x, edge_distance.y);
+	// 到整张纹理四条边的最近距离。
+	vec2 edge_distance = min(uv, vec2(1.0) - uv);
+	float nearest_edge = min(edge_distance.x, edge_distance.y);
 
-    float irregular_margin = max(
-        border_margin + (raw_noise * 2.0 - 1.0) * border_irregularity,
-        0.001
-    );
+	float irregular_margin = max(
+		border_margin + (raw_noise * 2.0 - 1.0) * border_irregularity,
+		0.001
+	);
 
-    float border_mask = smoothstep(
-        0.0,
-        irregular_margin,
-        nearest_edge
-    );
+	float border_mask = smoothstep(0.0, irregular_margin, nearest_edge);
 
-    // 同时限制噪波形状和图片边界，避免相乘后过度压低噪波值。
-    return min(raw_noise, border_mask);
+	return min(raw_noise, border_mask);
 }
 
 
-// 使用更高的阈值收缩主体，再取差值得到内部轮廓。
-float create_inner_edge(vec2 uv, float noise_value, float shape) {
-    float moving_noise = texture(
-        puddle_noise,
-        uv - TIME * edge_noise_speed
-    ).r;
+// ==================== 顶点阶段 ====================
 
-    float inner_shape = step(
-        threshold + edge_width + moving_noise * edge_noise_strength,
-        noise_value
-    );
+void vertex() {
+	world_position = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy;
 
-    return clamp(shape - inner_shape, 0.0, 1.0);
+	canvas_x = CANVAS_MATRIX[0].xy;
+	canvas_y = CANVAS_MATRIX[1].xy;
 }
 
 
-// 两次错位采样分别控制 X、Y 偏移，并将偏移范围居中到零。
-vec2 create_distortion_offset(vec2 uv) {
-    vec2 noise_uv = uv + TIME * distortion_speed;
-
-    vec2 noise_value = vec2(
-        texture(distortion_noise, noise_uv).r,
-        texture(distortion_noise, noise_uv + vec2(0.37, 0.61)).r
-    );
-
-    return (noise_value * 2.0 - 1.0) * distortion_strength;
-}
-
-
-// 将水坑 UV 映射到倒影纹理中的对应区域，并添加扰动。
-vec4 sample_reflection(vec2 uv, vec2 offset) {
-    vec2 reflection_uv = clamp(
-        reflection_uv_origin + (uv + offset) * reflection_uv_size,
-        vec2(0.0),
-        vec2(1.0)
-    );
-
-    return texture(reflection_texture, reflection_uv);
-}
-
-
-// 将水坑 UV 偏移换算为屏幕 UV 偏移，让水底与倒影保持相同位移。
-// 此换算适用于当前水坑与屏幕坐标轴对齐、没有旋转的情况。
-vec3 sample_ground(vec2 uv, vec2 screen_uv, vec2 offset) {
-    vec2 screen_uv_scale = vec2(
-        dFdx(screen_uv.x) / dFdx(uv.x),
-        dFdy(screen_uv.y) / dFdy(uv.y)
-    );
-
-    vec2 ground_uv = clamp(
-        screen_uv + offset * screen_uv_scale,
-        vec2(0.0),
-        vec2(1.0)
-    );
-
-    return textureLod(screen_texture, ground_uv, 0.0).rgb;
-}
-
-
-// 根据形状噪波混合水底与倒影，靠近形状阈值的位置显露更多水底。
-vec3 create_surface_color(
-    vec3 ground,
-    vec4 reflection,
-    float noise_value
-) {
-    float depth_mask = smoothstep(
-        threshold,
-        threshold + reflection_fade_range,
-        noise_value
-    );
-
-    float reflection_weight =
-        depth_mask * reflection_strength * reflection.a;
-
-    return mix(ground, reflection.rgb, reflection_weight);
-}
-
+// ==================== 片元阶段 ====================
 
 void fragment() {
-    // 形状和轮廓共用噪波纹理的像素网格。
-    // 倒影、地面和扰动仍使用原始 UV，避免改变原有采样效果。
-    vec2 noise_size = vec2(textureSize(puddle_noise, 0));
-    vec2 shape_uv = (floor(UV * noise_size) + vec2(0.5)) / noise_size;
+	// ---------- 固定水域形状 ----------
 
-    float noise_value = create_puddle_noise(shape_uv);
-    float shape = step(threshold, noise_value);
-    float edge = create_inner_edge(shape_uv, noise_value, shape);
+	// 对齐噪波像素中心，与脚本采样保持一致。
+	vec2 size = vec2(textureSize(puddle_noise, 0));
+	vec2 shape_uv = (
+		floor(UV * size + vec2(0.0001)) + vec2(0.5)
+	) / size;
 
-    vec2 offset = create_distortion_offset(UV);
-    vec4 reflection = sample_reflection(UV, offset);
-    vec3 ground = sample_ground(UV, SCREEN_UV, offset);
-    vec3 water_rgb = create_surface_color(ground, reflection, noise_value);
+	float value = create_puddle_noise(shape_uv);
+	float signed_depth = (value - threshold) * depth_scale;
 
-    // 先用形状遮罩裁切水面，再覆盖 Alpha 为 0.4 的白色轮廓。
-    vec4 color = mix(vec4(0.0), vec4(water_rgb, 1.0), shape);
-    color = mix(color, vec4(1, 1, 1, 0.679), edge);
+	// 多边形范围叠加静态不规则偏移。
+	vec4 mask = texture(water_mask, UV);
+	float area_distance = (
+		mask.r * 64.0
+		- texture(puddle_noise, shape_uv).r * area_irregularity
+	);
+	float area_shape = mask.a * step(0.0, area_distance);
 
-    // 最后叠加白色波纹；保持水面已有的 Alpha。
-    float ripple_mask = texture(ripple_texture, UV).a * shape;
-    color.rgb = mix(color.rgb, vec3(1.0), ripple_mask);
+	// 最终水域 = 噪波水坑 ∩ 多边形并集，不随时间变化。
+	float shape = step(0.0, signed_depth) * area_shape;
 
-    COLOR = color;
+	// 深度只影响染色和折射，不改变水域范围。
+	float depth = smoothstep(0.0, depth_scale * 0.18, signed_depth);
+
+
+	// ---------- 统一岸线 ----------
+
+	float shore = texture(shore_distance, UV).r * 64.0;
+	float moving_noise = texture(
+		puddle_noise,
+		shape_uv - water_time * edge_noise_speed
+	).r;
+
+	// 所有岸线使用同一个宽度和扰动公式。
+	float width = max(
+		0.0,
+		edge_width + (moving_noise * 2.0 - 1.0) * edge_noise_strength
+	);
+	float edge = shape * (1.0 - step(width, shore));
+
+
+	// ---------- 波纹折射 ----------
+
+	vec2 texel = vec2(1.0) / vec2(textureSize(ripple_texture, 0));
+
+	// 相邻 Alpha 的差值近似波纹坡度。
+	vec2 slope = vec2(
+		texture(ripple_texture, UV + vec2(texel.x, 0.0)).a
+			- texture(ripple_texture, UV - vec2(texel.x, 0.0)).a,
+		texture(ripple_texture, UV + vec2(0.0, texel.y)).a
+			- texture(ripple_texture, UV - vec2(0.0, texel.y)).a
+	);
+
+
+	// ---------- 水内流动 ----------
+
+	vec2 flow = vec2(
+		sin(world_position.y * 0.065 + water_time * 1.4),
+		cos(world_position.x * 0.037 + water_time)
+	);
+
+	vec2 displacement = (
+		flow * refraction_pixels + slope * ripple_distortion
+	) * depth;
+
+	// 世界像素偏移转换为屏幕 UV 偏移。
+	vec2 offset = (
+		canvas_x * displacement.x + canvas_y * displacement.y
+	) * SCREEN_PIXEL_SIZE;
+
+	vec3 ground = texture(
+		ground_screen,
+		clamp(SCREEN_UV + offset, vec2(0.0), vec2(1.0))
+	).rgb;
+
+
+	// ---------- 颜色合成 ----------
+
+	// 叠加水色，浅水染色较弱。
+	vec3 color = mix(
+		ground,
+		water_color.rgb,
+		water_opacity * mix(0.35, 1.0, depth)
+	);
+
+	// 叠加统一岸线亮色。
+	color = mix(
+		color,
+		vec3(0.90, 0.95, 0.94),
+		edge * edge_opacity
+	);
+
+	// 叠加波纹亮色。
+	float ripple = texture(ripple_texture, UV).a;
+	color = mix(
+		color,
+		vec3(0.90, 0.95, 0.94),
+		clamp(ripple * ripple_opacity * depth, 0.0, 1.0)
+	);
+
+	// 范围外透明，范围内显示折射后的地面与水面效果。
+	COLOR = vec4(color, shape);
 }

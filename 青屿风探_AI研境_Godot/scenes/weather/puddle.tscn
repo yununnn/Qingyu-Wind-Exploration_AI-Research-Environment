@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d10tqy1opg24v" path="res://scenes/fram/sky.tscn" id="4_3nbf8"]
 [ext_resource type="Texture2D" uid="uid://c706kujj1grr8" path="res://assets/farm/objects/Trees, stumps and bushes.png" id="4_37ga0"]
 [ext_resource type="Shader" uid="uid://bn7qnphrtsw7k" path="res://shaders/sky/sky.gdshader" id="5_3nbf8"]
+[ext_resource type="Shader" uid="uid://24w3m3s3mt45" path="res://shaders/weather/rain/tree/tree.gdshader" id="6_5x8rv"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_hktkw"]
 
@@ -33,6 +34,19 @@ shader_parameter/cloud_threshold = 0.7999999895690301
 shader_parameter/canvas_size = Vector2(640, 360)
 shader_parameter/pixel_size = 1.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ry2vk"]
+shader = ExtResource("6_5x8rv")
+shader_parameter/tree_height = 31.0
+shader_parameter/root_y = 12.0
+shader_parameter/right_bend = 12.0
+shader_parameter/rebound_ratio = 0.15
+shader_parameter/cycle_seconds = 1.4
+shader_parameter/refraction_pixels = 1.0
+shader_parameter/waterline_width = 1.0
+shader_parameter/waterline_color = Color(0.72, 0.79, 0.67, 1)
+shader_parameter/underwater_color = Color(0.42, 0.6, 0.62, 1)
+shader_parameter/underwater_tint = 0.16
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_0e3nr"]
 atlas = ExtResource("4_37ga0")
 region = Rect2(20, 0, 24, 31)
@@ -41,10 +55,12 @@ region = Rect2(20, 0, 24, 31)
 editor_description = "积水水坑
 "
 script = ExtResource("1_mmohq")
+wave_length = 16.0
+wave_speed = 1.4
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=458304110]
 material = ExtResource("1_4ge27")
-scale = Vector2(200, 200)
+scale = Vector2(2200, 360)
 texture = SubResource("CanvasTexture_hktkw")
 centered = false
 
@@ -60,7 +76,7 @@ render_target_update_mode = 4
 
 [node name="Ripple" parent="CanvasLayer/SubViewportRipple" unique_id=109034651 instance=ExtResource("2_hktkw")]
 position = Vector2(310, 154)
-amount = 300
+amount = 2000
 
 [node name="SubViewportReflection" type="SubViewport" parent="CanvasLayer" unique_id=1276117742]
 editor_description = "水面倒影子视口"
@@ -73,55 +89,45 @@ render_target_update_mode = 4
 [node name="Sky" parent="CanvasLayer/SubViewportReflection" unique_id=1051594638 instance=ExtResource("4_3nbf8")]
 material = SubResource("ShaderMaterial_5x8rv")
 
-[node name="Tree2" type="Node2D" parent="CanvasLayer/SubViewportReflection" unique_id=1941911101]
-position = Vector2(0, 32)
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubViewportReflection/Tree2" unique_id=957740320]
-position = Vector2(16, 16)
-scale = Vector2(1, 1.016129)
-texture = SubResource("AtlasTexture_0e3nr")
-flip_h = true
-flip_v = true
-
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/SubViewportReflection/Tree2" unique_id=656363951]
-position = Vector2(56, 24)
-scale = Vector2(1, 1.016129)
-texture = SubResource("AtlasTexture_0e3nr")
-flip_h = true
-flip_v = true
-
-[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/SubViewportReflection/Tree2" unique_id=1301353222]
-position = Vector2(120, 15.999996)
-scale = Vector2(1, 1.016129)
-texture = SubResource("AtlasTexture_0e3nr")
-flip_h = true
-flip_v = true
-
-[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer/SubViewportReflection/Tree2" unique_id=866789953]
-position = Vector2(40, 56)
-scale = Vector2(1, 1.0325181)
-texture = SubResource("AtlasTexture_0e3nr")
-flip_h = true
-flip_v = true
-
 [node name="Tree" type="Node2D" parent="." unique_id=1734155396]
+position = Vector2(296, 64)
 
 [node name="Sprite2D" type="Sprite2D" parent="Tree" unique_id=156162902]
+material = SubResource("ShaderMaterial_ry2vk")
 position = Vector2(16, 16)
 scale = Vector2(1, 1.016129)
 texture = SubResource("AtlasTexture_0e3nr")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Tree" unique_id=2136860869]
+material = SubResource("ShaderMaterial_ry2vk")
 position = Vector2(56, 24)
 scale = Vector2(1, 1.016129)
 texture = SubResource("AtlasTexture_0e3nr")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Tree" unique_id=1565755456]
+material = SubResource("ShaderMaterial_ry2vk")
 position = Vector2(120, 15.999996)
 scale = Vector2(1, 1.016129)
 texture = SubResource("AtlasTexture_0e3nr")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Tree" unique_id=2127756813]
+material = SubResource("ShaderMaterial_ry2vk")
 position = Vector2(40, 56)
 scale = Vector2(1, 1.0325181)
 texture = SubResource("AtlasTexture_0e3nr")
+
+[node name="WaterAreas" type="Node2D" parent="." unique_id=665119267]
+position = Vector2(216, 0)
+
+[node name="WaterArea1" type="Polygon2D" parent="WaterAreas" unique_id=232669803]
+editor_description = "水域面积"
+color = Color(0, 0.86939985, 0.87074333, 0.11764706)
+polygon = PackedVector2Array(0, 40, 248, 40, 248, 176, 0, 176)
+
+[node name="WaterArea2" type="Polygon2D" parent="WaterAreas" unique_id=1295615183]
+position = Vector2(176, 56)
+color = Color(0, 0.86939985, 0.87074333, 0.11764706)
+polygon = PackedVector2Array(288, 40, 552, 40, 552, 200, 288, 200)
+
+[node name="WaterArea3" type="Polygon2D" parent="WaterAreas" unique_id=1675891885]
+color = Color(0, 0.86939985, 0.87074333, 0.11764706)
