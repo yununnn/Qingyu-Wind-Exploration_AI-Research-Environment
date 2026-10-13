@@ -1,8 +1,16 @@
 extends Control
 
+
+
+## 消息行场景
+const MESSAGE_ROW = preload("res://scenes/widget/communication_device/message_row.tscn")
+## 对话资源
+@export var dialogue_resource: DialogueResource
+## 当前对话行
+var current_line: DialogueLine
+
 ## 弹出ui的动画名称
 const POP_UP_ANIMATION_NAME := "pop_up"
-
 
 @onready var animation_player: AnimationPlayer = $BoxContainer/AnimationPlayer
 @onready var professor: CharacterBody2D = $"../../Professor"
@@ -26,7 +34,17 @@ func _pop_up_ui(delay_time: float) -> void:
 	animation_player.play(POP_UP_ANIMATION_NAME)
 	# 强制立即刷新、播放动画。否则ui会出现一瞬间的默认状态
 	animation_player.advance(0.0)
-	
+
+## 显示下一行对话
+func show_next(cue: String) -> void:
+	current_line = await dialogue_resource.get_next_dialogue_line(cue)
+	if current_line == null:
+		return  # 结束时保留已存在的消息节点
+	var row = MESSAGE_ROW.instantiate()
+	%Messages.add_child(row)
+	row.setup(current_line.character, current_line.text)
+
+
 
 ## 转换场景到农场
 func _go_farm():

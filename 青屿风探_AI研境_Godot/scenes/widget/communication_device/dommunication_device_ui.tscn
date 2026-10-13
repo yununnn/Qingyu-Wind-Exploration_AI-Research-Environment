@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://bh3hwcf2knbmm"]
 
-[ext_resource type="Theme" uid="uid://c3b8a421bqpje" path="res://themes/Buttons/theme.tres" id="1_j878w"]
-[ext_resource type="Script" uid="uid://cxiveexp5luo4" path="res://scenes/widget/communication_device/dommunication_device_ui.gd" id="2_lw4kr"]
+[ext_resource type="Theme" uid="uid://ih6ry6vddf7l" path="res://themes/communicator/communicator_theme.tres" id="1_r2es6"]
+[ext_resource type="Script" uid="uid://cxiveexp5luo4" path="res://scripts/widget/communication_device/dommunication_device_ui.gd" id="2_lw4kr"]
+[ext_resource type="Texture2D" uid="uid://cmu2x86mraypx" path="res://assets/widget/communication_device/背景.png" id="3_2vvhn"]
+[ext_resource type="Resource" uid="uid://dvl0xmaxe02xm" path="res://dialogues/Start.dialogue" id="3_764qe"]
+[ext_resource type="Texture2D" uid="uid://be2ndeqpvxn1v" path="res://assets/widget/communication_device/对话器框架.png" id="4_764qe"]
 
 [sub_resource type="Animation" id="Animation_38pdc"]
 length = 0.9
@@ -84,15 +87,20 @@ _data = {
 [node name="DommunicationDeviceUI" type="Control" unique_id=1201337149]
 editor_description = "通讯设备UI"
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_j878w")
+scale = Vector2(0.8, 0.8)
+theme = ExtResource("1_r2es6")
 script = ExtResource("2_lw4kr")
+dialogue_resource = ExtResource("3_764qe")
 
 [node name="BoxContainer" type="BoxContainer" parent="." unique_id=801515308]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -116,3 +124,67 @@ text = "前往农场"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer" unique_id=1946276040]
 libraries/ = SubResource("AnimationLibrary_p6783")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1888314439]
+editor_description = "背景"
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_2vvhn")
+
+[node name="Frame" type="TextureRect" parent="." unique_id=2120742929]
+editor_description = "对话器框架"
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_764qe")
+
+[node name="ChatScroll" type="ScrollContainer" parent="." unique_id=1300359515]
+editor_description = "滚动条"
+custom_minimum_size = Vector2(457.59, 213.41)
+custom_maximum_size = Vector2(457.59, 213.41)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Padding" type="MarginContainer" parent="ChatScroll" unique_id=2115787486]
+editor_description = "边距"
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Messages" type="VBoxContainer" parent="ChatScroll/Padding" unique_id=1547924248]
+editor_description = "消息"
+layout_mode = 2
+
+[node name="Responses" type="VBoxContainer" parent="ChatScroll/Padding" unique_id=1447416432]
+editor_description = "回答选择"
+layout_mode = 2

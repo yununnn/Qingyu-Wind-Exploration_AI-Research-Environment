@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://ckbvphscdt6mm"]
+
+[ext_resource type="Texture2D" uid="uid://twx4eyxu47wv" path="res://assets/widget/communication_device/头像框.png" id="1_0ju25"]
+[ext_resource type="Texture2D" uid="uid://bibv3w15eyre5" path="res://assets/widget/communication_device/对话框_左.png" id="2_sunpe"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kpyxu"]
+texture = ExtResource("2_sunpe")
+texture_margin_left = 25.0
+texture_margin_top = 10.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[node name="MessageRow" type="HBoxContainer" unique_id=2080518024]
+editor_description = "消息条"
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AvatarFrame" type="TextureRect" parent="." unique_id=733256407]
+editor_description = "头像框"
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_0ju25")
+
+[node name="Avatar" type="TextureRect" parent="AvatarFrame" unique_id=489139798]
+editor_description = "头像"
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bubble" type="PanelContainer" parent="." unique_id=860814621]
+editor_description = "气泡"
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_kpyxu")
+
+[node name="MarginContainer" type="MarginContainer" parent="Bubble" unique_id=1443121853]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="RichTextLabel" parent="Bubble/MarginContainer" unique_id=887103875]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+text = "测试测试测试测试测试测试测试测试测试测试测试"
+fit_content = true
+
+[node name="ChoiceButton" type="Button" parent="Bubble" unique_id=244193040]
+editor_description = "选择按钮
+"
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.1, 1.4)
+offset_transform_visual_only = false
