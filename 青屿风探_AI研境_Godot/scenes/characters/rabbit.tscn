@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://de4042nkt7q28"]
 
-[ext_resource type="Texture2D" uid="uid://ccp663sjfjwb8" path="res://output/rabbit_backup_20261014_225243/Premium Charakter Spritesheet.png" id="1_3wuti"]
-[ext_resource type="Script" uid="uid://buroxrxplmein" path="res://scripts/characters/Rabbit.gd" id="2_rabbit_script"]
+[ext_resource type="Texture2D" uid="uid://ccp663sjfjwb8" path="res://assets/characters/rabbit/Premium Charakter Spritesheet.png" id="1_3wuti"]
+[ext_resource type="Script" uid="uid://buroxrxplmein" path="res://scripts/characters/rabbit.gd" id="2_rabbit_script"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hek4i"]
 radius = 7.0
@@ -1010,28 +1010,28 @@ animations = [{
 "speed": 8.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_0xgxq")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_q4u0g")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_1hkaf")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": SubResource("AtlasTexture_xd1bi")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k68oe")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_5x0ik")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_mm443")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_p56n2")
 }],
 "loop": 1,
@@ -1476,19 +1476,21 @@ animations = [{
 
 [node name="Rabbit" type="CharacterBody2D" unique_id=671228345 groups=["Player"]]
 editor_description = "兔子"
+collision_layer = 2
+collision_mask = 29
 script = ExtResource("2_rabbit_script")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=674164375 groups=["Player"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=674164375]
 position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_hek4i")
 
-[node name="BodySprite" type="AnimatedSprite2D" parent="." unique_id=1499438493 groups=["Player"]]
+[node name="BodySprite" type="AnimatedSprite2D" parent="." unique_id=1499438493]
 sprite_frames = SubResource("SpriteFrames_0e3nr")
 animation = &"idle_down"
 autoplay = "idle_down"
-frame_progress = 0.43746316
+frame_progress = 0.7488203
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=840236494 groups=["Player"]]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=840236494]
 zoom = Vector2(2, 2)
 limit_left = 0
 limit_top = 0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm1jp7ojixjot"
-path="res://.godot/imported/预制角色_14.png-7d0608e1f76dd6e5a69215f3bd734b64.ctex"
+uid="uid://ff35p2vatpdu"
+path="res://.godot/imported/预制角色_17.png-1d37545fc8af6fc3c129db38a8a9294f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/预制角色_14.png"
-dest_files=["res://.godot/imported/预制角色_14.png-7d0608e1f76dd6e5a69215f3bd734b64.ctex"]
+source_file="res://assets/characters/intern/预制角色_17.png"
+dest_files=["res://.godot/imported/预制角色_17.png-1d37545fc8af6fc3c129db38a8a9294f.ctex"]
 
 [params]
 

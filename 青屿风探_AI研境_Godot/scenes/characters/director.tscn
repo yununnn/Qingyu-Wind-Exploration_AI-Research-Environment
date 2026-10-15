@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cscjmmdue14iq"]
+
+[ext_resource type="Script" uid="uid://bnjkdl6rod8rw" path="res://scripts/characters/npc/director.gd" id="1_i1q15"]
+[ext_resource type="Shader" uid="uid://cwcimos4fsyog" path="res://shaders/outline/sprite_outline.gdshader" id="2_5j33e"]
+[ext_resource type="Texture2D" uid="uid://xqf8tcb56dt5" path="res://assets/characters/Director/主任06.png" id="2_myiih"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0e3nr"]
+radius = 9.0
+height = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_myiih"]
+radius = 28.160255
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8p25h"]
+shader = ExtResource("2_5j33e")
+shader_parameter/outline_color = Color(1, 1, 1, 0)
+shader_parameter/outline_size = 1.0
+shader_parameter/alpha_threshold = 0.3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j33e"]
+atlas = ExtResource("2_myiih")
+region = Rect2(288, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nasd"]
+atlas = ExtResource("2_myiih")
+region = Rect2(304, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcwis"]
+atlas = ExtResource("2_myiih")
+region = Rect2(320, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ibxr"]
+atlas = ExtResource("2_myiih")
+region = Rect2(336, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isxcs"]
+atlas = ExtResource("2_myiih")
+region = Rect2(352, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5my1v"]
+atlas = ExtResource("2_myiih")
+region = Rect2(368, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikp7p"]
+region = Rect2(0, 0, 443, 443)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0e3nr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j33e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nasd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcwis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ibxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isxcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5my1v")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikp7p")
+}],
+"loop": 1,
+"name": &"wave",
+"speed": 1.0
+}]
+
+[node name="Director" type="CharacterBody2D" unique_id=608739847]
+editor_description = "主任"
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_i1q15")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1469308832]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_0e3nr")
+
+[node name="Detection" type="Area2D" parent="." unique_id=703595676]
+editor_description = "检测区域"
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=255230707]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_myiih")
+debug_color = Color(0.9882353, 0, 0.32156864, 0.41960785)
+
+[node name="BodySprite" type="AnimatedSprite2D" parent="." unique_id=513486047]
+material = SubResource("ShaderMaterial_8p25h")
+sprite_frames = SubResource("SpriteFrames_0e3nr")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.30819026

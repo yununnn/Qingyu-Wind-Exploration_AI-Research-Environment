@@ -17,7 +17,7 @@ var facing_direction: String = "down"
 func _ready() -> void:
 	# 俯视角移动没有地面和重力，所有碰撞表面都作为墙壁处理。
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
-	body_sprite.play("idle_" + facing_direction)
+	play_animation("idle_" + facing_direction)
 
 
 func _physics_process(_delta: float) -> void:
@@ -25,7 +25,7 @@ func _physics_process(_delta: float) -> void:
 	# get_vector 会限制向量长度，避免斜向移动比水平或垂直移动更快。
 	var input_direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	# Shift 只改变移动速度与动作；没有方向输入时仍然播放待机动画。
-	var is_running := Input.is_action_pressed("run")
+	var is_running : bool = Input.is_action_pressed("run")
 	update_movement(input_direction, is_running)
 	update_animation(input_direction, is_running)
 
@@ -49,7 +49,12 @@ func update_animation(input_direction: Vector2, is_running: bool) -> void:
 	# 只在动作或朝向改变时切换动画，让当前动画持续播放。
 	var animation_name := action + "_" + facing_direction
 	if body_sprite.animation != animation_name:
-		body_sprite.play(animation_name)
+		play_animation(animation_name)
+
+
+## 播放指定名称的动画。
+func play_animation(animation_name: String) -> void:
+	body_sprite.play(animation_name)
 
 
 ## 根据非零移动输入记录朝向；素材只有四方向，斜向时优先朝左右。

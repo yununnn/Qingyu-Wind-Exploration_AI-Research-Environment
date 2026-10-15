@@ -1,0 +1,2 @@
+extends Npc
+class_name Intern

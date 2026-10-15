@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gwududecytpd"
-path="res://.godot/imported/professor_idle.png-662918e903e78ac007111e14770e8d0e.ctex"
+path="res://.godot/imported/professor_idle.png-c9a236c4a3de58d5e05276d6f863c649.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/professor/professor_idle.png"
-dest_files=["res://.godot/imported/professor_idle.png-662918e903e78ac007111e14770e8d0e.ctex"]
+source_file="res://assets/characters/Director/professor_idle.png"
+dest_files=["res://.godot/imported/professor_idle.png-c9a236c4a3de58d5e05276d6f863c649.ctex"]
 
 [params]
 

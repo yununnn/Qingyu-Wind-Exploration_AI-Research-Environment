@@ -1,10 +1,21 @@
 [gd_scene format=3 uid="uid://dmiihi6t4iuts"]
 
-[ext_resource type="Texture2D" uid="uid://d08tw58u22cbf" path="res://assets/characters/intern/预制角色_05.png" id="1_rfrvk"]
+[ext_resource type="Script" uid="uid://c8tjxu4mc0eru" path="res://scripts/characters/npc/intern.gd" id="1_db4c0"]
+[ext_resource type="Texture2D" uid="uid://ff35p2vatpdu" path="res://assets/characters/intern/预制角色_17.png" id="1_rfrvk"]
+[ext_resource type="Shader" uid="uid://cwcimos4fsyog" path="res://shaders/outline/sprite_outline.gdshader" id="2_lel14"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0e3nr"]
 radius = 9.0
 height = 26.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0e3nr"]
+radius = 28.160255
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0e3nr"]
+shader = ExtResource("2_lel14")
+shader_parameter/outline_color = Color(1, 1, 1, 0)
+shader_parameter/outline_size = 1.0
+shader_parameter/alpha_threshold = 0.3
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1flu6"]
 atlas = ExtResource("1_rfrvk")
@@ -53,17 +64,31 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [node name="Intern" type="CharacterBody2D" unique_id=512729683]
 editor_description = "实习生"
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_db4c0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1136314234]
 position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_0e3nr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1304290106]
+[node name="Detection" type="Area2D" parent="." unique_id=446721268]
+editor_description = "检测区域"
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=988106768]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_0e3nr")
+debug_color = Color(0.9882353, 0, 0.32156864, 0.41960785)
+
+[node name="BodySprite" type="AnimatedSprite2D" parent="." unique_id=1304290106]
+material = SubResource("ShaderMaterial_0e3nr")
 sprite_frames = SubResource("SpriteFrames_kpyxu")
 autoplay = "default"
-frame_progress = 0.18257535
+frame_progress = 0.39860237
