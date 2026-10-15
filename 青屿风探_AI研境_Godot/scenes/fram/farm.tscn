@@ -25,7 +25,7 @@ generate_mipmaps = false
 noise = SubResource("FastNoiseLite_clouds")
 seamless = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6hsba"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3xjet"]
 resource_local_to_scene = true
 resource_name = "像素阴天天空"
 shader = ExtResource("8_0ccrj")
@@ -85,21 +85,28 @@ tile_set = ExtResource("2_687ui")
 
 [node name="DecorativeLayer" type="Node2D" parent="." unique_id=529842974]
 editor_description = "装饰层"
+visible = false
 
 [node name="DataProp" parent="DecorativeLayer" unique_id=471788689 instance=ExtResource("3_mhalm")]
 position = Vector2(387, 163)
 
 [node name="WeatherRain" parent="." unique_id=1073655579 instance=ExtResource("5_84toc")]
+visible = false
+
+[node name="Rain" parent="WeatherRain/CanvasLayer" parent_id_path=PackedInt32Array(1073655579, 1477432973) index="0" unique_id=65213332]
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=883787791]
 
 [node name="SwitchViewport" parent="CanvasLayer" unique_id=1526755299 instance=ExtResource("2_8qp0c")]
+visible = false
 scale = Vector2(1, 0.99584776)
 
 [node name="Puddle" parent="." unique_id=788995391 instance=ExtResource("6_mhalm")]
+visible = false
 
 [node name="Sky" parent="Puddle/CanvasLayer/SubViewportReflection" parent_id_path=PackedInt32Array(788995391, 1276117742) index="0" unique_id=1051594638]
-material = SubResource("ShaderMaterial_6hsba")
+material = SubResource("ShaderMaterial_3xjet")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Puddle/Tree" parent_id_path=PackedInt32Array(788995391, 1734155396) index="4" unique_id=1038083221]
 material = SubResource("ShaderMaterial_ry2vk")
@@ -107,4 +114,5 @@ position = Vector2(40, 56)
 scale = Vector2(1, 1.0325181)
 texture = SubResource("AtlasTexture_0e3nr")
 
+[editable path="WeatherRain"]
 [editable path="Puddle"]

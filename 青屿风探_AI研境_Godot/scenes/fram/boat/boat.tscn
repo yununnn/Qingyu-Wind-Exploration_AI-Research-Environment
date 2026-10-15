@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://8iceaby3btwn"]
+
+[ext_resource type="Texture2D" uid="uid://ekbfuro3omqc" path="res://assets/farm/objects/Boats.png" id="1_uw84g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e3nr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2prm"]
+atlas = ExtResource("1_uw84g")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_551cd"]
+atlas = ExtResource("1_uw84g")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0e3nr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2prm")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_551cd")
+}],
+"loop": 1,
+"name": &"normal",
+"speed": 1.0
+}]
+
+[node name="Boat" type="Area2D" unique_id=641224119]
+editor_description = "船"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1359824861]
+shape = SubResource("RectangleShape2D_0e3nr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1957674986]
+sprite_frames = SubResource("SpriteFrames_0e3nr")
+animation = &"normal"
+autoplay = "normal"
+frame_progress = 0.9590789

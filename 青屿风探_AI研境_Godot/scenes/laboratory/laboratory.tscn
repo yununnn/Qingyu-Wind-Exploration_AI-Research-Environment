@@ -1,23 +1,432 @@
-[gd_scene format=3 uid="uid://dtd41scagbkdm"]
+[gd_scene format=4 uid="uid://dtd41scagbkdm"]
 
 [ext_resource type="Script" uid="uid://crewt7dwnf5ab" path="res://scenes/laboratory/laboratory.gd" id="1_tx4pg"]
-[ext_resource type="Texture2D" uid="uid://dfloddpuao7pd" path="res://assets/laboratory/laboratory_background.png" id="2_271nj"]
+[ext_resource type="TileSet" uid="uid://cchcunn3f0ux0" path="res://tile_set/laboratory_tile_set.tres" id="2_nwdle"]
+[ext_resource type="Texture2D" uid="uid://cdu6a1tkhuvs8" path="res://assets/laboratory/18_监狱_无阴影.png" id="3_j2o5o"]
 [ext_resource type="PackedScene" uid="uid://cscjmmdue14iq" path="res://scenes/characters/professor.tscn" id="3_omwdr"]
+[ext_resource type="Texture2D" uid="uid://cnh5714j25s2c" path="res://assets/laboratory/动画_控制室_屏幕.png" id="4_0d3px"]
 [ext_resource type="Script" uid="uid://cmwgmgqp0b8r4" path="res://scenes/laboratory/transition_black.gd" id="4_tp0kf"]
-[ext_resource type="PackedScene" uid="uid://bh3hwcf2knbmm" path="res://scenes/widget/communication_device/dommunication_device_ui.tscn" id="5_omwdr"]
+[ext_resource type="PackedScene" uid="uid://dmiihi6t4iuts" path="res://scenes/characters/intern.tscn" id="5_sc7ut"]
+[ext_resource type="Texture2D" uid="uid://cjb57b3tjxvhe" path="res://assets/laboratory/动画_医院_屏幕_彩色.png" id="6_72auc"]
+[ext_resource type="Texture2D" uid="uid://b6751minpspt7" path="res://assets/laboratory/动画_控制室_服务器.png" id="7_e8o22"]
+[ext_resource type="PackedScene" uid="uid://de4042nkt7q28" path="res://scenes/characters/rabbit.tscn" id="9_i04fv"]
+[ext_resource type="PackedScene" uid="uid://yuv01q6ad5br" path="res://scenes/laboratory/door.tscn" id="10_j2o5o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e3nr"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(192, 288, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv3u3"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(144, 256, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ocxd"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(208, 288, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iauew"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(160, 320, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8xew"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(0, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c0qv"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(16, 336, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ot6r3"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(8, 352, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roqlo"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(32, 272, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5np7r"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(48, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8xex"]
+atlas = ExtResource("4_0d3px")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6ipk"]
+atlas = ExtResource("4_0d3px")
+region = Rect2(64, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8k8xl"]
+atlas = ExtResource("4_0d3px")
+region = Rect2(128, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxdie"]
+atlas = ExtResource("4_0d3px")
+region = Rect2(192, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y43b"]
+atlas = ExtResource("4_0d3px")
+region = Rect2(256, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36db6"]
+atlas = ExtResource("4_0d3px")
+region = Rect2(320, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnsku"]
+atlas = ExtResource("4_0d3px")
+region = Rect2(384, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga5ww"]
+atlas = ExtResource("4_0d3px")
+region = Rect2(448, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n1wf"]
+atlas = ExtResource("4_0d3px")
+region = Rect2(512, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcpqk"]
+atlas = ExtResource("4_0d3px")
+region = Rect2(576, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxu5e"]
+atlas = ExtResource("4_0d3px")
+region = Rect2(640, 0, 64, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tv3u3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8xex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6ipk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8k8xl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxdie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y43b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36db6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnsku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga5ww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2n1wf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcpqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxu5e")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mlxo"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(192, 352, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdj2e"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(176, 352, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cd63"]
+atlas = ExtResource("6_72auc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmygl"]
+atlas = ExtResource("6_72auc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2kvi"]
+atlas = ExtResource("6_72auc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fego"]
+atlas = ExtResource("6_72auc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rb0c1"]
+atlas = ExtResource("6_72auc")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iauew"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cd63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmygl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2kvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fego")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rb0c1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndqq4"]
+atlas = ExtResource("7_e8o22")
+region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gytvx"]
+atlas = ExtResource("7_e8o22")
+region = Rect2(16, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8fnr"]
+atlas = ExtResource("7_e8o22")
+region = Rect2(32, 0, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kpyxu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndqq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gytvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8fnr")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 0.5
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytxab"]
+atlas = ExtResource("7_e8o22")
+region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8el5"]
+atlas = ExtResource("7_e8o22")
+region = Rect2(32, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7qny"]
+atlas = ExtResource("7_e8o22")
+region = Rect2(16, 0, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ocxd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytxab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8el5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7qny")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 0.6
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqxkb"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(160, 352, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvjgx"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(160, 320, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3hcl"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(128, 320, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj415"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(176, 320, 16, 32)
 
 [node name="Laboratory" type="Node2D" unique_id=751390667]
 editor_description = "实验室"
 script = ExtResource("1_tx4pg")
 
-[node name="LaboratoryBackground" type="Sprite2D" parent="." unique_id=349992705]
-scale = Vector2(0.38277513, 0.38257173)
-texture = ExtResource("2_271nj")
-centered = false
+[node name="Scene" type="Node2D" parent="." unique_id=209910780]
+position = Vector2(6, 0)
+
+[node name="Ground" type="TileMapLayer" parent="Scene" unique_id=110100909]
+editor_description = "地面"
+tile_map_data = PackedByteArray("AAAHAAYAAQAOAB8AAAAHAAUAAQAOAB8AAAAHAAQAAQAOAB8AAAAHAAMAAQANAB4AAAAGAAYAAQAOAB8AAAAGAAUAAQAOAB8AAAAGAAQAAQAOAB8AAAAGAAMAAQANAB4AAAAFAAYAAQAOAB8AAAAFAAUAAQAOAB8AAAAFAAQAAQAOAB8AAAAFAAMAAQANAB4AAAAEAAYAAQAOAB8AAAAEAAUAAQAOAB8AAAAEAAQAAQAOAB8AAAAEAAMAAQANAB4AAAADAAYAAQAOAB8AAAADAAUAAQAOAB8AAAADAAQAAQAOAB8AAAADAAMAAQANAB4AAAACAAYAAQAOAB8AAAACAAUAAQAOAB8AAAACAAQAAQAOAB8AAAACAAMAAQANAB4AAAABAAYAAQAOAB8AAAABAAUAAQAOAB8AAAABAAQAAQAOAB8AAAABAAMAAQANAB4AAAAAAAYAAQAMAB8AAAAAAAUAAQAMAB8AAAAAAAQAAQAMAB8AAAAAAAMAAQAMAB4AAAAJAAYAAQAOAB8AAAAJAAUAAQAOAB8AAAAJAAQAAQAOAB8AAAAJAAMAAQANAB4AAAAIAAYAAQAOAB8AAAAIAAUAAQAOAB8AAAAIAAQAAQAOAB8AAAAIAAMAAQANAB4AAAAJAAcAAQAOAB8AAAAIAAcAAQAOAB8AAAAHAAcAAQAOAB8AAAAGAAcAAQAOAB8AAAAFAAcAAQAOAB8AAAAEAAcAAQAOAB8AAAADAAcAAQAOAB8AAAACAAcAAQAOAB8AAAABAAcAAQAOAB8AAAAAAAcAAQAMAB8AAAAJAAgAAQAOAB8AAAAIAAgAAQAOAB8AAAAHAAgAAQAOAB8AAAAGAAgAAQAOAB8AAAAFAAgAAQAOAB8AAAAEAAgAAQAOAB8AAAADAAgAAQAOAB8AAAACAAgAAQAOAB8AAAABAAgAAQAOAB8AAAAAAAgAAQAMAB8AAAAEAAkAAQAMAB8AAAAEAAoAAQAMAB8AAAAEAAsAAQAMAB8AAAAFAAsAAQAOAB8AAAAFAAwAAQANAB4AAAAFAAkAAQAOAB8AAAAFAAoAAQAOAB8AAAAEAAwAAQAMAB8AAAAEAA0AAQAMAB8AAAAFAA0AAQAOAB8AAAA=")
+tile_set = ExtResource("2_nwdle")
+
+[node name="Wall" type="TileMapLayer" parent="Scene" unique_id=1415213499]
+tile_map_data = PackedByteArray("AAAJAAIAAwABAAUAAAAJAAAAAwABAAQAAAAIAAIAAwABAAUAAAAIAAEAAwAFAAQAAAAIAAAAAwABAAQAAAAHAAIAAwABAAUAAAAHAAEAAwAFAAQAAAAHAAAAAwABAAQAAAAGAAIAAwABAAUAAAAGAAEAAwAFAAQAAAAGAAAAAwABAAQAAAAFAAIAAwABAAUAAAAFAAEAAwAFAAQAAAAFAAAAAwABAAQAAAAEAAIAAwABAAUAAAAEAAEAAwAFAAQAAAAEAAAAAwABAAQAAAADAAIAAwABAAUAAAADAAEAAwAFAAQAAAADAAAAAwABAAQAAAACAAIAAwABAAUAAAACAAEAAwAFAAQAAAACAAAAAwABAAQAAAABAAIAAwABAAUAAAABAAEAAwAFAAQAAAABAAAAAwABAAQAAAAAAAIAAwABAAUAAAAAAAEAAwAFAAQAAAAAAAAAAwABAAQAAAAJAAEAAwAFAAQAAAA=")
+tile_set = ExtResource("2_nwdle")
+
+[node name="WallBoder" type="TileMapLayer" parent="Scene" unique_id=605188692]
+editor_description = "墙壁边框"
+tile_map_data = PackedByteArray("AAAKAAcAAgAIAAcAAAAKAAYAAgAIAAcAAAAKAAUAAgAIAAcAAAAKAAQAAgAIAAcAAAAKAAMAAgAIAAcAAAAKAAIAAgAIAAcAAAAKAAEAAgAIAAcAAAAKAAAAAgAIAAYAAAAJAAYAAgAHAAcAAAAJAAUAAgAHAAcAAAAJAAQAAgAHAAcAAAAJAAMAAgAHAAcAAAAJAAIAAgAHAAcAAAAJAAEAAgAHAAcAAAAJAAAAAgAHAAYAAAAIAAYAAgAHAAcAAAAIAAUAAgAHAAcAAAAIAAQAAgAHAAcAAAAIAAMAAgAHAAcAAAAIAAIAAgAHAAcAAAAIAAEAAgAHAAcAAAAIAAAAAgAHAAYAAAAHAAYAAgAHAAcAAAAHAAUAAgAHAAcAAAAHAAQAAgAHAAcAAAAHAAMAAgAHAAcAAAAHAAIAAgAHAAcAAAAHAAEAAgAHAAcAAAAHAAAAAgAHAAYAAAAGAAYAAgAHAAcAAAAGAAUAAgAHAAcAAAAGAAQAAgAHAAcAAAAGAAMAAgAHAAcAAAAGAAIAAgAHAAcAAAAGAAEAAgAHAAcAAAAGAAAAAgAHAAYAAAAFAAYAAgAHAAcAAAAFAAUAAgAHAAcAAAAFAAQAAgAHAAcAAAAFAAMAAgAHAAcAAAAFAAIAAgAHAAcAAAAFAAEAAgAHAAcAAAAFAAAAAgAHAAYAAAAEAAYAAgAHAAcAAAAEAAUAAgAHAAcAAAAEAAQAAgAHAAcAAAAEAAMAAgAHAAcAAAAEAAIAAgAHAAcAAAAEAAEAAgAHAAcAAAAEAAAAAgAHAAYAAAADAAYAAgAHAAcAAAADAAUAAgAHAAcAAAADAAQAAgAHAAcAAAADAAMAAgAHAAcAAAADAAIAAgAHAAcAAAADAAEAAgAHAAcAAAADAAAAAgAHAAYAAAACAAYAAgAHAAcAAAACAAUAAgAHAAcAAAACAAQAAgAHAAcAAAACAAMAAgAHAAcAAAACAAIAAgAHAAcAAAACAAEAAgAHAAcAAAACAAAAAgAHAAYAAAABAAYAAgAHAAcAAAABAAUAAgAHAAcAAAABAAQAAgAHAAcAAAABAAMAAgAHAAcAAAABAAIAAgAHAAcAAAABAAEAAgAHAAcAAAABAAAAAgAHAAYAAAAAAAYAAgAHAAcAAAAAAAUAAgAHAAcAAAAAAAQAAgAHAAcAAAAAAAMAAgAHAAcAAAAAAAIAAgAHAAcAAAAAAAEAAgAHAAcAAAAAAAAAAgAHAAYAAAD//wcAAgAGAAcAAAD//wYAAgAGAAcAAAD//wUAAgAGAAcAAAD//wQAAgAGAAcAAAD//wMAAgAGAAcAAAD//wIAAgAGAAcAAAD//wEAAgAGAAcAAAD//wAAAgAGAAYAAAAKAAkAAgAIAAgAAAAKAAgAAgAIAAcAAAAJAAkAAgAHAAgAAAAJAAgAAgAHAAcAAAAJAAcAAgAHAAcAAAAIAAkAAgAHAAgAAAAIAAgAAgAHAAcAAAAIAAcAAgAHAAcAAAAHAAkAAgAHAAgAAAAHAAgAAgAHAAcAAAAHAAcAAgAHAAcAAAAGAAkAAgABAAcAAAAGAAgAAgAHAAcAAAAGAAcAAgAHAAcAAAAFAAgAAgAHAAcAAAAFAAcAAgAHAAcAAAAEAAgAAgAHAAcAAAAEAAcAAgAHAAcAAAADAAgAAgAHAAcAAAADAAcAAgAHAAcAAAACAAkAAgAHAAgAAAACAAgAAgAHAAcAAAACAAcAAgAHAAcAAAABAAkAAgAHAAgAAAABAAgAAgAHAAcAAAABAAcAAgAHAAcAAAAAAAkAAgAHAAgAAAAAAAgAAgAHAAcAAAAAAAcAAgAHAAcAAAD//wkAAgAGAAgAAAD//wgAAgAGAAcAAAADAAkAAgAAAAcAAAADAAoAAgACAAUAAAAGAAoAAgADAAUAAAAGAAsAAgADAAUAAAAGAAwAAgADAAUAAAAGAA0AAgADAAUAAAADAAsAAgACAAUAAAADAAwAAgACAAUAAAADAA0AAgACAAUAAAA=")
+tile_set = ExtResource("2_nwdle")
+
+[node name="Decoration" type="Node2D" parent="Scene" unique_id=2141677192]
+editor_description = "装饰层"
+
+[node name="桌子_灰" type="TileMapLayer" parent="Scene/Decoration" unique_id=1667351377]
+position = Vector2(0, 5)
+tile_map_data = PackedByteArray("AAACAAIABAACABMAAAABAAIABAADABMAAAAAAAIABAAAABMAAAA=")
+tile_set = ExtResource("2_nwdle")
+
+[node name="电脑_灰绿_右斜" type="Sprite2D" parent="Scene/Decoration/桌子_灰" unique_id=741765644]
+position = Vector2(39, 41)
+texture = SubResource("AtlasTexture_0e3nr")
+
+[node name="电脑_灰_左斜" type="Sprite2D" parent="Scene/Decoration/桌子_灰" unique_id=468193522]
+position = Vector2(8, 40)
+texture = SubResource("AtlasTexture_tv3u3")
+
+[node name="电脑" type="Sprite2D" parent="Scene/Decoration/桌子_灰" unique_id=859662056]
+position = Vector2(24, 40)
+texture = SubResource("AtlasTexture_5ocxd")
+
+[node name="椅子_灰" type="Sprite2D" parent="Scene/Decoration/桌子_灰" unique_id=1950979461]
+position = Vector2(14, 57)
+texture = SubResource("AtlasTexture_iauew")
+
+[node name="桌子_绿" type="TileMapLayer" parent="Scene/Decoration" unique_id=58686490]
+position = Vector2(16, 53)
+tile_map_data = PackedByteArray("AAAIAP//BAACAA8AAAAHAP//BAADAA8AAAAGAP//BAADAA8AAAAFAP//BAADAA8AAAAEAP//BAAAAA8AAAA=")
+tile_set = ExtResource("2_nwdle")
+
+[node name="纸2" type="Sprite2D" parent="Scene/Decoration/桌子_绿" unique_id=916841143]
+position = Vector2(83, -1)
+texture = SubResource("AtlasTexture_s8xew")
+
+[node name="电话" type="Sprite2D" parent="Scene/Decoration/桌子_绿" unique_id=1101296430]
+position = Vector2(117, -9)
+texture = SubResource("AtlasTexture_7c0qv")
+
+[node name="纸1" type="Sprite2D" parent="Scene/Decoration/桌子_绿/电话" unique_id=725050615]
+position = Vector2(7, 8)
+texture = SubResource("AtlasTexture_ot6r3")
+
+[node name="控制器1" type="Sprite2D" parent="Scene/Decoration/桌子_绿" unique_id=843997363]
+position = Vector2(104, -8)
+texture = SubResource("AtlasTexture_roqlo")
+
+[node name="鼠标" type="Sprite2D" parent="Scene/Decoration/桌子_绿" unique_id=629263161]
+position = Vector2(134, -2)
+texture = SubResource("AtlasTexture_5np7r")
+
+[node name="多显示器" type="AnimatedSprite2D" parent="Scene/Decoration/桌子_绿" unique_id=186151049]
+position = Vector2(104, -32)
+sprite_frames = SubResource("SpriteFrames_tv3u3")
+autoplay = "default"
+frame_progress = 0.13220285
+
+[node name="Intern" parent="Scene/Decoration/桌子_绿" unique_id=512729683 instance=ExtResource("5_sc7ut")]
+position = Vector2(94, -3)
+
+[node name="椅子_蓝" type="Sprite2D" parent="Scene/Decoration/桌子_绿/Intern" unique_id=1726299600]
+position = Vector2(0, 9)
+texture = SubResource("AtlasTexture_1mlxo")
+
+[node name="椅子_蓝" type="Sprite2D" parent="Scene/Decoration/桌子_绿" unique_id=1694189921]
+position = Vector2(132, 8)
+texture = SubResource("AtlasTexture_sdj2e")
+
+[node name="挂壁显示器" type="AnimatedSprite2D" parent="Scene/Decoration" unique_id=1788859760]
+position = Vector2(25, 20)
+sprite_frames = SubResource("SpriteFrames_iauew")
+frame_progress = 0.5709343
+
+[node name="服务器1" type="Node2D" parent="Scene/Decoration" unique_id=1731734954]
+
+[node name="服务器" type="AnimatedSprite2D" parent="Scene/Decoration/服务器1" unique_id=1570210520]
+position = Vector2(56, 41)
+sprite_frames = SubResource("SpriteFrames_kpyxu")
+autoplay = "default"
+frame_progress = 0.96106154
+
+[node name="服务器2" type="AnimatedSprite2D" parent="Scene/Decoration/服务器1" unique_id=1693742667]
+position = Vector2(72, 41)
+sprite_frames = SubResource("SpriteFrames_5ocxd")
+autoplay = "default"
+frame_progress = 0.61932087
+
+[node name="椅子_蓝" type="Sprite2D" parent="Scene/Decoration" unique_id=862794026]
+position = Vector2(131, 88)
+texture = SubResource("AtlasTexture_uqxkb")
+
+[node name="椅子_灰" type="Sprite2D" parent="Scene/Decoration" unique_id=490743480]
+position = Vector2(35, 95)
+texture = SubResource("AtlasTexture_fvjgx")
+
+[node name="服务器2" type="Node2D" parent="Scene/Decoration" unique_id=313054537]
+position = Vector2(-3, 20)
+
+[node name="Sprite2D" type="Sprite2D" parent="Scene/Decoration/服务器2" unique_id=589581979]
+position = Vector2(11, 85)
+texture = SubResource("AtlasTexture_j3hcl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Scene/Decoration/服务器2" unique_id=1709528641]
+position = Vector2(27, 85)
+texture = SubResource("AtlasTexture_j3hcl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Scene/Decoration/服务器2" unique_id=28891183]
+position = Vector2(42, 85)
+texture = SubResource("AtlasTexture_j3hcl")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Scene/Decoration/服务器2" unique_id=1763609266]
+position = Vector2(42, 85)
+texture = SubResource("AtlasTexture_j3hcl")
+
+[node name="服务器3" type="Node2D" parent="Scene/Decoration" unique_id=720426978]
+position = Vector2(94, 20)
+
+[node name="Sprite2D" type="Sprite2D" parent="Scene/Decoration/服务器3" unique_id=234703174]
+position = Vector2(11, 85)
+texture = SubResource("AtlasTexture_j3hcl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Scene/Decoration/服务器3" unique_id=960078175]
+position = Vector2(27, 85)
+texture = SubResource("AtlasTexture_j3hcl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Scene/Decoration/服务器3" unique_id=1674306349]
+position = Vector2(42, 85)
+texture = SubResource("AtlasTexture_j3hcl")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Scene/Decoration/服务器3" unique_id=1732027481]
+position = Vector2(58, 85)
+texture = SubResource("AtlasTexture_j3hcl")
+
+[node name="椅子_灰2" type="Sprite2D" parent="Scene/Decoration" unique_id=1912105197]
+position = Vector2(141, 131)
+texture = SubResource("AtlasTexture_bj415")
 
 [node name="Professor" parent="." unique_id=608739847 instance=ExtResource("3_omwdr")]
-position = Vector2(312, 162)
-scale = Vector2(0.3, 0.3)
+position = Vector2(35, 59)
+
+[node name="Rabbit" parent="." unique_id=671228345 instance=ExtResource("9_i04fv")]
+position = Vector2(81, 89)
+
+[node name="Camera2D" parent="Rabbit" index="2" unique_id=840236494]
+limit_right = 172
+limit_bottom = 149
+
+[node name="Door" parent="." unique_id=86733597 instance=ExtResource("10_j2o5o")]
+position = Vector2(86.00001, 189)
+scale = Vector2(1.5599976, 2.8000002)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=393391405]
 
@@ -31,7 +440,5 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0)
 script = ExtResource("4_tp0kf")
 
-[node name="DommunicationDeviceUI" parent="CanvasLayer" unique_id=1201337149 instance=ExtResource("5_omwdr")]
-
-[connection signal="ready" from="." to="CanvasLayer/ColorRect" method="_on_laboratory_ready"]
-[connection signal="black_finished" from="CanvasLayer/ColorRect" to="Professor" method="_on_color_rect_black_finished"]
+[editable path="Rabbit"]
+[editable path="Door"]

@@ -100,7 +100,6 @@ script = ExtResource("2_lw4kr")
 dialogue_resource = ExtResource("3_764qe")
 
 [node name="BoxContainer" type="BoxContainer" parent="." unique_id=801515308]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -127,6 +126,7 @@ libraries/ = SubResource("AnimationLibrary_p6783")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1888314439]
 editor_description = "背景"
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -143,6 +143,7 @@ texture = ExtResource("3_2vvhn")
 
 [node name="Frame" type="TextureRect" parent="." unique_id=2120742929]
 editor_description = "对话器框架"
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -159,6 +160,7 @@ texture = ExtResource("4_764qe")
 
 [node name="ChatScroll" type="ScrollContainer" parent="." unique_id=1300359515]
 editor_description = "滚动条"
+visible = false
 custom_minimum_size = Vector2(457.59, 213.41)
 custom_maximum_size = Vector2(457.59, 213.41)
 layout_mode = 1

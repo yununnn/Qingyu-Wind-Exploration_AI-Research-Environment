@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://dmiihi6t4iuts"]
+
+[ext_resource type="Texture2D" uid="uid://d08tw58u22cbf" path="res://assets/characters/intern/预制角色_05.png" id="1_rfrvk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0e3nr"]
+radius = 9.0
+height = 26.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1flu6"]
+atlas = ExtResource("1_rfrvk")
+region = Rect2(96, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db4c0"]
+atlas = ExtResource("1_rfrvk")
+region = Rect2(112, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lel14"]
+atlas = ExtResource("1_rfrvk")
+region = Rect2(128, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43dvj"]
+atlas = ExtResource("1_rfrvk")
+region = Rect2(144, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka6in"]
+atlas = ExtResource("1_rfrvk")
+region = Rect2(160, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2dme"]
+atlas = ExtResource("1_rfrvk")
+region = Rect2(176, 32, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kpyxu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1flu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_db4c0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lel14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43dvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka6in")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2dme")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Intern" type="CharacterBody2D" unique_id=512729683]
+editor_description = "实习生"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1136314234]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_0e3nr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1304290106]
+sprite_frames = SubResource("SpriteFrames_kpyxu")
+autoplay = "default"
+frame_progress = 0.18257535
