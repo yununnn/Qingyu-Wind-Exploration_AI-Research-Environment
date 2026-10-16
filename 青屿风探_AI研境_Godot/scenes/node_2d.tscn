@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ceamkasad5boc"]
+
+[ext_resource type="PackedScene" uid="uid://de4042nkt7q28" path="res://scenes/characters/rabbit.tscn" id="1_4dvvg"]
+[ext_resource type="Texture2D" uid="uid://cdu6a1tkhuvs8" path="res://assets/laboratory/18_监狱_无阴影.png" id="2_rnjyy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vge2"]
+atlas = ExtResource("2_rnjyy")
+region = Rect2(128, 320, 16, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04qyp"]
+size = Vector2(16, 14)
+
+[node name="Node2D" type="Node2D" unique_id=845433833]
+y_sort_enabled = true
+
+[node name="Rabbit" parent="." unique_id=671228345 instance=ExtResource("1_4dvvg")]
+y_sort_enabled = false
+position = Vector2(240, 126)
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=978447601]
+position = Vector2(191, 115)
+texture = SubResource("AtlasTexture_4vge2")
+offset = Vector2(0, -7.255)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D4" unique_id=1136031711]
+position = Vector2(0, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D4/StaticBody2D" unique_id=383621409]
+shape = SubResource("RectangleShape2D_04qyp")

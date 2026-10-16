@@ -3,10 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://ccp663sjfjwb8" path="res://assets/characters/rabbit/Premium Charakter Spritesheet.png" id="1_3wuti"]
 [ext_resource type="Script" uid="uid://buroxrxplmein" path="res://scripts/characters/rabbit.gd" id="2_rabbit_script"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hek4i"]
-radius = 7.0
-height = 20.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_rabbit_16_0"]
 atlas = ExtResource("1_3wuti")
 region = Rect2(0, 768, 48, 48)
@@ -1474,23 +1470,30 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hek4i"]
+radius = 4.5
+height = 9.0
+
 [node name="Rabbit" type="CharacterBody2D" unique_id=671228345 groups=["Player"]]
 editor_description = "兔子"
 collision_layer = 2
 collision_mask = 29
 script = ExtResource("2_rabbit_script")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=674164375]
-position = Vector2(0, -1)
-shape = SubResource("CapsuleShape2D_hek4i")
-
 [node name="BodySprite" type="AnimatedSprite2D" parent="." unique_id=1499438493]
+position = Vector2(0, -3.33)
 sprite_frames = SubResource("SpriteFrames_0e3nr")
 animation = &"idle_down"
 autoplay = "idle_down"
 frame_progress = 0.7488203
+offset = Vector2(0, -4.76)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=674164375]
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_hek4i")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=840236494]
+position = Vector2(0, -8)
 zoom = Vector2(2, 2)
 limit_left = 0
 limit_top = 0

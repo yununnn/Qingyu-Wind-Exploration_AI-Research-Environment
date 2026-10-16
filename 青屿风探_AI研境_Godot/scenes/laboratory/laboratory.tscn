@@ -28,14 +28,6 @@ region = Rect2(144, 256, 16, 32)
 atlas = ExtResource("3_j2o5o")
 region = Rect2(208, 288, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iauew"]
-atlas = ExtResource("3_j2o5o")
-region = Rect2(160, 320, 16, 32)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kpyxu"]
-radius = 6.0
-height = 26.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_s8xew"]
 atlas = ExtResource("3_j2o5o")
 region = Rect2(0, 272, 16, 16)
@@ -141,14 +133,6 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1mlxo"]
-atlas = ExtResource("3_j2o5o")
-region = Rect2(192, 352, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sdj2e"]
-atlas = ExtResource("3_j2o5o")
-region = Rect2(176, 352, 16, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_3cd63"]
 atlas = ExtResource("6_72auc")
 region = Rect2(0, 0, 32, 32)
@@ -192,66 +176,21 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ndqq4"]
-atlas = ExtResource("7_e8o22")
-region = Rect2(0, 0, 16, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdj2e"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(176, 352, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gytvx"]
-atlas = ExtResource("7_e8o22")
-region = Rect2(16, 0, 16, 48)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kpyxu"]
+radius = 6.0
+height = 26.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a8fnr"]
-atlas = ExtResource("7_e8o22")
-region = Rect2(32, 0, 16, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mlxo"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(192, 352, 16, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_kpyxu"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ndqq4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gytvx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a8fnr")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 0.5
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e3nr"]
-size = Vector2(16, 14)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ytxab"]
-atlas = ExtResource("7_e8o22")
-region = Rect2(0, 0, 16, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c8el5"]
-atlas = ExtResource("7_e8o22")
-region = Rect2(32, 0, 16, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m7qny"]
-atlas = ExtResource("7_e8o22")
-region = Rect2(16, 0, 16, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5ocxd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ytxab")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c8el5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m7qny")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 0.6
-}]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iauew"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(160, 320, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uqxkb"]
 atlas = ExtResource("3_j2o5o")
@@ -261,13 +200,80 @@ region = Rect2(160, 352, 16, 32)
 atlas = ExtResource("3_j2o5o")
 region = Rect2(160, 320, 16, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj415"]
+atlas = ExtResource("3_j2o5o")
+region = Rect2(176, 320, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwdle"]
+atlas = ExtResource("7_e8o22")
+region = Rect2(0, 0, 16, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2o5o"]
+atlas = ExtResource("7_e8o22")
+region = Rect2(16, 0, 16, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d3px"]
+atlas = ExtResource("7_e8o22")
+region = Rect2(32, 0, 16, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kpyxu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwdle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2o5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d3px")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 0.5
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xgxq"]
+size = Vector2(16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sc7ut"]
+atlas = ExtResource("7_e8o22")
+region = Rect2(0, 0, 16, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72auc"]
+atlas = ExtResource("7_e8o22")
+region = Rect2(16, 0, 16, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8o22"]
+atlas = ExtResource("7_e8o22")
+region = Rect2(32, 0, 16, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ocxd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sc7ut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72auc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8o22")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 0.6
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4u0g"]
+size = Vector2(16, 14)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_j3hcl"]
 atlas = ExtResource("3_j2o5o")
 region = Rect2(128, 320, 16, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bj415"]
-atlas = ExtResource("3_j2o5o")
-region = Rect2(176, 320, 16, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e3nr"]
+size = Vector2(16, 14)
 
 [node name="Laboratory" type="Node2D" unique_id=751390667]
 editor_description = "实验室"
@@ -295,6 +301,7 @@ tile_set = ExtResource("2_nwdle")
 
 [node name="Decoration" type="Node2D" parent="Scene" unique_id=2141677192]
 editor_description = "装饰层"
+y_sort_enabled = true
 
 [node name="桌子_灰" type="TileMapLayer" parent="Scene/Decoration" unique_id=1667351377]
 position = Vector2(0, 5)
@@ -312,16 +319,6 @@ texture = SubResource("AtlasTexture_tv3u3")
 [node name="电脑" type="Sprite2D" parent="Scene/Decoration/桌子_灰" unique_id=859662056]
 position = Vector2(24, 40)
 texture = SubResource("AtlasTexture_5ocxd")
-
-[node name="椅子_灰" type="Sprite2D" parent="Scene/Decoration/桌子_灰" unique_id=1950979461]
-position = Vector2(14, 57)
-texture = SubResource("AtlasTexture_iauew")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Scene/Decoration/桌子_灰/椅子_灰" unique_id=1330510341]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/桌子_灰/椅子_灰/StaticBody2D" unique_id=1517505004]
-position = Vector2(0, -1)
-shape = SubResource("CapsuleShape2D_kpyxu")
 
 [node name="桌子_绿" type="TileMapLayer" parent="Scene/Decoration" unique_id=58686490]
 position = Vector2(16, 53)
@@ -354,184 +351,188 @@ sprite_frames = SubResource("SpriteFrames_tv3u3")
 autoplay = "default"
 frame_progress = 0.13220285
 
-[node name="Intern" parent="Scene/Decoration/桌子_绿" unique_id=512729683 instance=ExtResource("5_sc7ut")]
-position = Vector2(94, -3)
-
-[node name="椅子_蓝" type="Sprite2D" parent="Scene/Decoration/桌子_绿/Intern" unique_id=1726299600]
-position = Vector2(0, 9)
-texture = SubResource("AtlasTexture_1mlxo")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Scene/Decoration/桌子_绿/Intern/椅子_蓝" unique_id=1980730502]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/桌子_绿/Intern/椅子_蓝/StaticBody2D" unique_id=1941112856]
-position = Vector2(0, -1)
-shape = SubResource("CapsuleShape2D_kpyxu")
-
-[node name="椅子_蓝" type="Sprite2D" parent="Scene/Decoration/桌子_绿" unique_id=1694189921]
-position = Vector2(132, 8)
-texture = SubResource("AtlasTexture_sdj2e")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Scene/Decoration/桌子_绿/椅子_蓝" unique_id=842790019]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/桌子_绿/椅子_蓝/StaticBody2D" unique_id=2088190216]
-position = Vector2(0, -1)
-shape = SubResource("CapsuleShape2D_kpyxu")
-
 [node name="挂壁显示器" type="AnimatedSprite2D" parent="Scene/Decoration" unique_id=1788859760]
 position = Vector2(25, 20)
 sprite_frames = SubResource("SpriteFrames_iauew")
 frame_progress = 0.5709343
 
-[node name="服务器1" type="Node2D" parent="Scene/Decoration" unique_id=1731734954]
+[node name="椅子" type="Node2D" parent="Scene/Decoration" unique_id=710530765]
+y_sort_enabled = true
 
-[node name="服务器" type="AnimatedSprite2D" parent="Scene/Decoration/服务器1" unique_id=1570210520]
-position = Vector2(56, 41)
+[node name="椅子1" type="StaticBody2D" parent="Scene/Decoration/椅子" unique_id=842790019]
+position = Vector2(148, 61)
+
+[node name="椅子_蓝" type="Sprite2D" parent="Scene/Decoration/椅子/椅子1" unique_id=1694189921]
+texture = SubResource("AtlasTexture_sdj2e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/椅子/椅子1" unique_id=2088190216]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_kpyxu")
+
+[node name="椅子2_实习生之椅" type="StaticBody2D" parent="Scene/Decoration/椅子" unique_id=1980730502]
+position = Vector2(110, 59)
+
+[node name="Intern" parent="Scene/Decoration/椅子/椅子2_实习生之椅" unique_id=512729683 instance=ExtResource("5_sc7ut")]
+position = Vector2(0, 3)
+
+[node name="椅子_蓝" type="Sprite2D" parent="Scene/Decoration/椅子/椅子2_实习生之椅" unique_id=1726299600]
+texture = SubResource("AtlasTexture_1mlxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/椅子/椅子2_实习生之椅" unique_id=1941112856]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_kpyxu")
+
+[node name="椅子3" type="StaticBody2D" parent="Scene/Decoration/椅子" unique_id=1330510341]
+position = Vector2(14, 62)
+
+[node name="椅子_灰" type="Sprite2D" parent="Scene/Decoration/椅子/椅子3" unique_id=1950979461]
+texture = SubResource("AtlasTexture_iauew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/椅子/椅子3" unique_id=1517505004]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_kpyxu")
+
+[node name="椅子4" type="StaticBody2D" parent="Scene/Decoration/椅子" unique_id=35150854]
+position = Vector2(131, 88)
+
+[node name="椅子_蓝" type="Sprite2D" parent="Scene/Decoration/椅子/椅子4" unique_id=862794026]
+texture = SubResource("AtlasTexture_uqxkb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/椅子/椅子4" unique_id=534085796]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_kpyxu")
+
+[node name="椅子5" type="StaticBody2D" parent="Scene/Decoration/椅子" unique_id=1416475750]
+position = Vector2(35, 100)
+
+[node name="椅子_灰" type="Sprite2D" parent="Scene/Decoration/椅子/椅子5" unique_id=490743480]
+texture = SubResource("AtlasTexture_fvjgx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/椅子/椅子5" unique_id=1749979012]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_kpyxu")
+
+[node name="椅子6" type="StaticBody2D" parent="Scene/Decoration/椅子" unique_id=1029247776]
+position = Vector2(141, 128)
+
+[node name="椅子_灰" type="Sprite2D" parent="Scene/Decoration/椅子/椅子6" unique_id=1912105197]
+texture = SubResource("AtlasTexture_bj415")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/椅子/椅子6" unique_id=63025980]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_kpyxu")
+
+[node name="服务器" type="Node2D" parent="Scene/Decoration" unique_id=1039550201]
+y_sort_enabled = true
+
+[node name="服务器1" type="StaticBody2D" parent="Scene/Decoration/服务器" unique_id=860976258]
+position = Vector2(56, 47)
+
+[node name="服务器" type="AnimatedSprite2D" parent="Scene/Decoration/服务器/服务器1" unique_id=1570210520]
 sprite_frames = SubResource("SpriteFrames_kpyxu")
 autoplay = "default"
-frame_progress = 0.96106154
+frame_progress = 0.013541407
+offset = Vector2(0, -7)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Scene/Decoration/服务器1/服务器" unique_id=860976258]
-position = Vector2(-56, -41)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器/服务器1" unique_id=1492824170]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_0xgxq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器1/服务器/StaticBody2D" unique_id=1492824170]
-position = Vector2(56, 54)
-shape = SubResource("RectangleShape2D_0e3nr")
+[node name="服务器2" type="StaticBody2D" parent="Scene/Decoration/服务器" unique_id=374159481]
+position = Vector2(72, 47)
 
-[node name="服务器2" type="AnimatedSprite2D" parent="Scene/Decoration/服务器1" unique_id=1693742667]
-position = Vector2(72, 41)
+[node name="服务器2" type="AnimatedSprite2D" parent="Scene/Decoration/服务器/服务器2" unique_id=1693742667]
 sprite_frames = SubResource("SpriteFrames_5ocxd")
 autoplay = "default"
 frame_progress = 0.61932087
+offset = Vector2(0, -7)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Scene/Decoration/服务器1/服务器2" unique_id=374159481]
-position = Vector2(-56, -41)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器/服务器2" unique_id=1315499953]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_q4u0g")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器1/服务器2/StaticBody2D" unique_id=1315499953]
-position = Vector2(56, 54)
+[node name="服务器3" type="StaticBody2D" parent="Scene/Decoration/服务器" unique_id=1739083265]
+position = Vector2(8, 114)
+
+[node name="Sprite2D" type="Sprite2D" parent="Scene/Decoration/服务器/服务器3" unique_id=589581979]
+texture = SubResource("AtlasTexture_j3hcl")
+offset = Vector2(0, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器/服务器3" unique_id=1089691347]
+position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_0e3nr")
 
-[node name="椅子_蓝" type="Sprite2D" parent="Scene/Decoration" unique_id=862794026]
-position = Vector2(131, 88)
-texture = SubResource("AtlasTexture_uqxkb")
+[node name="服务器4" type="StaticBody2D" parent="Scene/Decoration/服务器" unique_id=1907330289]
+position = Vector2(24, 114)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Scene/Decoration/椅子_蓝" unique_id=35150854]
+[node name="Sprite2D2" type="Sprite2D" parent="Scene/Decoration/服务器/服务器4" unique_id=1709528641]
+texture = SubResource("AtlasTexture_j3hcl")
+offset = Vector2(0, -7)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/椅子_蓝/StaticBody2D" unique_id=534085796]
-position = Vector2(0, -1)
-shape = SubResource("CapsuleShape2D_kpyxu")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器/服务器4" unique_id=1228993263]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_0e3nr")
 
-[node name="椅子_灰" type="Sprite2D" parent="Scene/Decoration" unique_id=490743480]
-position = Vector2(35, 95)
-texture = SubResource("AtlasTexture_fvjgx")
+[node name="服务器5" type="StaticBody2D" parent="Scene/Decoration/服务器" unique_id=2027047564]
+position = Vector2(39, 114)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Scene/Decoration/椅子_灰" unique_id=1416475750]
+[node name="Sprite2D3" type="Sprite2D" parent="Scene/Decoration/服务器/服务器5" unique_id=28891183]
+texture = SubResource("AtlasTexture_j3hcl")
+offset = Vector2(0, -7)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/椅子_灰/StaticBody2D" unique_id=1749979012]
-position = Vector2(0, -1)
-shape = SubResource("CapsuleShape2D_kpyxu")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器/服务器5" unique_id=1688141621]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_0e3nr")
+
+[node name="服务器6" type="StaticBody2D" parent="Scene/Decoration/服务器" unique_id=1475545452]
+position = Vector2(105, 114)
+
+[node name="Sprite2D" type="Sprite2D" parent="Scene/Decoration/服务器/服务器6" unique_id=234703174]
+texture = SubResource("AtlasTexture_j3hcl")
+offset = Vector2(0, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器/服务器6" unique_id=1867222189]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_0e3nr")
+
+[node name="服务器7" type="StaticBody2D" parent="Scene/Decoration/服务器" unique_id=896480286]
+position = Vector2(121, 114)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Scene/Decoration/服务器/服务器7" unique_id=960078175]
+texture = SubResource("AtlasTexture_j3hcl")
+offset = Vector2(0, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器/服务器7" unique_id=1583501970]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_0e3nr")
+
+[node name="服务器8" type="StaticBody2D" parent="Scene/Decoration/服务器" unique_id=351729284]
+position = Vector2(136, 114)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Scene/Decoration/服务器/服务器8" unique_id=1674306349]
+texture = SubResource("AtlasTexture_j3hcl")
+offset = Vector2(0, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器/服务器8" unique_id=766195643]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_0e3nr")
+
+[node name="服务器9" type="StaticBody2D" parent="Scene/Decoration/服务器" unique_id=1346059463]
+position = Vector2(152, 114)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Scene/Decoration/服务器/服务器9" unique_id=1732027481]
+texture = SubResource("AtlasTexture_j3hcl")
+offset = Vector2(0, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器/服务器9" unique_id=1406385666]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_0e3nr")
 
 [node name="Professor" parent="Scene/Decoration" unique_id=608739847 instance=ExtResource("3_omwdr")]
-position = Vector2(29, 59)
+position = Vector2(31, 65)
 
 [node name="Rabbit" parent="Scene/Decoration" unique_id=671228345 instance=ExtResource("9_i04fv")]
-position = Vector2(75, 89)
-
-[node name="Camera2D" parent="Scene/Decoration/Rabbit" index="2" unique_id=840236494]
-limit_right = 172
-limit_bottom = 149
-
-[node name="服务器2" type="Node2D" parent="Scene/Decoration" unique_id=313054537]
-position = Vector2(-3, 17)
-
-[node name="Sprite2D" type="Sprite2D" parent="Scene/Decoration/服务器2" unique_id=589581979]
-position = Vector2(11, 85)
-texture = SubResource("AtlasTexture_j3hcl")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Scene/Decoration/服务器2/Sprite2D" unique_id=1739083265]
-position = Vector2(-56, -41)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器2/Sprite2D/StaticBody2D" unique_id=1089691347]
-position = Vector2(56, 54)
-shape = SubResource("RectangleShape2D_0e3nr")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Scene/Decoration/服务器2" unique_id=1709528641]
-position = Vector2(27, 85)
-texture = SubResource("AtlasTexture_j3hcl")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Scene/Decoration/服务器2/Sprite2D2" unique_id=1907330289]
-position = Vector2(-56, -41)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器2/Sprite2D2/StaticBody2D" unique_id=1228993263]
-position = Vector2(56, 54)
-shape = SubResource("RectangleShape2D_0e3nr")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Scene/Decoration/服务器2" unique_id=28891183]
-position = Vector2(42, 85)
-texture = SubResource("AtlasTexture_j3hcl")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Scene/Decoration/服务器2/Sprite2D3" unique_id=2027047564]
-position = Vector2(-56, -41)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器2/Sprite2D3/StaticBody2D" unique_id=1688141621]
-position = Vector2(56, 54)
-shape = SubResource("RectangleShape2D_0e3nr")
-
-[node name="服务器3" type="Node2D" parent="Scene/Decoration" unique_id=720426978]
-position = Vector2(94, 17)
-
-[node name="Sprite2D" type="Sprite2D" parent="Scene/Decoration/服务器3" unique_id=234703174]
-position = Vector2(11, 85)
-texture = SubResource("AtlasTexture_j3hcl")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Scene/Decoration/服务器3/Sprite2D" unique_id=1475545452]
-position = Vector2(-56, -41)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器3/Sprite2D/StaticBody2D" unique_id=1867222189]
-position = Vector2(56, 54)
-shape = SubResource("RectangleShape2D_0e3nr")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Scene/Decoration/服务器3" unique_id=960078175]
-position = Vector2(27, 85)
-texture = SubResource("AtlasTexture_j3hcl")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Scene/Decoration/服务器3/Sprite2D2" unique_id=896480286]
-position = Vector2(-56, -41)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器3/Sprite2D2/StaticBody2D" unique_id=1583501970]
-position = Vector2(56, 54)
-shape = SubResource("RectangleShape2D_0e3nr")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Scene/Decoration/服务器3" unique_id=1674306349]
-position = Vector2(42, 85)
-texture = SubResource("AtlasTexture_j3hcl")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Scene/Decoration/服务器3/Sprite2D3" unique_id=351729284]
-position = Vector2(-56, -41)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器3/Sprite2D3/StaticBody2D" unique_id=766195643]
-position = Vector2(56, 54)
-shape = SubResource("RectangleShape2D_0e3nr")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Scene/Decoration/服务器3" unique_id=1732027481]
-position = Vector2(58, 85)
-texture = SubResource("AtlasTexture_j3hcl")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Scene/Decoration/服务器3/Sprite2D4" unique_id=1346059463]
-position = Vector2(-56, -41)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/服务器3/Sprite2D4/StaticBody2D" unique_id=1406385666]
-position = Vector2(56, 54)
-shape = SubResource("RectangleShape2D_0e3nr")
-
-[node name="椅子_灰2" type="Sprite2D" parent="Scene/Decoration" unique_id=1912105197]
-position = Vector2(141, 128)
-texture = SubResource("AtlasTexture_bj415")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Scene/Decoration/椅子_灰2" unique_id=1029247776]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/Decoration/椅子_灰2/StaticBody2D" unique_id=63025980]
-position = Vector2(0, -1)
-shape = SubResource("CapsuleShape2D_kpyxu")
+position = Vector2(69, 91)
 
 [node name="Door" parent="." unique_id=86733597 instance=ExtResource("10_j2o5o")]
 position = Vector2(86.00001, 189)
@@ -552,5 +553,4 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0)
 script = ExtResource("4_tp0kf")
 
-[editable path="Scene/Decoration/Rabbit"]
 [editable path="Door"]
