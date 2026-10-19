@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b28x3ty6yef8u"
-path="res://.godot/imported/button_Sheet.png-5560d4c59e760a10e78303d650691235.ctex"
+uid="uid://vkmqasdnglcl"
+path="res://.godot/imported/界面_思考_表情_动画_16x16.png-d07707f0ebca5eeeff0cda75fc98e56a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/widget/switch_viewport_buttons/button_Sheet.png"
-dest_files=["res://.godot/imported/button_Sheet.png-5560d4c59e760a10e78303d650691235.ctex"]
+source_file="res://assets/widget/bubble/界面_思考_表情_动画_16x16.png"
+dest_files=["res://.godot/imported/界面_思考_表情_动画_16x16.png-d07707f0ebca5eeeff0cda75fc98e56a.ctex"]
 
 [params]
 

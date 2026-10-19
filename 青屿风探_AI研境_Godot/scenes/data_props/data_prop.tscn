@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://crkwrq01r68dl"]
 
 [ext_resource type="Script" uid="uid://n7i0cm32mu8w" path="res://scenes/data_props/data_prop.gd" id="1_jqu8o"]
-[ext_resource type="Shader" uid="uid://cwcimos4fsyog" path="res://shaders/outline/sprite_outline.gdshader" id="2_he6gx"]
+[ext_resource type="Shader" uid="uid://cwcimos4fsyog" path="res://shaders/outline/outline.gdshader" id="2_he6gx"]
 [ext_resource type="Texture2D" uid="uid://c706kujj1grr8" path="res://assets/farm/objects/Trees, stumps and bushes.png" id="3_he6gx"]
 
 [sub_resource type="Resource" id="Resource_6bxix"]

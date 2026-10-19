@@ -1,50 +1,60 @@
 extends CanvasLayer
-## A basic dialogue balloon for use with Dialogue Manager.
+## 与对话管理器一起使用的基本对话气泡。
 
 
-## The dialogue resource
+## 对话资源
 @export var dialogue_resource: DialogueResource
 
-## Start from a given cue when using balloon as a [Node] in a scene.
+## 使用气泡作为场景中的[节点]时，从给定的提示开始。
 @export var start_from_cue: String = ""
 
-## If running as a [Node] in a scene then auto start the dialogue.
+## 如果在场景中作为[节点]运行，则自动启动对话。
 @export var auto_start: bool = false
 
-## If all other input is blocked as long as dialogue is shown.
+## 如果只要显示对话，所有其他输入都被阻止。
 @export var will_block_other_input: bool = true
 
-## The action to use for advancing the dialogue
+## 用于推进对话的动作
 @export var next_action: StringName = &"ui_accept"
 
-## The action to use to skip typing the dialogue
+## 用于跳过输入对话的操作
 @export var skip_action: StringName = &"ui_cancel"
 
-## A sound player for voice lines (if they exist).
+## 语音线路的声音播放器（如果存在）。
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
-## Temporary game states
+## 对话气泡的画板
+@onready var panel: PanelContainer = %PanelContainer
+## 对话气泡的边距面板
+@onready var margin_container: MarginContainer = $Balloon/MarginContainer
+
+
+## 对话标记
+var marker: DialogueMarker2D
+
+
+## 临时游戏状态
 var temporary_game_states: Array = []
 
-## See if we are waiting for the player
+## 看看我们是否在等待玩家
 var is_waiting_for_input: bool = false
 
-## See if we are running a long mutation and should hide the balloon
+## 看看我们是否正在运行长突变并且应该隐藏气泡
 var will_hide_balloon: bool = false
 
-## A dictionary to store any ephemeral variables
+## 用于存储任何临时变量的字典
 var locals: Dictionary = {}
 
 var _locale: String = TranslationServer.get_locale()
 
-## The current line
+## 当前行
 var dialogue_line: DialogueLine:
 	set(value):
 		if value:
 			dialogue_line = value
 			apply_dialogue_line()
 		else:
-			# The dialogue has finished so close the balloon
+			# 对话已经结束，离气泡很近
 			if owner == null:
 				queue_free()
 			else:
@@ -52,30 +62,25 @@ var dialogue_line: DialogueLine:
 	get:
 		return dialogue_line
 
-## A cooldown timer for delaying the balloon hide when encountering a mutation.
+## 一个冷却计时器，用于在遇到突变时延迟气泡隐藏。
 var mutation_cooldown: Timer = Timer.new()
 
-## The base balloon anchor
+## 底座气泡锚
 @onready var balloon: Control = %Balloon
 
-## The label showing the name of the currently speaking character
-@onready var character_label: RichTextLabel = %CharacterLabel
-
-## The label showing the currently spoken dialogue
+## 显示当前对话的标签
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 
-## The menu of responses
+## 回复菜单
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
-## Indicator to show that player can progress dialogue.
-@onready var progress: Polygon2D = %Progress
 
 
 func _ready() -> void:
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
-	# If the responses menu doesn't have a next action set, use this one
+	# 如果响应菜单没有设置下一个操作，请使用此操作
 	if responses_menu.next_action.is_empty():
 		responses_menu.next_action = next_action
 
@@ -89,19 +94,14 @@ func _ready() -> void:
 
 
 
-func _process(_delta: float) -> void:
-	if is_instance_valid(dialogue_line):
-		progress.visible = not dialogue_label.is_typing and dialogue_line.responses.size() == 0 and not dialogue_line.has_tag("voice")
-
-
 func _unhandled_input(_event: InputEvent) -> void:
-	# Only the balloon is allowed to handle input while it's showing
+	# 仅允许气泡在显示时处理输入
 	if will_block_other_input:
 		get_viewport().set_input_as_handled()
 
 
 func _notification(what: int) -> void:
-	## Detect a change of locale and update the current dialogue line to show the new language
+	## 检测区域设置的更改并更新当前对话行以显示新语言
 	if what == NOTIFICATION_TRANSLATION_CHANGED and _locale != TranslationServer.get_locale() and is_instance_valid(dialogue_label):
 		_locale = TranslationServer.get_locale()
 		var visible_ratio: float = dialogue_label.visible_ratio
@@ -110,7 +110,7 @@ func _notification(what: int) -> void:
 			dialogue_label.skip_typing()
 
 
-## Start some dialogue
+## 开始一些对话
 func start(with_dialogue_resource: DialogueResource = null, cue: String = "", extra_game_states: Array = []) -> void:
 	temporary_game_states = [self] + extra_game_states
 	is_waiting_for_input = false
@@ -122,17 +122,18 @@ func start(with_dialogue_resource: DialogueResource = null, cue: String = "", ex
 	show()
 
 
-## Apply any changes to the balloon given a new [DialogueLine].
+## 将任何更改应用于给定新的 [DialogueLine] 的气泡。
 func apply_dialogue_line() -> void:
+	
+	marker = _get_marker(dialogue_line.character)
+	# ... 下面保持现有 balloon.gd 的全部逻辑不变
+
 	mutation_cooldown.stop()
 
-	progress.hide()
 	is_waiting_for_input = false
 	balloon.focus_mode = Control.FOCUS_ALL
 	balloon.grab_focus()
 
-	character_label.visible = not dialogue_line.character.is_empty()
-	character_label.text = tr(dialogue_line.character, "dialogue")
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
@@ -140,7 +141,7 @@ func apply_dialogue_line() -> void:
 	responses_menu.hide()
 	responses_menu.responses = dialogue_line.responses
 
-	# Show our balloon
+	# 展示我们的气泡
 	balloon.show()
 	will_hide_balloon = false
 
@@ -149,7 +150,7 @@ func apply_dialogue_line() -> void:
 		dialogue_label.type_out()
 		await dialogue_label.finished_typing
 
-	# Wait for next line
+	# 等待下一行
 	if dialogue_line.has_tag("voice"):
 		audio_stream_player.stream = load(dialogue_line.get_tag_value("voice"))
 		audio_stream_player.play()
@@ -168,12 +169,12 @@ func apply_dialogue_line() -> void:
 		balloon.grab_focus()
 
 
-## Go to the next line
+## 转到下一行
 func next(next_id: String) -> void:
 	dialogue_line = await dialogue_resource.get_next_dialogue_line(next_id, temporary_game_states)
 
 
-#region Signals
+#区域信号
 
 
 func _on_mutation_cooldown_timeout() -> void:
@@ -190,7 +191,7 @@ func _on_mutated(mutation: Dictionary) -> void:
 
 
 func _on_balloon_gui_input(event: InputEvent) -> void:
-	# See if we need to skip typing of the dialogue
+	# 看看我们是否需要跳过对话的输入
 	if dialogue_label.is_typing:
 		var mouse_was_clicked: bool = event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed()
 		var skip_button_was_pressed: bool = event.is_action_pressed(skip_action)
@@ -202,7 +203,7 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 	if not is_waiting_for_input: return
 	if dialogue_line.responses.size() > 0: return
 
-	# When there are no response options the balloon itself is the clickable thing
+	# 当没有响应选项时，气泡本身就是可点击的东西
 	get_viewport().set_input_as_handled()
 
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
@@ -215,4 +216,13 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
 
 
-#endregion
+## 查找场景中给定角色名称的标记。
+func _get_marker(character: String) -> DialogueMarker2D:
+	return DialogueMarker2D.find_for_character(character)
+
+
+func _process(_delta: float) -> void:
+	if not is_instance_valid(marker): return
+	# 设置新位置
+	var new_pos: Vector2 = marker.get_position_in_viewport()
+	set_transform(Transform2D(0, new_pos))

@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://bxp6qkg6attcq" path="res://shaders/weather/rain/puddle/puddle_material.tres" id="1_4ge27"]
 [ext_resource type="Script" uid="uid://bbww85f778n1m" path="res://scenes/weather/puddle.gd" id="1_mmohq"]
 [ext_resource type="PackedScene" uid="uid://754086yhcxft" path="res://scenes/weather/ripple.tscn" id="2_hktkw"]
-[ext_resource type="PackedScene" uid="uid://d10tqy1opg24v" path="res://scenes/fram/Sky.tscn" id="4_3nbf8"]
+[ext_resource type="PackedScene" uid="uid://d10tqy1opg24v" path="res://scenes/fram/sky.tscn" id="4_3nbf8"]
 [ext_resource type="Texture2D" uid="uid://c706kujj1grr8" path="res://assets/farm/objects/Trees, stumps and bushes.png" id="4_37ga0"]
 [ext_resource type="Shader" uid="uid://bn7qnphrtsw7k" path="res://shaders/sky/sky.gdshader" id="5_5x8rv"]
 
@@ -19,7 +19,7 @@ generate_mipmaps = false
 noise = SubResource("FastNoiseLite_clouds")
 seamless = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3nbf8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c08cj"]
 resource_local_to_scene = true
 resource_name = "像素阴天天空"
 shader = ExtResource("5_5x8rv")
@@ -70,7 +70,7 @@ size = Vector2i(640, 360)
 render_target_update_mode = 4
 
 [node name="Sky" parent="CanvasLayer/SubViewportReflection" unique_id=1290018216 instance=ExtResource("4_3nbf8")]
-material = SubResource("ShaderMaterial_3nbf8")
+material = SubResource("ShaderMaterial_c08cj")
 
 [node name="Tree2" type="Node2D" parent="CanvasLayer/SubViewportReflection" unique_id=1941911101]
 position = Vector2(0, 32)

@@ -1,0 +1,17 @@
+[gd_resource type="Theme" format=3 uid="uid://cxapldk65b82e"]
+
+[ext_resource type="Texture2D" uid="uid://bt2ifeybqp3vu" path="res://assets/widget/bubble/Sprite-0001.png" id="1_l23me"]
+[ext_resource type="FontFile" uid="uid://bbs4bsx5id7l5" path="res://themes/WenQuanYi.Bitmap.Song.12px.ttf" id="2_l23me"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynt28"]
+texture = ExtResource("1_l23me")
+texture_margin_left = 7.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+region_rect = Rect2(3, 8, 170, 31)
+
+[resource]
+default_font = ExtResource("2_l23me")
+default_font_size = 12
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_ynt28")

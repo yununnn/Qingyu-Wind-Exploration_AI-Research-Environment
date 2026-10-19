@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dvl0xmaxe02xm"
+path="res://.godot/imported/director_first_meeting.dialogue-4f3dc25542eed3d264f80d772e4770a3.tres"
+
+[deps]
+
+source_file="res://dialogues/director/director_first_meeting.dialogue"
+dest_files=["res://.godot/imported/director_first_meeting.dialogue-4f3dc25542eed3d264f80d772e4770a3.tres"]
+
+[params]
+
+defaults=true

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cohxhaoy5kihw"
-path="res://.godot/imported/fusion-pixel-12px-monospaced-zh_hant.ttf-8803384b6da195701e59640571e7f33b.fontdata"
+uid="uid://bbs4bsx5id7l5"
+path="res://.godot/imported/WenQuanYi.Bitmap.Song.12px.ttf-810659396e63a873b7fc9f99e4539fb3.fontdata"
 
 [deps]
 
-source_file="res://themes/fusion-pixel-12px-monospaced-zh_hant.ttf"
-dest_files=["res://.godot/imported/fusion-pixel-12px-monospaced-zh_hant.ttf-8803384b6da195701e59640571e7f33b.fontdata"]
+source_file="res://themes/WenQuanYi.Bitmap.Song.12px.ttf"
+dest_files=["res://.godot/imported/WenQuanYi.Bitmap.Song.12px.ttf-810659396e63a873b7fc9f99e4539fb3.fontdata"]
 
 [params]
 

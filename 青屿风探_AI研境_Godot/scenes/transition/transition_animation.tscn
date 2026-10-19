@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://nvtg2g57lc4p"]
+
+[ext_resource type="Texture2D" uid="uid://ekbfuro3omqc" path="res://assets/farm/objects/Boats.png" id="1_epeck"]
+[ext_resource type="Script" uid="uid://ckj0ulnok16kc" path="res://scripts/transition/transition_animation.gd" id="1_wnkko"]
+[ext_resource type="Texture2D" uid="uid://ccp663sjfjwb8" path="res://assets/characters/rabbit/Premium Charakter Spritesheet.png" id="2_nmgjj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e3nr"]
+atlas = ExtResource("1_epeck")
+region = Rect2(0, 64, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpyxu"]
+atlas = ExtResource("2_nmgjj")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="Animation" id="Animation_nmgjj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/CenterContainer/TexBoat:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 64, 48, 32)]
+}
+
+[sub_resource type="Animation" id="Animation_epeck"]
+resource_name = "normal_boat"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/CenterContainer/TexBoat:texture:region")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 64, 48, 32), Rect2(48, 64, 48, 32), Rect2(96, 64, 48, 32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nmgjj"]
+_data = {
+&"RESET": SubResource("Animation_nmgjj"),
+&"normal_boat": SubResource("Animation_epeck")
+}
+
+[sub_resource type="Animation" id="Animation_0qym3"]
+resource_name = "normal_rabbit"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../ColorRect/CenterContainer/TexBoat/TexRabbit:texture:region")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.76666665, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 96, 48, 48), Rect2(48, 96, 48, 48), Rect2(96, 96, 48, 48), Rect2(144, 96, 48, 48), Rect2(192, 96, 48, 48), Rect2(240, 96, 48, 48), Rect2(288, 96, 48, 48), Rect2(336, 96, 48, 48)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mvmko"]
+_data = {
+&"normal_rabbit": SubResource("Animation_0qym3")
+}
+
+[node name="TransitionAnimation" type="CanvasLayer" unique_id=625834184]
+script = ExtResource("1_wnkko")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=484015267]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect" unique_id=843544336]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-50, -30)
+offset_transform_scale = Vector2(1.5, 1.5)
+
+[node name="TexBoat" type="TextureRect" parent="ColorRect/CenterContainer" unique_id=731652933]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0e3nr")
+
+[node name="TexRabbit" type="TextureRect" parent="ColorRect/CenterContainer/TexBoat" unique_id=1534685314]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-2.185, -2.805)
+texture = SubResource("AtlasTexture_kpyxu")
+
+[node name="AnimationPlayerBoat" type="AnimationPlayer" parent="." unique_id=57233488]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_nmgjj")
+autoplay = &"normal_boat"
+
+[node name="AnimationPlayerRabbit" type="AnimationPlayer" parent="." unique_id=1356051770]
+unique_name_in_owner = true
+root_node = NodePath("../AnimationPlayerBoat")
+libraries/ = SubResource("AnimationLibrary_mvmko")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cf3uabeqov7dm"]
+
+[ext_resource type="Script" uid="uid://b7b0i2ewv0yon" path="res://scripts/transition/iris_transition.gd" id="1_muk7i"]
+[ext_resource type="Shader" uid="uid://83jlywfindit" path="res://shaders/transition/iris_transition.gdshader" id="2_0ll6k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gv4o7"]
+shader = ExtResource("2_0ll6k")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/mask_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+shader_parameter/progress = 0.0
+shader_parameter/edge_softness_px = 1.5
+
+[node name="IrisTransition" type="CanvasLayer" unique_id=1958449952]
+script = ExtResource("1_muk7i")
+
+[node name="Iris" type="ColorRect" parent="." unique_id=581117223]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_gv4o7")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

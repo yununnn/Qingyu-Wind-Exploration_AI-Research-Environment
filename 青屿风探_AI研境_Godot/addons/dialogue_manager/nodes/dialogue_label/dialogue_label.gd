@@ -2,47 +2,47 @@
 
 @tool
 
-## A RichTextLabel specifically for use with [b]Dialogue Manager[/b] dialogue.
+## 专门用于[b]对话管理器[/b]对话的 RichTextLabel。
 class_name DialogueLabel extends RichTextLabel
 
 
-## Emitted for each letter typed out.
+## 每打出一个字母就会发出一次。
 signal spoke(letter: String, letter_index: int, speed: float)
 
-## Emitted when the player skips the typing of dialogue.
+## 当玩家跳过对话输入时发出。
 signal skipped_typing()
 
-## Emitted when typing starts
+## 开始打字时发出
 signal started_typing()
 
-## Emitted when typing finishes.
+## 键入完成时发出。
 signal finished_typing()
 
 
-## The action to press to skip typing.
+## 按下可跳过打字的操作。
 @export var skip_action: StringName = &"ui_cancel"
 
-## The speed with which the text types out.
+## 文本输入的速度。
 @export var seconds_per_step: float = 0.02
 
-## Automatically have a brief pause when these characters are encountered.
+## 遇到这些字符时自动短暂停顿。
 @export var pause_at_characters: String = ".?!"
 
-## Don't auto pause if the character after the pause is one of these.
+## 如果暂停后的字符是其中之一，则不要自动暂停。
 @export var skip_pause_at_character_if_followed_by: String = ")\""
 
-## Don't auto pause after these abbreviations (only if "." is in `pause_at_characters`).[br]
-## Abbreviations are limitted to 5 characters in length [br]
-## Does not support multi-period abbreviations (ex. "p.m.")
+## 不要在这些缩写后自动暂停（仅当“.”位于 `pause_at_characters` 中时）。[br]
+## 缩写长度限制为 5 个字符 [br]
+## 不支持多句点缩写（例如“p.m.”）
 @export var skip_pause_at_abbreviations: PackedStringArray = ["Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex"]
 
-## The amount of time to pause when exposing a character present in `pause_at_characters`.
+## 暴露“pause_at_characters”中存在的字符时暂停的时间量。
 @export var seconds_per_pause_step: float = 0.3
 
 var _already_mutated_indices: PackedInt32Array = []
 
 
-## The current line of dialogue.
+## 当前的对话内容。
 var dialogue_line: Variant:
 	set(value):
 		if value != dialogue_line:
@@ -51,7 +51,7 @@ var dialogue_line: Variant:
 	get:
 		return dialogue_line
 
-## Whether the label is currently typing itself out.
+## 标签当前是否正在自行输入。
 var is_typing: bool = false:
 	set(value):
 		var did_just_finish: bool = _is_typing != value and value == false and visible_characters == get_total_character_count()
@@ -71,22 +71,22 @@ var _is_skipping_mutations: bool = false
 
 func _process(delta: float) -> void:
 	if _is_typing:
-		# Type out text
+		# 输入文本
 		if visible_ratio < 1:
-			# See if we are waiting
+			# 看看我们是否在等待
 			if _waiting_seconds > 0:
 				_waiting_seconds = _waiting_seconds - delta
-			# If we are no longer waiting then keep typing
+			# 如果我们不再等待，请继续输入
 			if _waiting_seconds <= 0:
 				_type_next(delta, _waiting_seconds)
 		else:
-			# Make sure any mutations at the end of the line get run
+			# 确保行末尾的任何突变都能运行
 			_mutate_inline_mutations(get_total_character_count())
 			is_typing = false
 
 
-## Sets the label's text from the current dialogue line. Override if you want
-## to do something more interesting in your subclass.
+## 设置当前对话行中的标签文本。如果您愿意，可以覆盖
+## 在你的子类中做一些更有趣的事情。
 func _update_text() -> void:
 	if is_instance_valid(dialogue_line):
 		text = dialogue_line.text
@@ -94,7 +94,7 @@ func _update_text() -> void:
 		text = ""
 
 
-## Start typing out the text
+## 开始输入文字
 func type_out() -> void:
 	_update_text()
 	visible_characters = 0
@@ -107,7 +107,7 @@ func type_out() -> void:
 	is_typing = true
 	started_typing.emit()
 
-	# Allow typing listeners a chance to connect
+	# 允许打字听众有机会连接
 	await get_tree().process_frame
 
 	if get_total_character_count() == 0:
@@ -118,7 +118,7 @@ func type_out() -> void:
 		is_typing = false
 
 
-## Stop typing out the text and jump right to the end
+## 停止输入文本并直接跳至末尾
 func skip_typing() -> void:
 	_mutate_remaining_mutations()
 	visible_characters = get_total_character_count()
@@ -126,7 +126,7 @@ func skip_typing() -> void:
 	skipped_typing.emit()
 
 
-# Type out the next character(s)
+# 键入下一个字符
 func _type_next(delta: float, seconds_needed: float) -> void:
 	if _is_awaiting_mutation: return
 
@@ -138,7 +138,7 @@ func _type_next(delta: float, seconds_needed: float) -> void:
 		_mutate_inline_mutations(visible_characters)
 		if _is_awaiting_mutation: return
 
-	# Pause on characters like "."
+	# 在“.”等字符上暂停。
 	var waiting_seconds: float = seconds_per_pause_step if _should_auto_pause() else 0.0
 	if _last_wait_index != visible_characters and waiting_seconds > 0:
 		_last_wait_index = visible_characters
@@ -147,7 +147,7 @@ func _type_next(delta: float, seconds_needed: float) -> void:
 		visible_characters += 1
 		if visible_characters <= get_total_character_count():
 			spoke.emit(get_parsed_text()[visible_characters - 1], visible_characters - 1, _get_speed(visible_characters))
-		# See if there's time to type out some more in this frame
+		# 看看是否有时间在此框架中输入更多内容
 		seconds_needed += seconds_per_step * (1.0 / _get_speed(visible_characters))
 		if seconds_needed > delta:
 			_waiting_seconds += seconds_needed
@@ -155,7 +155,7 @@ func _type_next(delta: float, seconds_needed: float) -> void:
 			_type_next(delta, seconds_needed)
 
 
-# Get the speed for the current typing position
+# 获取当前打字位置的速度
 func _get_speed(at_index: int) -> float:
 	var speed: float = 1
 	for index: int in dialogue_line.speeds:
@@ -165,7 +165,7 @@ func _get_speed(at_index: int) -> float:
 	return speed
 
 
-# Run any inline mutations that haven't been run yet
+# 运行任何尚未运行的内联突变
 func _mutate_remaining_mutations() -> void:
 	_is_skipping_mutations = true
 	for i: int in range(visible_characters, get_total_character_count() + 1):
@@ -173,10 +173,10 @@ func _mutate_remaining_mutations() -> void:
 	_is_skipping_mutations = false
 
 
-# Run any mutations at the current typing position
+# 在当前打字位置运行任何突变
 func _mutate_inline_mutations(index: int) -> void:
 	for inline_mutation: Array in dialogue_line.inline_mutations:
-		# inline mutations are an array of arrays in the form of [character index, resolvable function]
+		# 内联突变是数组的数组，其形式为[字符索引，可解析函数]
 		if inline_mutation[0] > index:
 			return
 		if inline_mutation[0] == index and not _already_mutated_indices.has(index):
@@ -184,35 +184,35 @@ func _mutate_inline_mutations(index: int) -> void:
 				Engine.get_singleton("DialogueManager")._mutate(inline_mutation[1], dialogue_line.extra_game_states, true)
 			else:
 				_is_awaiting_mutation = true
-				# The DialogueManager can't be referenced directly here so we need to get it by its path
+				# 这里不能直接引用DialogueManager，所以我们需要通过它的路径来获取它
 				await Engine.get_singleton("DialogueManager")._mutate(inline_mutation[1], dialogue_line.extra_game_states, true)
 				_is_awaiting_mutation = false
 
 	_already_mutated_indices.append(index)
 
 
-# Determine if the current autopause character at the cursor should qualify to pause typing.
+# 确定光标处的当前自动暂停字符是否有资格暂停键入。
 func _should_auto_pause() -> bool:
 	if visible_characters == 0: return false
 
 	var parsed_text: String = get_parsed_text()
 
-	# Avoid outofbounds when the label auto-translates and the text changes to one shorter while typing out
-	# Note: visible characters can be larger than parsed_text after a translation event
+	# 当标签自动翻译并且打字时文本变短时，避免越界
+	# 注意：翻译事件后可见字符可能大于 parsed_text
 	if visible_characters >= parsed_text.length(): return false
 
-	# Ignore pause characters if they are next to a non-pause character
+	# 如果暂停字符位于非暂停字符旁边，则忽略它们
 	if parsed_text[visible_characters] in skip_pause_at_character_if_followed_by.split():
 		return false
 
-	# Ignore "." if it's between two numbers
+	# 忽略 ”。”如果它在两个数字之间
 	if visible_characters > 3 and parsed_text[visible_characters - 1] == ".":
 		var possible_number: String = parsed_text.substr(visible_characters - 2, 3)
 		if str(float(possible_number)).pad_decimals(1) == possible_number:
 			return false
 
-	# Ignore "." if it's used in an abbreviation
-	# Note: does NOT support multi-period abbreviations (ex. p.m.)
+	# 忽略 ”。”如果它用在缩写中
+	# 注意：不支持多句点缩写（例如 p.m.）
 	if "." in pause_at_characters and parsed_text[visible_characters - 1] == ".":
 		for abbreviation: String in skip_pause_at_abbreviations:
 			if visible_characters >= abbreviation.length():
@@ -220,7 +220,7 @@ func _should_auto_pause() -> bool:
 				if previous_characters == abbreviation:
 					return false
 
-	# Ignore two non-"." characters next to each other
+	# 忽略两个非“.”字符彼此相邻
 	var other_pause_characters: PackedStringArray = pause_at_characters.replace(".", "").split()
 	if visible_characters > 1 and parsed_text[visible_characters - 1] in other_pause_characters and parsed_text[visible_characters] in other_pause_characters:
 		return false

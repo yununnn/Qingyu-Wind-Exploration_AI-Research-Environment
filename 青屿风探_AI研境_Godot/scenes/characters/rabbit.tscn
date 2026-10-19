@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ccp663sjfjwb8" path="res://assets/characters/rabbit/Premium Charakter Spritesheet.png" id="1_3wuti"]
 [ext_resource type="Script" uid="uid://buroxrxplmein" path="res://scripts/characters/rabbit.gd" id="2_rabbit_script"]
+[ext_resource type="Script" uid="uid://cxge1wx70prau" path="res://addons/dialogue_manager/nodes/marker/dialogue_marker_2d.gd" id="3_q4u0g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rabbit_16_0"]
 atlas = ExtResource("1_3wuti")
@@ -1483,18 +1484,23 @@ script = ExtResource("2_rabbit_script")
 [node name="BodySprite" type="AnimatedSprite2D" parent="." unique_id=1499438493]
 position = Vector2(0, -3.33)
 sprite_frames = SubResource("SpriteFrames_0e3nr")
-animation = &"idle_down"
+animation = &"hoe_up"
 autoplay = "idle_down"
-frame_progress = 0.7488203
 offset = Vector2(0, -4.76)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=674164375]
 position = Vector2(0, -4)
 shape = SubResource("CapsuleShape2D_hek4i")
 
+[node name="DialogueMarker2D" type="Marker2D" parent="." unique_id=295868092]
+position = Vector2(5, -2)
+script = ExtResource("3_q4u0g")
+character_name = "主角"
+metadata/_custom_type_script = "uid://cxge1wx70prau"
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=840236494]
 position = Vector2(0, -8)
-zoom = Vector2(2, 2)
+zoom = Vector2(1.5, 1.5)
 limit_left = 0
 limit_top = 0
 limit_right = 1280

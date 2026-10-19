@@ -1,20 +1,18 @@
 [gd_scene format=3 uid="uid://8iceaby3btwn"]
 
+[ext_resource type="Script" uid="uid://dutyvfu5s74dt" path="res://scripts/farm/boat/boat.gd" id="1_f2prm"]
 [ext_resource type="Texture2D" uid="uid://ekbfuro3omqc" path="res://assets/farm/objects/Boats.png" id="1_uw84g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e3nr"]
 size = Vector2(30, 14)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tv3u3"]
-size = Vector2(4, 15)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_f2prm"]
 atlas = ExtResource("1_uw84g")
-region = Rect2(0, 0, 48, 32)
+region = Rect2(0, 32, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_551cd"]
 atlas = ExtResource("1_uw84g")
-region = Rect2(48, 0, 48, 32)
+region = Rect2(48, 32, 48, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0e3nr"]
 animations = [{
@@ -31,25 +29,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpyxu"]
-size = Vector2(37, 20)
+size = Vector2(30, 3)
 
-[node name="Boat" type="Area2D" unique_id=641224119]
+[node name="Boat" type="StaticBody2D" unique_id=1290340647]
 editor_description = "船"
 collision_mask = 2
+script = ExtResource("1_f2prm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1359824861]
 position = Vector2(-2, 2)
 shape = SubResource("RectangleShape2D_0e3nr")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=491976348]
-position = Vector2(-21, -4.5)
-shape = SubResource("RectangleShape2D_tv3u3")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1957674986]
 sprite_frames = SubResource("SpriteFrames_0e3nr")
 animation = &"normal"
 autoplay = "normal"
-frame_progress = 0.9590789
+frame_progress = 0.594428
 
 [node name="Detection" type="Area2D" parent="." unique_id=1314102106]
 editor_description = "检测范围"
@@ -57,6 +52,6 @@ collision_layer = 16
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=301706209]
-position = Vector2(-5, -15)
+position = Vector2(-2, -6.5)
 shape = SubResource("RectangleShape2D_kpyxu")
 debug_color = Color(0.98702055, 0, 0.32239002, 0.41960785)

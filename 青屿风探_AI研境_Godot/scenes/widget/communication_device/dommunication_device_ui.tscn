@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://ih6ry6vddf7l" path="res://themes/communicator/communicator_theme.tres" id="1_r2es6"]
 [ext_resource type="Script" uid="uid://cxiveexp5luo4" path="res://scripts/widget/communication_device/dommunication_device_ui.gd" id="2_lw4kr"]
 [ext_resource type="Texture2D" uid="uid://cmu2x86mraypx" path="res://assets/widget/communication_device/背景.png" id="3_2vvhn"]
-[ext_resource type="Resource" uid="uid://dvl0xmaxe02xm" path="res://dialogues/Start.dialogue" id="3_764qe"]
+[ext_resource type="Resource" uid="uid://dvl0xmaxe02xm" path="res://dialogues/director/director_first_meeting.dialogue" id="3_764qe"]
 [ext_resource type="Texture2D" uid="uid://be2ndeqpvxn1v" path="res://assets/widget/communication_device/对话器框架.png" id="4_764qe"]
 
 [sub_resource type="Animation" id="Animation_38pdc"]

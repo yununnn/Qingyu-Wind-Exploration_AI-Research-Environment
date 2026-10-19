@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://cdu6a1tkhuvs8" path="res://assets/laboratory/18_监狱_无阴影.png" id="3_j2o5o"]
 [ext_resource type="PackedScene" uid="uid://cscjmmdue14iq" path="res://scenes/characters/director.tscn" id="3_omwdr"]
 [ext_resource type="Texture2D" uid="uid://cnh5714j25s2c" path="res://assets/laboratory/动画_控制室_屏幕.png" id="4_0d3px"]
-[ext_resource type="Script" uid="uid://cmwgmgqp0b8r4" path="res://scenes/laboratory/transition_black.gd" id="4_tp0kf"]
 [ext_resource type="PackedScene" uid="uid://dmiihi6t4iuts" path="res://scenes/characters/intern.tscn" id="5_sc7ut"]
 [ext_resource type="Texture2D" uid="uid://cjb57b3tjxvhe" path="res://assets/laboratory/动画_医院_屏幕_彩色.png" id="6_72auc"]
 [ext_resource type="Texture2D" uid="uid://b6751minpspt7" path="res://assets/laboratory/动画_控制室_服务器.png" id="7_e8o22"]
@@ -528,29 +527,25 @@ offset = Vector2(0, -7)
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_0e3nr")
 
-[node name="Professor" parent="Scene/Decoration" unique_id=608739847 instance=ExtResource("3_omwdr")]
+[node name="Director" parent="Scene/Decoration" unique_id=608739847 instance=ExtResource("3_omwdr")]
 position = Vector2(31, 65)
 
 [node name="Rabbit" parent="Scene/Decoration" unique_id=671228345 instance=ExtResource("9_i04fv")]
-position = Vector2(69, 91)
+position = Vector2(80, 155)
 
-[node name="Door" parent="." unique_id=86733597 instance=ExtResource("10_j2o5o")]
-position = Vector2(86.00001, 189)
+[node name="Camera2D" parent="Scene/Decoration/Rabbit" index="3" unique_id=840236494]
+zoom = Vector2(1.9, 1.9)
+limit_left = -1
+limit_right = 173
+limit_bottom = 150
+
+[node name="Door" parent="Scene" unique_id=86733597 instance=ExtResource("10_j2o5o")]
+position = Vector2(80.00001, 189)
 scale = Vector2(1.5599976, 2.8000002)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=393391405]
-visible = false
+[node name="CollisionShape2D" parent="Scene/Door" index="0" unique_id=2021501780]
+scale = Vector2(1, 0.8142875)
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=808429365]
-editor_description = "用以出现黑幕"
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -3.0
-offset_right = -3.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0)
-script = ExtResource("4_tp0kf")
-
-[editable path="Door"]
+[editable path="Scene/Decoration/椅子/椅子2_实习生之椅/Intern"]
+[editable path="Scene/Decoration/Rabbit"]
+[editable path="Scene/Door"]

@@ -5,10 +5,10 @@ extends CharacterBody2D
 ## 移动速度，单位为像素/秒。
 @export var move_speed: float = 50.0
 ## 按住 Shift 时的奔跑速度，单位为像素/秒。
-@export var run_speed: float = 100.0
+@export var run_speed: float = 60.0
 
-## 记录最后一次移动的朝向，松开方向键后仍朝向该方向。
-var facing_direction: String = "down"
+## 记录最后一次移动的朝向，松开方向键后仍朝向该方向。也可以用于设置初始方向
+@export var facing_direction: String = "up"
 
 ## 负责播放序列帧的节点。
 @onready var body_sprite: AnimatedSprite2D = $BodySprite
@@ -21,6 +21,13 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	# 对话等非正常状态下：停止移动，播放待机动画，并直接返回。
+	if PlayerState.current_state != PlayerState.State.NORMAL: 
+		velocity = Vector2.ZERO
+		move_and_slide()
+		update_animation(Vector2.ZERO, false)
+		return
+
 	# 项目输入映射：A/左、D/右、W/上、S/下；run 对应 Shift。
 	# get_vector 会限制向量长度，避免斜向移动比水平或垂直移动更快。
 	var input_direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
