@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dtodmcyivxnsc"]
+
+[ext_resource type="Texture2D" uid="uid://tx7866uct4i0" path="res://assets/farm/objects/Mushrooms, Flowers, Stones.png" id="1_tex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1"]
+atlas = ExtResource("1_tex")
+region = Rect2(16, 32, 16, 16)
+
+[node name="草_2" type="Node2D" unique_id=833033531]
+editor_description = "草_2"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=412687568]
+position = Vector2(0, -7)
+texture = SubResource("AtlasTexture_1")

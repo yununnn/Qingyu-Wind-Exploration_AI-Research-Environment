@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/farm/objects/Farming Plants.png" id="1_tex"]
+[ext_resource type="Script" path="res://scripts/farm/crops/crop.gd" id="2_script"]
+
+[node name="甜菜" type="Node2D"]
+editor_description = "第4行作物，4个生长阶段"
+script = ExtResource("2_script")
+stage = 0
+regions = [Rect2(0, 64, 16, 16), Rect2(16, 64, 16, 16), Rect2(32, 64, 16, 16), Rect2(48, 64, 16, 16)]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tex")
+region_enabled = true
+region_rect = Rect2(0, 64, 16, 16)

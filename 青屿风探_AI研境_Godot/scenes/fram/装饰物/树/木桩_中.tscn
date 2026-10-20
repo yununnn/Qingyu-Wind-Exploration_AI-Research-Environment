@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bt7140wlwbum7"]
+
+[ext_resource type="Texture2D" uid="uid://c706kujj1grr8" path="res://assets/farm/objects/Trees, stumps and bushes.png" id="1_l6fea"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e3nr"]
+atlas = ExtResource("1_l6fea")
+region = Rect2(32, 96, 32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpyxu"]
+size = Vector2(18.155336, 8.395949)
+
+[node name="木桩_中" type="StaticBody2D" unique_id=1985875756]
+editor_description = "树1"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1829932930]
+position = Vector2(1.101904, -7.1342726)
+texture = SubResource("AtlasTexture_0e3nr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=264933701]
+position = Vector2(0.0978899, -4.291181)
+shape = SubResource("RectangleShape2D_kpyxu")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://roytrlmvtf4f"]
+
+[ext_resource type="Texture2D" uid="uid://mehrjc7ttt2a" path="res://assets/farm/objects/work station.png" id="1_d0low"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(30.098122, 12.997711)
+
+[node name="工作台" type="StaticBody2D" unique_id=1433664421]
+editor_description = "水井"
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=85758815]
+position = Vector2(-0.061019897, -14.35997)
+texture = ExtResource("1_d0low")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1385796082]
+position = Vector2(-0.010983467, -6.7269993)
+shape = SubResource("RectangleShape2D_1")

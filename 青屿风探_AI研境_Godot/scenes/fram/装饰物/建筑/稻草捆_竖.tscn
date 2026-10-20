@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dm3rprn6wnkxb"]
+
+[ext_resource type="Texture2D" uid="uid://jy535pvi2727" path="res://assets/farm/objects/Barn structures.png" id="1_tex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1"]
+atlas = ExtResource("1_tex")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(16.032171, 7.032398)
+
+[node name="稻草捆_竖" type="StaticBody2D" unique_id=2108682712]
+editor_description = "稻草捆_竖"
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=771879899]
+position = Vector2(0, -6.0583878)
+texture = SubResource("AtlasTexture_1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=204564550]
+position = Vector2(-0.07262325, -3.5144367)
+shape = SubResource("RectangleShape2D_1")

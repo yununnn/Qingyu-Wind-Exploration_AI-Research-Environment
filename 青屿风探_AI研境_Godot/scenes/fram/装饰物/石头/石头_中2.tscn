@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dje6qjvv54caq"]
+
+[ext_resource type="Texture2D" uid="uid://tx7866uct4i0" path="res://assets/farm/objects/Mushrooms, Flowers, Stones.png" id="1_tex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1"]
+atlas = ExtResource("1_tex")
+region = Rect2(128, 16, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(30.072681, 22.308819)
+
+[node name="石头_中2" type="StaticBody2D" unique_id=1682228337]
+editor_description = "石头_中2"
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=154178004]
+position = Vector2(0, -8.039585)
+texture = SubResource("AtlasTexture_1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=56244533]
+position = Vector2(-0.13876534, -3.743452)
+shape = SubResource("RectangleShape2D_1")

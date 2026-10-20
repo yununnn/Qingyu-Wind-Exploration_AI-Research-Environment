@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://j3c4g23vf1hd"]
+
+[ext_resource type="Texture2D" uid="uid://jy535pvi2727" path="res://assets/farm/objects/Barn structures.png" id="1_tex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1"]
+atlas = ExtResource("1_tex")
+region = Rect2(0, 48, 16, 16)
+
+[node name="干草堆_小" type="Node2D" unique_id=1622297466]
+editor_description = "干草堆_小"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1856861252]
+texture = SubResource("AtlasTexture_1")

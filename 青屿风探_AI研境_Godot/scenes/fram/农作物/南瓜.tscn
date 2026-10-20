@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dne7p5ay5ly0u"]
+
+[ext_resource type="Texture2D" uid="uid://bp4ux35cwqd5h" path="res://assets/farm/objects/Farming Plants.png" id="1_tex"]
+[ext_resource type="Script" uid="uid://bp6d8ua1hyqub" path="res://scripts/farm/crops/crop.gd" id="2_script"]
+
+[node name="南瓜" type="Node2D" unique_id=1360015263]
+editor_description = "第9行作物，4个生长阶段"
+script = ExtResource("2_script")
+stage = 3
+regions = [Rect2(0, 144, 16, 16), Rect2(16, 144, 16, 16), Rect2(32, 144, 16, 16), Rect2(48, 144, 16, 16)]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1591622396]
+texture = ExtResource("1_tex")
+offset = Vector2(0, -4.99)
+region_enabled = true
+region_rect = Rect2(48, 144, 16, 16)

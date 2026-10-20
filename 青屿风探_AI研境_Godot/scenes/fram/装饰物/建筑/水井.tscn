@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b323whhk63774"]
+
+[ext_resource type="Texture2D" uid="uid://cm71vnfnvcocn" path="res://assets/farm/objects/Water well.png" id="1_tex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1"]
+atlas = ExtResource("1_tex")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(28.99811, 11.078867)
+
+[node name="水井" type="StaticBody2D" unique_id=1433664421]
+editor_description = "水井"
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=85758815]
+position = Vector2(0, -15.092234)
+texture = SubResource("AtlasTexture_1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1385796082]
+position = Vector2(-0.49996996, -5.5898657)
+shape = SubResource("RectangleShape2D_1")
