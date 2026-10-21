@@ -25,7 +25,7 @@ func close_to_black(
     show()
     _set_progress(0.0)
     _set_center(center_uv)
-    PlayerState.current_state = PlayerState.State.CUTSCENE
+    PlayerState.current_state = PlayerState.State.UNMOVE
     
     # 如果 tween 变量中已有 Tween，就先停止它
     if tween: tween.kill()

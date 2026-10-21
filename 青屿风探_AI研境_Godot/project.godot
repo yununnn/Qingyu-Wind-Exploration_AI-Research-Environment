@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="青屿风探_AI研境"
-run/main_scene="uid://dtd41scagbkdm"
+run/main_scene="uid://lmpg1xaslkmc"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,8 @@ PlayerState="*uid://b58rk4dmo0kb5"
 IrisTransition="*uid://cf3uabeqov7dm"
 FunctionLibrary="*uid://cyw5ren5l8yqh"
 TransitionAnimation="*uid://nvtg2g57lc4p"
+BlackTransition="*uid://dxdyljv0tyi5"
+GameState="*uid://c0blkqqqtt5by"
 
 [dialogue_manager]
 

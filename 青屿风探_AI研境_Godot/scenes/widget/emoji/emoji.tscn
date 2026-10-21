@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cbiqnn6e7k1u"]
+
+[ext_resource type="Texture2D" uid="uid://vkmqasdnglcl" path="res://assets/widget/bubble/界面_思考_表情_动画_16x16.png" id="1_qo88j"]
+[ext_resource type="Texture2D" uid="uid://bho3ar7w2p43s" path="res://assets/widget/bubble/emotes/Teemo premium emote animations sprite sheet-export.png" id="2_evq2h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e3nr"]
+atlas = ExtResource("1_qo88j")
+region = Rect2(112, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e85s8"]
+atlas = ExtResource("2_evq2h")
+region = Rect2(0, 800, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se527"]
+atlas = ExtResource("2_evq2h")
+region = Rect2(32, 800, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0e3nr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e85s8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se527")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Emoji" type="Node2D" unique_id=975144824]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1468752683]
+texture = SubResource("AtlasTexture_0e3nr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D" unique_id=1612892463]
+position = Vector2(0, 0.3332939)
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_0e3nr")
+frame_progress = 0.9145492

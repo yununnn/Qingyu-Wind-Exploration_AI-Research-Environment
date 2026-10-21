@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://lmpg1xaslkmc"]
 
-[ext_resource type="Script" uid="uid://exyv4ihm2k3t" path="res://scenes/fram/farm.gd" id="1_0ccrj"]
+[ext_resource type="Script" uid="uid://exyv4ihm2k3t" path="res://scripts/farm/farm.gd" id="1_0ccrj"]
 [ext_resource type="TileSet" uid="uid://dso46e5ygdq08" path="res://tile_set/farm_tile_set.tres" id="2_687ui"]
 [ext_resource type="TileSet" uid="uid://ci5y674iuaivl" path="res://tile_set/building_parts_tile_set.tres" id="3_kv8f1"]
 [ext_resource type="TileSet" uid="uid://dy5xl3r88ij4l" path="res://tile_set/house_tile_set.tres" id="3_qgkrs"]
@@ -49,6 +49,7 @@
 [ext_resource type="PackedScene" path="res://scenes/fram/装饰物/花草/花_粉4.tscn" id="42_63tr4"]
 [ext_resource type="PackedScene" path="res://scenes/fram/农作物/花椰菜.tscn" id="42_l7q8w"]
 [ext_resource type="PackedScene" path="res://scenes/fram/农作物/西兰花.tscn" id="42_umrc0"]
+[ext_resource type="PackedScene" uid="uid://cbiqnn6e7k1u" path="res://scenes/widget/emoji/emoji.tscn" id="50_l7q8w"]
 
 [sub_resource type="Environment" id="Environment_0e3nr"]
 background_mode = 3
@@ -64,7 +65,7 @@ generate_mipmaps = false
 noise = SubResource("FastNoiseLite_clouds")
 seamless = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ksp3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l7q8w"]
 resource_local_to_scene = true
 resource_name = "像素阴天天空"
 shader = ExtResource("8_0ccrj")
@@ -527,7 +528,7 @@ visible = false
 visible = false
 
 [node name="Sky" parent="Puddle/CanvasLayer/SubViewportReflection" parent_id_path=PackedInt32Array(788995391, 1276117742) index="0" unique_id=1051594638]
-material = SubResource("ShaderMaterial_7ksp3")
+material = SubResource("ShaderMaterial_l7q8w")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Puddle/Tree" parent_id_path=PackedInt32Array(788995391, 1734155396) index="4" unique_id=1038083221]
 material = SubResource("ShaderMaterial_ry2vk")
@@ -542,6 +543,9 @@ stage = 2
 [node name="花椰菜2" parent="." unique_id=1834905862 instance=ExtResource("42_l7q8w")]
 position = Vector2(318.78, 263.783)
 stage = 2
+
+[node name="Emoji" parent="." unique_id=975144824 instance=ExtResource("50_l7q8w")]
+position = Vector2(216.33861, 254.09427)
 
 [editable path="WeatherRain"]
 [editable path="Puddle"]

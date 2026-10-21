@@ -5,7 +5,7 @@ extends Node
 ## 获取当前场景中的玩家节点
 func get_player() -> Node2D:
     var player : Node = get_tree().get_first_node_in_group("Player")
-    return player as Node2D
+    return player
 
 
 ## 获取玩家的全局位置
@@ -31,3 +31,7 @@ func get_player_viewport_uv() -> Vector2:
 func has_player() -> bool:
     return get_player() != null
 
+func print11() -> void:
+    print(111)
+    await get_tree().create_timer(10.0).timeout
+    

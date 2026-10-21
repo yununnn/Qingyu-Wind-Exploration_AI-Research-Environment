@@ -1,4 +1,4 @@
 extends Node2D
 
 func _ready() -> void:
-	pass
+	BlackTransition._black_to_light(2.0)

@@ -1,7 +1,7 @@
 extends Node
 
-## 玩家状态{正常，对话，过场动画}
-enum State { NORMAL, DIALOGUE, CUTSCENE }
+## 玩家状态{正常，无法移动，无法控制}
+enum State { NORMAL, UNMOVE, UNCONTROL }
 ## 当前状态
 var current_state : State = State.NORMAL
 

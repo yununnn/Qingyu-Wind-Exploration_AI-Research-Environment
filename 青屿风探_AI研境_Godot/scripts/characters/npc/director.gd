@@ -7,5 +7,3 @@ func _try_start_dialogue() -> void:
         load("res://dialogues/director/director_first_meeting.dialogue"),
         "start"
     )
-
-    

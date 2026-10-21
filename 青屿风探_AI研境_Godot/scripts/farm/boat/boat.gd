@@ -7,7 +7,8 @@ func _ready() -> void:
 	# 绑定信号
 	detection.body_entered.connect(_on_body_entered)
 	# 入场效果
-	IrisTransition.open_from_black(0.9)
+	if not GameState.is_first_farm:
+		IrisTransition.open_from_black(0.9)
 
 ## 当有物体进入检测区域时触发
 func _on_body_entered(body: Node2D) -> void:
