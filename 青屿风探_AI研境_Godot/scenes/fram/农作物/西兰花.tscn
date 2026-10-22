@@ -1,15 +1,23 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cm2k05ni70ahk"]
 
-[ext_resource type="Texture2D" path="res://assets/farm/objects/Farming Plants.png" id="1_tex"]
-[ext_resource type="Script" path="res://scripts/farm/crops/crop.gd" id="2_script"]
+[ext_resource type="Texture2D" uid="uid://bp4ux35cwqd5h" path="res://assets/farm/objects/Farming Plants.png" id="1_tex"]
+[ext_resource type="Script" uid="uid://bp6d8ua1hyqub" path="res://scripts/farm/crops/crop.gd" id="2_script"]
 
-[node name="西兰花" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_0jgvb"]
+radius = 1.8995333
+
+[node name="西兰花" type="Node2D" unique_id=463011593]
 editor_description = "第14行作物，4个生长阶段"
 script = ExtResource("2_script")
-stage = 0
 regions = [Rect2(0, 224, 16, 16), Rect2(16, 224, 16, 16), Rect2(32, 224, 16, 16), Rect2(48, 224, 16, 16)]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1741708634]
 texture = ExtResource("1_tex")
+offset = Vector2(0, -4)
 region_enabled = true
 region_rect = Rect2(0, 224, 16, 16)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2110265932]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1429793170]
+shape = SubResource("CircleShape2D_0jgvb")

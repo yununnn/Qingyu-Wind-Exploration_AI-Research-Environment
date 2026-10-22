@@ -1486,9 +1486,8 @@ script = ExtResource("2_rabbit_script")
 [node name="BodySprite" type="AnimatedSprite2D" parent="." unique_id=1499438493]
 position = Vector2(0, -3.33)
 sprite_frames = SubResource("SpriteFrames_0e3nr")
-animation = &"idle_left"
+animation = &"idle_down"
 autoplay = "idle_down"
-frame_progress = 0.5543471
 offset = Vector2(0, -4.76)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=674164375]
@@ -1503,7 +1502,8 @@ metadata/_custom_type_script = "uid://cxge1wx70prau"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=840236494]
 position = Vector2(0, -8)
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(1.7, 1.7)
+limit_enabled = false
 limit_left = 0
 limit_top = 0
 limit_right = 1280

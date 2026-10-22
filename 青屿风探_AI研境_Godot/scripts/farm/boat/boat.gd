@@ -6,9 +6,7 @@ extends StaticBody2D
 func _ready() -> void:
 	# 绑定信号
 	detection.body_entered.connect(_on_body_entered)
-	# 入场效果
-	if not GameState.is_first_farm:
-		IrisTransition.open_from_black(0.9)
+
 
 ## 当有物体进入检测区域时触发
 func _on_body_entered(body: Node2D) -> void:
@@ -19,8 +17,10 @@ func _on_body_entered(body: Node2D) -> void:
 # ## 返回农场
 func go_laboratory() -> void:
 	# 加载并切换到农场场景。
-	await IrisTransition.close_to_black(0.9)
-	await TransitionAnimation.play_animation()
+	IrisTransition.close_to_black(0.9)
+	await IrisTransition.tween_finished
+	TransitionAnimation.play_animation()
+	await TransitionAnimation.tween_finished
 	
 	# 更换场景
 	get_tree().change_scene_to_file(

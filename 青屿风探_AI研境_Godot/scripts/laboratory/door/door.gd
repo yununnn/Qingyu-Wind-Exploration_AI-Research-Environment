@@ -6,8 +6,7 @@ extends Area2D
 func _ready() -> void:
 	# 绑定信号
 	body_entered.connect(_on_body_entered)
-	# 入场效果
-	IrisTransition.open_from_black(0.9)
+	
 
 ## 当有物体进入碰撞区域时触发
 func _on_body_entered(body: Node2D) -> void:
@@ -18,8 +17,11 @@ func _on_body_entered(body: Node2D) -> void:
 ## 返回农场
 func back() -> void:
 	# 加载并切换到农场场景。
-	await IrisTransition.close_to_black(0.9)
-	await TransitionAnimation.play_animation()
+	IrisTransition.close_to_black(0.9)
+	await IrisTransition.tween_finished
+	TransitionAnimation.play_animation()
+	await TransitionAnimation.tween_finished
+	
 	# 更换场景
 	get_tree().change_scene_to_file(
 		"res://scenes/fram/farm.tscn"

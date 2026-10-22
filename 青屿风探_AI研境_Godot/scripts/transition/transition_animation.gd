@@ -10,6 +10,8 @@ var tween:Tween
 @export var hide_time : float = 0.9
 @export var black_time : float = 1.5
 
+signal tween_finished
+
 
 func _ready() -> void:
 	# 隐藏自身
@@ -21,15 +23,16 @@ func _ready() -> void:
 
 func play_animation() -> void:
 	show()
+	# 播放动画
 	animation_player_rabbit.play("normal_rabbit")
 	animation_player_boat.play("normal_boat")
-
+	# 逐渐出现
 	await _show_Control(show_time)
 	# 延迟
 	await get_tree().create_timer(black_time).timeout
-
+	# 逐渐消失
 	await _hide_Control(hide_time)
-	
+	tween_finished.emit()
 	hide()
 	
 

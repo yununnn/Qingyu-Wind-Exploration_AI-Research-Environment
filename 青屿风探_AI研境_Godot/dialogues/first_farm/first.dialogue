@@ -1,0 +1,6 @@
+~ start
+主角: [wave]天气真好！[/wave][next=auto]
+do Emoji._show_emoji("主角生气", "主角", 3.0)
+
+主角: [wave]天气真好！[/wave]
+=> END

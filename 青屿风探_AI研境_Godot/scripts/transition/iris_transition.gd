@@ -7,6 +7,8 @@ extends CanvasLayer
     overlay.material as ShaderMaterial
 )
 
+signal tween_finished
+
 var tween:Tween
 
 func _ready() -> void:
@@ -34,8 +36,9 @@ func close_to_black(
     tween.set_trans(Tween.TRANS_QUART)
     tween.set_ease(Tween.EASE_IN)
     tween.tween_method(_set_progress, 0.0, 1.0, time)
-    await tween.finished
 
+    await tween.finished
+    tween_finished.emit()
 
 ## 从纯黑开始，圆形向外扩张直至显示完整场景
 func open_from_black(
@@ -49,14 +52,15 @@ func open_from_black(
     # 如果 tween 变量中已有 Tween，就先停止它
     if tween: tween.kill()
 
-    tween= create_tween()
+    tween = create_tween()
     tween.set_trans(Tween.TRANS_QUART)
     tween.set_ease(Tween.EASE_IN)
     tween.tween_method(_set_progress, 1.0, 0.0, time)
-    await tween.finished
 
+    await tween.finished
     PlayerState.current_state = PlayerState.State.NORMAL
     hide()
+    tween_finished.emit()
 
 
 ## 设置遮罩值

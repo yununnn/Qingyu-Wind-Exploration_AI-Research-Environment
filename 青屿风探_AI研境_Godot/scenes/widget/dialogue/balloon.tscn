@@ -86,16 +86,20 @@ layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(7, -5)
+offset_transform_visual_only = false
 theme = SubResource("Theme_qq3yp")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon" unique_id=1302081376]
+custom_minimum_size = Vector2(25, 19)
 custom_maximum_size = Vector2(120, 32)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -21.0
-offset_right = 69.0
+offset_top = -19.0
+offset_right = 25.0
 grow_vertical = 0
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 0
@@ -112,7 +116,7 @@ theme = ExtResource("2_7olsc")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=903640783]
 layout_mode = 2
-theme_override_constants/margin_left = 2
+theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 1
 theme_override_constants/margin_right = 1
 theme_override_constants/margin_bottom = 1
@@ -122,6 +126,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "我"
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=1801308483 node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true

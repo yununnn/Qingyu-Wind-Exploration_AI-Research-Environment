@@ -541,10 +541,11 @@ shape = SubResource("RectangleShape2D_0e3nr")
 position = Vector2(31, 65)
 
 [node name="Rabbit" parent="Scene/Decoration" unique_id=671228345 instance=ExtResource("9_i04fv")]
-position = Vector2(80, 159)
+position = Vector2(77, 142)
 
 [node name="Camera2D" parent="Scene/Decoration/Rabbit" index="3" unique_id=840236494]
 zoom = Vector2(1.9, 1.9)
+limit_enabled = true
 limit_left = -1
 limit_right = 173
 limit_bottom = 150

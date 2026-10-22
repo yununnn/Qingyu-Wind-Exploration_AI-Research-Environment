@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://b8tx05ftveu1w"]
+
+[ext_resource type="Script" uid="uid://dyjfsv3q24dcu" path="res://scripts/farm/house/door/door.gd" id="1_1q2pp"]
+[ext_resource type="Texture2D" uid="uid://dgdx05oc4l1n7" path="res://assets/house/door animation sprites.png" id="1_lc7qi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q2pp"]
+atlas = ExtResource("1_lc7qi")
+region = Rect2(240, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjols"]
+atlas = ExtResource("1_lc7qi")
+region = Rect2(192, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2orcf"]
+atlas = ExtResource("1_lc7qi")
+region = Rect2(144, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1i63"]
+atlas = ExtResource("1_lc7qi")
+region = Rect2(96, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xukbt"]
+atlas = ExtResource("1_lc7qi")
+region = Rect2(48, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjwwe"]
+atlas = ExtResource("1_lc7qi")
+region = Rect2(0, 16, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0e3nr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1q2pp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjols")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2orcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1i63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xukbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjwwe")
+}],
+"loop": 0,
+"name": &"normal",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpyxu"]
+size = Vector2(17, 30.581)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e3nr"]
+size = Vector2(13.536742, 8.085521)
+
+[node name="Door" type="Node2D" unique_id=264119310]
+script = ExtResource("1_1q2pp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1727285807]
+sprite_frames = SubResource("SpriteFrames_0e3nr")
+animation = &"normal"
+offset = Vector2(0, -8)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=655373608]
+position = Vector2(0, -8.049692)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=771223704]
+position = Vector2(0, 1.3143864)
+shape = SubResource("RectangleShape2D_kpyxu")
+debug_color = Color(0.8505367, 0.33810583, 0.42121726, 0.41960785)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1221395873]
+position = Vector2(0, -8.049692)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1326998748]
+position = Vector2(-17.195648, 3.9379997)
+shape = SubResource("RectangleShape2D_0e3nr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=253965301]
+position = Vector2(17.272396, 3.938)
+shape = SubResource("RectangleShape2D_0e3nr")

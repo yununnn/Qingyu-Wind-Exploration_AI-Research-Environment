@@ -9,16 +9,21 @@ extends Node2D
 
 
 func _ready() -> void:
-	await IrisTransition.open_from_black()
+	# 初始朝向
+	FunctionLibrary.set_player_Initial_direction("up")
+	# 入场效果
+	IrisTransition.open_from_black(0.9)
+	await IrisTransition.tween_finished
+
 	# 更新玩家状态
-	PlayerState.current_state = PlayerState.State.UNCONTROL
-	player._move_to_navigation_position(player_move_location.position)
-	await get_tree().create_timer(0.5).timeout
-	director._move_to_navigation_position(director_move_location.position)
-	await get_tree().create_timer(1.0).timeout
-	
-	# 更新玩家状态
-	PlayerState.current_state = PlayerState.State.NORMAL
+
+	# PlayerState.current_state = PlayerState.State.UNCONTROL
+	# player._move_to_navigation_position(player_move_location.position)
+	# await get_tree().create_timer(0.5).timeout
+	# director._move_to_navigation_position(director_move_location.position)
+	# await get_tree().create_timer(1.0).timeout
+	# # 更新玩家状态
+	# PlayerState.current_state = PlayerState.State.NORMAL
 
 func _physics_process(_delta: float) -> void:
 	pass

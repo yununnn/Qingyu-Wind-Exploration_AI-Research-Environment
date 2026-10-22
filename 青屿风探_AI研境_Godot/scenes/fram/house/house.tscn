@@ -1,0 +1,222 @@
+[gd_scene format=4 uid="uid://vup0rurh4dvp"]
+
+[ext_resource type="TileSet" uid="uid://dy5xl3r88ij4l" path="res://tile_set/house_tile_set.tres" id="1_auboq"]
+[ext_resource type="Script" uid="uid://emakwp63xjcv" path="res://scripts/farm/house/house.gd" id="1_cdpyd"]
+[ext_resource type="PackedScene" uid="uid://b8tx05ftveu1w" path="res://scenes/fram/house/door/door.tscn" id="2_32w1y"]
+[ext_resource type="Texture2D" uid="uid://b04eknc4wgjby" path="res://assets/house/Basic Furniture.png" id="3_0701j"]
+[ext_resource type="Texture2D" uid="uid://c4yxp3n6m2ewf" path="res://assets/farm/items/农作物物品_UnOutline.png" id="4_j4g4h"]
+[ext_resource type="PackedScene" uid="uid://cmo8ptahc26h4" path="res://scenes/fram/house/chest/chest.tscn" id="5_2jlu1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e3nr"]
+atlas = ExtResource("3_0701j")
+region = Rect2(16, 16, 16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpyxu"]
+size = Vector2(13.679123, 17.215055)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpyxu"]
+atlas = ExtResource("3_0701j")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ocxd"]
+atlas = ExtResource("3_0701j")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tv3u3"]
+size = Vector2(13.475716, 7.780321)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv3u3"]
+atlas = ExtResource("3_0701j")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ocxd"]
+size = Vector2(13.872362, 12.6417465)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iauew"]
+atlas = ExtResource("3_0701j")
+region = Rect2(96, 32, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0e3nr"]
+radius = 5.786225
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdj2e"]
+atlas = ExtResource("3_0701j")
+region = Rect2(112, 80, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3hcl"]
+atlas = ExtResource("3_0701j")
+region = Rect2(112, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqxkb"]
+atlas = ExtResource("4_j4g4h")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roqlo"]
+atlas = ExtResource("3_0701j")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c0qv"]
+atlas = ExtResource("3_0701j")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kpyxu"]
+radius = 3.4676447
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e3nr"]
+size = Vector2(80, 48)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0e3nr"]
+
+[node name="House" type="Node2D" unique_id=477764817]
+editor_description = "房子
+"
+y_sort_enabled = true
+script = ExtResource("1_cdpyd")
+up_scale_value = Vector2(2.3, 2.3)
+down_scale_value = Vector2(1.7, 1.7)
+
+[node name="地面" type="TileMapLayer" parent="." unique_id=1182543109]
+z_index = -2
+position = Vector2(8, 0)
+tile_map_data = PackedByteArray("AAD+//3/AgABAAIAAAD///3/AgABAAIAAAAAAP3/AgABAAIAAAABAP3/AgABAAIAAAD+//7/AgABAAIAAAD///7/AgABAAIAAAAAAP7/AgABAAIAAAABAP7/AgABAAIAAAD9//7/AgABAAIAAAD9////AgABAAIAAAD+////AgABAAIAAAD/////AgABAAIAAAAAAP//AgABAAIAAAABAP//AgABAAIAAAD9//3/AgABAAIAAAA=")
+tile_set = ExtResource("1_auboq")
+
+[node name="墙壁" type="TileMapLayer" parent="." unique_id=254941656]
+y_sort_enabled = true
+position = Vector2(8, 0)
+tile_map_data = PackedByteArray("AAD8//z/AgAAAAEAAAD8//3/AgAAAAIAAAD8//7/AgAAAAIAAAD8////AgAAAAMAAAD9//z/AgABAAEAAAD9////AgABAAMAAAD+//z/AgABAAEAAAD///z/AgABAAEAAAAAAPz/AgABAAEAAAABAPz/AgABAAEAAAABAP//AgABAAMAAAACAPz/AgACAAEAAAACAP3/AgACAAIAAAACAP7/AgACAAIAAAACAP//AgACAAMAAAA=")
+tile_set = ExtResource("1_auboq")
+y_sort_origin = 12
+
+[node name="装饰" type="Node2D" parent="." unique_id=1746330149]
+y_sort_enabled = true
+
+[node name="床" type="Sprite2D" parent="装饰" unique_id=1265950533]
+position = Vector2(-32.88995, -41.59929)
+texture = SubResource("AtlasTexture_0e3nr")
+offset = Vector2(0, -8)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="装饰/床" unique_id=1797982150]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="装饰/床/StaticBody2D" unique_id=1306622449]
+position = Vector2(0.076293945, -1.3924713)
+shape = SubResource("RectangleShape2D_kpyxu")
+
+[node name="床头柜" type="Sprite2D" parent="装饰" unique_id=206936136]
+position = Vector2(-18.855877, -41.59929)
+texture = SubResource("AtlasTexture_kpyxu")
+offset = Vector2(0, -8)
+
+[node name="台灯" type="Sprite2D" parent="装饰/床头柜" unique_id=858072864]
+z_index = 4
+position = Vector2(-0.12831497, -8)
+texture = SubResource("AtlasTexture_5ocxd")
+offset = Vector2(0, -8)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="装饰/床头柜" unique_id=1183430410]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="装饰/床头柜/StaticBody2D" unique_id=650815323]
+position = Vector2(0.039093018, -3.9051476)
+shape = SubResource("RectangleShape2D_tv3u3")
+
+[node name="桌子" type="Sprite2D" parent="装饰" unique_id=1695113817]
+position = Vector2(32, -7.9197083)
+texture = SubResource("AtlasTexture_tv3u3")
+offset = Vector2(0, -8)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="装饰/桌子" unique_id=1479032610]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="装饰/桌子/StaticBody2D" unique_id=1662081273]
+position = Vector2(0.14622498, -8.332745)
+shape = SubResource("RectangleShape2D_5ocxd")
+
+[node name="椅子" type="Sprite2D" parent="装饰" unique_id=574864798]
+position = Vector2(32.054783, -16)
+texture = SubResource("AtlasTexture_iauew")
+offset = Vector2(0, -8)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="装饰/椅子" unique_id=466456564]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="装饰/椅子/StaticBody2D" unique_id=67130347]
+position = Vector2(0, -9.1464615)
+shape = SubResource("CircleShape2D_0e3nr")
+
+[node name="地毯" type="Sprite2D" parent="装饰" unique_id=923597588]
+z_index = -1
+position = Vector2(0, -14.186966)
+texture = SubResource("AtlasTexture_sdj2e")
+
+[node name="时钟" type="Sprite2D" parent="装饰" unique_id=1494086889]
+y_sort_enabled = true
+position = Vector2(-5.4295444, -43.14646)
+scale = Vector2(0.8, 0.8)
+texture = SubResource("AtlasTexture_j3hcl")
+offset = Vector2(0, -15)
+
+[node name="胡萝卜" type="Sprite2D" parent="装饰" unique_id=1650091610]
+position = Vector2(32.146225, -2.5926538)
+scale = Vector2(0.6, 0.6)
+texture = SubResource("AtlasTexture_uqxkb")
+offset = Vector2(0, -26)
+
+[node name="Chest" parent="装饰" unique_id=1662836648 instance=ExtResource("5_2jlu1")]
+position = Vector2(11.524967, -43.14646)
+
+[node name="画" type="Sprite2D" parent="装饰" unique_id=1874559236]
+position = Vector2(30.252739, -41.59929)
+texture = SubResource("AtlasTexture_roqlo")
+offset = Vector2(0, -13.87)
+
+[node name="盆栽" type="Sprite2D" parent="装饰" unique_id=1822784297]
+position = Vector2(-5.4295444, -41.59929)
+scale = Vector2(0.9, 0.9)
+texture = SubResource("AtlasTexture_7c0qv")
+offset = Vector2(0, -7)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="装饰/盆栽" unique_id=2111574556]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="装饰/盆栽/StaticBody2D" unique_id=1345461771]
+position = Vector2(0, -4.86241)
+shape = SubResource("CircleShape2D_kpyxu")
+
+[node name="Door" parent="." unique_id=264119310 instance=ExtResource("2_32w1y")]
+y_sort_enabled = true
+
+[node name="Roof" type="TileMapLayer" parent="." unique_id=1027086184]
+editor_description = "屋顶
+"
+z_index = 5
+position = Vector2(8, 0)
+tile_map_data = PackedByteArray("AAD8//z/AgADAAEAAAD8//3/AgADAAIAAQD8//7/AgADAAMAAQD8////AgADAAQAAAD9//z/AgAEAAEAAAD9//3/AgAEAAIAAQD9//7/AgAEAAMAAQD9////AgAEAAQAAAD+//z/AgAEAAEAAAD+//3/AgAEAAIAAQD+//7/AgAEAAMAAQD+////AgAEAAQAAAD///z/AgAEAAEAAAD///3/AgAEAAIAAQD///7/AgAEAAMAAQD/////AgAEAAQAAAAAAPz/AgAEAAEAAAAAAP3/AgAEAAIAAQAAAP7/AgAEAAMAAQAAAP//AgAEAAQAAAABAPz/AgAEAAEAAAABAP3/AgAEAAIAAQABAP7/AgAEAAMAAQABAP//AgAEAAQAAAACAPz/AgAFAAEAAAACAP3/AgAFAAIAAQACAP7/AgAFAAMAAQACAP//AgAFAAQAAAD8//v/AgADAAAAAAD9//v/AgAEAAAAAAD+//v/AgAEAAAAAAD///v/AgAEAAAAAAAAAPv/AgAEAAAAAAABAPv/AgAEAAAAAAACAPv/AgAFAAAAAAA=")
+tile_set = ExtResource("1_auboq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=612070281]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=458227299]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_0e3nr")
+
+[node name="遮罩" type="Node2D" parent="." unique_id=1168625641]
+
+[node name="裁剪图像" type="Polygon2D" parent="遮罩" unique_id=313448904]
+clip_children = 1
+z_index = 3
+z_as_relative = false
+position = Vector2(-2.882782, 0)
+scale = Vector2(1, 1.0282856)
+polygon = PackedVector2Array(-247.11722, -243.12311, 249.49158, -242.61888, 249.88278, 246.04059, -247.11722, 246.04059, -42.117218, -10.697417, -9.117218, -10.697417, -9.117218, 0, 14.882782, 0, 14.882782, -10.697417, 47.882782, -10.697417, 47.882782, -61.267025, -42.117218, -61.267025, -42.117218, -10.697417, -247.11722, 246.04059)
+
+[node name="Mask" type="Sprite2D" parent="遮罩/裁剪图像" unique_id=1286205185]
+unique_name_in_owner = true
+modulate = Color(0.11764706, 0.11764706, 0.11764706, 0)
+z_index = 3
+z_as_relative = false
+position = Vector2(3.8146973e-06, 7.6293945e-06)
+scale = Vector2(500, 500.00003)
+texture = SubResource("CanvasTexture_0e3nr")

@@ -6,7 +6,7 @@
 
 [node name="Door" type="Area2D" unique_id=86733597]
 editor_description = "门"
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_3ljnh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2021501780]

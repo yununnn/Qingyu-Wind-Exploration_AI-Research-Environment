@@ -225,4 +225,4 @@ func _process(_delta: float) -> void:
 	if not is_instance_valid(marker): return
 	# 设置新位置
 	var new_pos: Vector2 = marker.get_position_in_viewport()
-	set_transform(Transform2D(0, new_pos))
+	transform = Transform2D(0, new_pos)
