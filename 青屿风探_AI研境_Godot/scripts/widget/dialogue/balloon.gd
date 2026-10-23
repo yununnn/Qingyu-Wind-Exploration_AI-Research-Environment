@@ -31,7 +31,8 @@ extends CanvasLayer
 
 ## 对话标记
 var marker: DialogueMarker2D
-
+## 动效播放器
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 ## 临时游戏状态
 var temporary_game_states: Array = []
@@ -56,8 +57,16 @@ var dialogue_line: DialogueLine:
 		else:
 			# 对话已经结束，离气泡很近
 			if owner == null:
+				# 退场动效
+				animation_player.play_backwards("show_hide")
+				await animation_player.animation_finished
+
 				queue_free()
 			else:
+				# 退场动效
+				animation_player.play_backwards("show_hide")
+				await animation_player.animation_finished
+
 				hide()
 	get:
 		return dialogue_line
@@ -78,6 +87,8 @@ var mutation_cooldown: Timer = Timer.new()
 
 func _ready() -> void:
 	balloon.hide()
+
+
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
 	# 如果响应菜单没有设置下一个操作，请使用此操作
@@ -119,6 +130,7 @@ func start(with_dialogue_resource: DialogueResource = null, cue: String = "", ex
 	if not cue.is_empty():
 		start_from_cue = cue
 	dialogue_line = await dialogue_resource.get_next_dialogue_line(start_from_cue, temporary_game_states)
+
 	show()
 
 
@@ -143,6 +155,9 @@ func apply_dialogue_line() -> void:
 
 	# 展示我们的气泡
 	balloon.show()
+	# 出现动效
+	animation_player.play("show_hide")
+
 	will_hide_balloon = false
 
 	dialogue_label.show()
@@ -180,6 +195,11 @@ func next(next_id: String) -> void:
 func _on_mutation_cooldown_timeout() -> void:
 	if will_hide_balloon:
 		will_hide_balloon = false
+
+		# 退场动效
+		animation_player.play_backwards("show_hide")
+		await animation_player.animation_finished
+
 		balloon.hide()
 
 

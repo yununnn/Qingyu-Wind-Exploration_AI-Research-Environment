@@ -26,6 +26,8 @@ TransitionAnimation="*uid://nvtg2g57lc4p"
 BlackTransition="*uid://dxdyljv0tyi5"
 GameState="*uid://c0blkqqqtt5by"
 Emoji="*uid://cbiqnn6e7k1u"
+Curtain="*uid://c0w2ijtjhwvsg"
+TextIntro="*uid://cnpg3vie73il"
 
 [dialogue_manager]
 

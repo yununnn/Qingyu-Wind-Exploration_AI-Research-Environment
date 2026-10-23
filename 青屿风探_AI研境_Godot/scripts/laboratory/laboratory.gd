@@ -16,7 +16,7 @@ func _ready() -> void:
 	await IrisTransition.tween_finished
 
 	# 更新玩家状态
-
+	
 	# PlayerState.current_state = PlayerState.State.UNCONTROL
 	# player._move_to_navigation_position(player_move_location.position)
 	# await get_tree().create_timer(0.5).timeout

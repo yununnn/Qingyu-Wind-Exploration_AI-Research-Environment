@@ -19,9 +19,6 @@ class_name Player
 ## 是否在导航
 var _is_navigating: bool = false
 
-func _ready() -> void:
-	# 初始朝向
-	play_animation("idle_" + facing_direction)
 
 
 func _physics_process(_delta: float) -> void:
