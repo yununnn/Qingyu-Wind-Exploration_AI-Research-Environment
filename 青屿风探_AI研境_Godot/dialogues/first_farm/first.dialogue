@@ -1,5 +1,6 @@
 ~ start
-主角: 天气预报今天说是[wave]大晴天！[wave] [next=3]
-do Emoji._show_emoji("主角开心", "主角", 3.0)
-主角: [wave]太好了！[/wave]
+主角: 天气预报说今天是...[next=1]
+[speed=0.3][wave]大晴天！[wave] [next=1.2]
+do Emoji._show_emoji("主角开心", "主角", 1.2)
+主角: 该去看看我的农田了，肯定有好多胡萝卜成熟了！[next=2]
 => END

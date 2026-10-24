@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dcpx6ywlx2pam"]
 
 [ext_resource type="Script" uid="uid://b1gh3fmb4p4e3" path="res://scripts/widget/dialogue/balloon.gd" id="1_36de5"]
-[ext_resource type="Theme" uid="uid://cxapldk65b82e" path="res://themes/主题_黄色木板.tres" id="2_7olsc"]
+[ext_resource type="Theme" uid="uid://cxapldk65b82e" path="res://themes/黄色木板_主题.tres" id="2_7olsc"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="3_72ixx"]
 
@@ -138,7 +138,6 @@ _data = {
 }
 
 [node name="ExampleBalloon" type="CanvasLayer" unique_id=38036521]
-layer = 100
 script = ExtResource("1_36de5")
 
 [node name="Balloon" type="Control" parent="." unique_id=154399927]
@@ -154,7 +153,7 @@ theme = SubResource("Theme_qq3yp")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon" unique_id=1302081376]
 custom_minimum_size = Vector2(25, 19)
-custom_maximum_size = Vector2(120, 32)
+custom_maximum_size = Vector2(150, 32)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -188,8 +187,8 @@ theme_override_constants/margin_bottom = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "我"
+theme_override_colors/default_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+seconds_per_step = 0.15
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=1801308483 node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true

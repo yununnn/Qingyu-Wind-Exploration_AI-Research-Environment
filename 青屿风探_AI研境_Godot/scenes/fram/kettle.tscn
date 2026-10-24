@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://drjoeqh4pfyxx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kpyxu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0e3nr"]
+
+[node name="Kettle" type="Area2D" unique_id=459523364]
+editor_description = "水壶"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1134342494]
+sprite_frames = SubResource("SpriteFrames_kpyxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=11077181]
+shape = SubResource("CircleShape2D_0e3nr")

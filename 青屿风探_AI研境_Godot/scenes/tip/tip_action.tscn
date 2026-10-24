@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://ju2pppom4od8"]
+
+[ext_resource type="Script" uid="uid://doh73x23nq40y" path="res://scripts/tip/tip_action.gd" id="1_gmypd"]
+
+[sub_resource type="Animation" id="Animation_pmh2c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TipLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/TipLabel:offset_transform_position_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, -0.1)]
+}
+
+[sub_resource type="Animation" id="Animation_gmypd"]
+resource_name = "show_hide"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/TipLabel:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(2, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/TipLabel:offset_transform_position_ratio")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(2, 0.5),
+"update": 0,
+"values": [Vector2(-1, -0.1), Vector2(0.1, -0.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3w2si"]
+_data = {
+&"RESET": SubResource("Animation_pmh2c"),
+&"show_hide": SubResource("Animation_gmypd")
+}
+
+[node name="TipAction" type="CanvasLayer" unique_id=2128000021]
+editor_description = "操作提示"
+script = ExtResource("1_gmypd")
+
+[node name="Control" type="Control" parent="." unique_id=213939559]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TipLabel" type="Label" parent="Control" unique_id=1348422773]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -17.0
+offset_right = 40.0
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(-1, -0.1)
+theme_override_colors/font_color = Color(0.9529412, 0.95686275, 0.90588236, 1)
+theme_override_colors/font_shadow_color = Color(0.36862746, 0.36862746, 0.36862746, 1)
+theme_override_font_sizes/font_size = 12
+text = "移动：WASD
+奔跑：Shift"
+
+[node name="TipAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1550172269]
+libraries/ = SubResource("AnimationLibrary_3w2si")

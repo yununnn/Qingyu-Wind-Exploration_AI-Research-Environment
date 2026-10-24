@@ -45,8 +45,9 @@ func has_player() -> bool:
 ## 设置玩家初始朝向
 func set_player_Initial_direction(facing_direction: String):
 	# 初始朝向
+	get_player().facing_direction = facing_direction
 	get_player().play_animation("idle_" + facing_direction)
-
+	
 
 ## 相机动画结束信号
 signal tween_camera_finished

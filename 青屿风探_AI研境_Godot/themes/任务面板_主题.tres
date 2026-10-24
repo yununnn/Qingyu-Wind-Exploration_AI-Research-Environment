@@ -1,0 +1,27 @@
+[gd_resource type="Theme" format=3 uid="uid://bqxv7kp8dg8j3"]
+
+[ext_resource type="FontFile" uid="uid://bbs4bsx5id7l5" path="res://themes/WenQuanYi.Bitmap.Song.12px.ttf" id="1_l1nr8"]
+[ext_resource type="Texture2D" uid="uid://c1s40gokxl705" path="res://assets/widget/task_panel/ALL UI ASSETS on one sheet.png" id="1_sqbkg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7ak6"]
+atlas = ExtResource("1_sqbkg")
+region = Rect2(576, 64, 80, 80)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqbkg"]
+texture = SubResource("AtlasTexture_v7ak6")
+texture_margin_left = 20.0
+texture_margin_top = 19.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+region_rect = Rect2(11, 12, 58, 57)
+
+[resource]
+default_font = ExtResource("1_l1nr8")
+Label/colors/font_color = Color(0.9529412, 0.95686275, 0.90588236, 1)
+Label/colors/font_outline_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+Label/colors/font_shadow_color = Color(0.36862746, 0.36862746, 0.36862746, 1)
+MarginContainer/constants/margin_bottom = 0
+MarginContainer/constants/margin_left = 0
+MarginContainer/constants/margin_right = 0
+MarginContainer/constants/margin_top = 0
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_sqbkg")

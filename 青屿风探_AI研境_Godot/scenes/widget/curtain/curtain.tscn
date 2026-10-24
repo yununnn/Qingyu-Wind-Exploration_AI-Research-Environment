@@ -14,7 +14,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(640, 0)]
+"values": [Vector2(800, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -26,7 +26,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(640, 0)]
+"values": [Vector2(800, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_bqxbb"]
@@ -41,7 +41,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(0.5, 2),
 "update": 0,
-"values": [Vector2(640, 0), Vector2(640, 30)]
+"values": [Vector2(800, 0), Vector2(800, 30)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -53,7 +53,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(0.5, 2),
 "update": 0,
-"values": [Vector2(640, 0), Vector2(640, 30)]
+"values": [Vector2(800, 0), Vector2(800, 30)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2mpxl"]
@@ -64,6 +64,7 @@ _data = {
 
 [node name="Curtain" type="CanvasLayer" unique_id=1982864652]
 editor_description = "帷幕"
+layer = 3
 script = ExtResource("1_bqxbb")
 
 [node name="Control" type="Control" parent="." unique_id=2092852272]
@@ -78,6 +79,7 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_right = 160.0
 grow_horizontal = 2
 color = Color(0.11764706, 0.11764706, 0.11764706, 1)
 
@@ -87,6 +89,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 160.0
 grow_horizontal = 2
 grow_vertical = 0
 rotation = 3.1415927

@@ -73,6 +73,7 @@ _data = {
 }
 
 [node name="TransitionAnimation" type="CanvasLayer" unique_id=625834184]
+layer = 4
 script = ExtResource("1_wnkko")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=484015267]

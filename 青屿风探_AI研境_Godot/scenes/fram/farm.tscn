@@ -40,15 +40,13 @@
 [ext_resource type="PackedScene" path="res://scenes/fram/装饰物/石头/石头_扁1.tscn" id="30_tcpvn"]
 [ext_resource type="PackedScene" path="res://scenes/fram/装饰物/石头/石头_扁2.tscn" id="31_dw7w6"]
 [ext_resource type="PackedScene" path="res://scenes/fram/装饰物/石头/石头_小4.tscn" id="32_tueu4"]
-[ext_resource type="PackedScene" uid="uid://d0dbjtxuajn2t" path="res://scenes/fram/农作物/白萝卜.tscn" id="38_l7q8w"]
-[ext_resource type="PackedScene" uid="uid://clcfg2bwcjue1" path="res://scenes/fram/农作物/紫萝卜.tscn" id="39_40lvm"]
+[ext_resource type="PackedScene" uid="uid://bkgkgy0jynnh5" path="res://scenes/fram/农作物/白萝卜.tscn" id="38_l7q8w"]
+[ext_resource type="PackedScene" uid="uid://clutx8gb30axk" path="res://scenes/fram/农作物/紫萝卜.tscn" id="39_40lvm"]
 [ext_resource type="PackedScene" path="res://scenes/fram/装饰物/花草/花_蓝6.tscn" id="40_g16yi"]
-[ext_resource type="PackedScene" uid="uid://b1bbfmk0wwftk" path="res://scenes/fram/农作物/胡萝卜.tscn" id="41_7ksp3"]
-[ext_resource type="PackedScene" uid="uid://bs0845iei4po3" path="res://scenes/fram/农作物/茄子.tscn" id="41_hn0ej"]
+[ext_resource type="PackedScene" uid="uid://b6tbljyb8n05l" path="res://scenes/fram/农作物/胡萝卜.tscn" id="41_7ksp3"]
 [ext_resource type="PackedScene" path="res://scenes/fram/装饰物/花草/花_蓝2.tscn" id="41_nqxkd"]
 [ext_resource type="PackedScene" path="res://scenes/fram/装饰物/花草/花_粉4.tscn" id="42_63tr4"]
-[ext_resource type="PackedScene" uid="uid://17hhmkg0m2fi" path="res://scenes/fram/农作物/花椰菜.tscn" id="42_l7q8w"]
-[ext_resource type="PackedScene" uid="uid://cm2k05ni70ahk" path="res://scenes/fram/农作物/西兰花.tscn" id="42_umrc0"]
+[ext_resource type="PackedScene" uid="uid://dewngupr6fnka" path="res://scenes/tip/tip_location.tscn" id="47_2an8l"]
 
 [sub_resource type="Environment" id="Environment_0e3nr"]
 background_mode = 3
@@ -64,7 +62,7 @@ generate_mipmaps = false
 noise = SubResource("FastNoiseLite_clouds")
 seamless = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ksp3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2an8l"]
 resource_local_to_scene = true
 resource_name = "像素阴天天空"
 shader = ExtResource("8_0ccrj")
@@ -324,193 +322,144 @@ position = Vector2(330.44104, 154.35547)
 [node name="农作物" type="Node2D" parent="排序层" unique_id=1529328718]
 y_sort_enabled = true
 
-[node name="花椰菜3" parent="排序层/农作物" unique_id=1649310342 instance=ExtResource("42_l7q8w")]
-position = Vector2(302.62, 265.84525)
-stage = 2
-
-[node name="花椰菜4" parent="排序层/农作物" unique_id=1834905862 instance=ExtResource("42_l7q8w")]
-position = Vector2(318.78, 265.84525)
-stage = 2
-
-[node name="白萝卜" parent="排序层/农作物" unique_id=1567896359 instance=ExtResource("38_l7q8w")]
-position = Vector2(302.62, 252.16383)
-stage = 1
-
-[node name="白萝卜2" parent="排序层/农作物" unique_id=562234074 instance=ExtResource("38_l7q8w")]
-position = Vector2(318.78, 252.16383)
-stage = 2
-
-[node name="白萝卜3" parent="排序层/农作物" unique_id=1386896425 instance=ExtResource("38_l7q8w")]
-position = Vector2(334.803, 252.16383)
-
-[node name="白萝卜4" parent="排序层/农作物" unique_id=1186442708 instance=ExtResource("38_l7q8w")]
-position = Vector2(350.222, 252.16383)
-stage = 2
-
-[node name="白萝卜5" parent="排序层/农作物" unique_id=664411579 instance=ExtResource("38_l7q8w")]
-position = Vector2(366.901, 252.16383)
-stage = 2
-
-[node name="紫萝卜" parent="排序层/农作物" unique_id=1685722264 instance=ExtResource("39_40lvm")]
-position = Vector2(383.123, 252.16383)
-stage = 2
-
-[node name="紫萝卜2" parent="排序层/农作物" unique_id=582401772 instance=ExtResource("39_40lvm")]
-position = Vector2(398.885, 252.16383)
-stage = 2
-
-[node name="紫萝卜3" parent="排序层/农作物" unique_id=1198002463 instance=ExtResource("39_40lvm")]
-position = Vector2(415.299, 252.16383)
-stage = 1
-
-[node name="茄子" parent="排序层/农作物" unique_id=172800870 instance=ExtResource("41_hn0ej")]
-position = Vector2(366.901, 265.84525)
-stage = 2
-
-[node name="茄子2" parent="排序层/农作物" unique_id=1620525333 instance=ExtResource("41_hn0ej")]
-position = Vector2(383.123, 265.84525)
-stage = 2
-
-[node name="西兰花" parent="排序层/农作物" unique_id=1070281032 instance=ExtResource("42_umrc0")]
-position = Vector2(398.885, 265.84525)
-stage = 2
-
-[node name="西兰花2" parent="排序层/农作物" unique_id=509809043 instance=ExtResource("42_umrc0")]
-position = Vector2(415.299, 265.84525)
+[node name="胡萝卜" parent="排序层/农作物" unique_id=580941444 instance=ExtResource("41_7ksp3")]
+position = Vector2(301, 200)
 stage = 3
 
-[node name="胡萝卜" parent="排序层/农作物" unique_id=584347848 instance=ExtResource("41_7ksp3")]
-position = Vector2(302.62, 238.4029)
+[node name="胡萝卜2" parent="排序层/农作物" unique_id=1582768992 instance=ExtResource("41_7ksp3")]
+position = Vector2(320, 200)
 stage = 2
 
-[node name="胡萝卜2" parent="排序层/农作物" unique_id=2009606851 instance=ExtResource("41_7ksp3")]
-position = Vector2(318.78, 238.4029)
-
-[node name="胡萝卜3" parent="排序层/农作物" unique_id=1618936688 instance=ExtResource("41_7ksp3")]
-position = Vector2(334.803, 238.4029)
+[node name="胡萝卜3" parent="排序层/农作物" unique_id=1865425968 instance=ExtResource("41_7ksp3")]
+position = Vector2(340, 200)
 stage = 2
 
-[node name="胡萝卜4" parent="排序层/农作物" unique_id=1420294381 instance=ExtResource("41_7ksp3")]
-position = Vector2(350.222, 238.4029)
-stage = 2
-
-[node name="胡萝卜5" parent="排序层/农作物" unique_id=1628801420 instance=ExtResource("41_7ksp3")]
-position = Vector2(366.901, 238.4029)
+[node name="胡萝卜4" parent="排序层/农作物" unique_id=688683161 instance=ExtResource("41_7ksp3")]
+position = Vector2(360, 200)
 stage = 3
 
-[node name="胡萝卜6" parent="排序层/农作物" unique_id=313134307 instance=ExtResource("41_7ksp3")]
-position = Vector2(383.123, 238.4029)
+[node name="胡萝卜5" parent="排序层/农作物" unique_id=1265586104 instance=ExtResource("41_7ksp3")]
+position = Vector2(380, 200)
 stage = 2
 
-[node name="胡萝卜7" parent="排序层/农作物" unique_id=880257382 instance=ExtResource("41_7ksp3")]
-position = Vector2(398.885, 238.4029)
-stage = 1
-
-[node name="胡萝卜8" parent="排序层/农作物" unique_id=907004507 instance=ExtResource("41_7ksp3")]
-position = Vector2(415.299, 238.4029)
-stage = 2
-
-[node name="胡萝卜9" parent="排序层/农作物" unique_id=605221277 instance=ExtResource("41_7ksp3")]
-position = Vector2(302.62, 224.9948)
-stage = 2
-
-[node name="胡萝卜10" parent="排序层/农作物" unique_id=1328216409 instance=ExtResource("41_7ksp3")]
-position = Vector2(318.78, 224.9948)
-stage = 2
-
-[node name="胡萝卜11" parent="排序层/农作物" unique_id=607327838 instance=ExtResource("41_7ksp3")]
-position = Vector2(334.803, 224.9948)
-stage = 1
-
-[node name="胡萝卜12" parent="排序层/农作物" unique_id=136581075 instance=ExtResource("41_7ksp3")]
-position = Vector2(350.222, 224.9948)
-stage = 2
-
-[node name="胡萝卜13" parent="排序层/农作物" unique_id=1131965766 instance=ExtResource("41_7ksp3")]
-position = Vector2(366.901, 224.9948)
-stage = 2
-
-[node name="胡萝卜14" parent="排序层/农作物" unique_id=1193729148 instance=ExtResource("41_7ksp3")]
-position = Vector2(383.123, 224.9948)
-stage = 2
-
-[node name="胡萝卜15" parent="排序层/农作物" unique_id=1804098856 instance=ExtResource("41_7ksp3")]
-position = Vector2(398.885, 224.9948)
-stage = 2
-
-[node name="胡萝卜16" parent="排序层/农作物" unique_id=775540355 instance=ExtResource("41_7ksp3")]
-position = Vector2(415.299, 224.9948)
-stage = 2
-
-[node name="胡萝卜17" parent="排序层/农作物" unique_id=1122906371 instance=ExtResource("41_7ksp3")]
-position = Vector2(302.62, 211.07652)
-stage = 2
-
-[node name="胡萝卜18" parent="排序层/农作物" unique_id=1486847864 instance=ExtResource("41_7ksp3")]
-position = Vector2(318.78, 211.07652)
-stage = 2
-
-[node name="胡萝卜19" parent="排序层/农作物" unique_id=132578093 instance=ExtResource("41_7ksp3")]
-position = Vector2(334.803, 211.07652)
-stage = 4
-
-[node name="胡萝卜20" parent="排序层/农作物" unique_id=669753802 instance=ExtResource("41_7ksp3")]
-position = Vector2(350.222, 211.07652)
-stage = 2
-
-[node name="胡萝卜21" parent="排序层/农作物" unique_id=1138104605 instance=ExtResource("41_7ksp3")]
-position = Vector2(366.901, 211.07652)
-stage = 2
-
-[node name="胡萝卜22" parent="排序层/农作物" unique_id=142641359 instance=ExtResource("41_7ksp3")]
-position = Vector2(383.123, 211.07652)
-stage = 2
-
-[node name="胡萝卜23" parent="排序层/农作物" unique_id=1259019832 instance=ExtResource("41_7ksp3")]
-position = Vector2(398.885, 211.07652)
-stage = 1
-
-[node name="胡萝卜24" parent="排序层/农作物" unique_id=110618568 instance=ExtResource("41_7ksp3")]
-position = Vector2(415.299, 211.07652)
-stage = 2
-
-[node name="胡萝卜25" parent="排序层/农作物" unique_id=902159475 instance=ExtResource("41_7ksp3")]
-position = Vector2(302.62, 197.81291)
-stage = 2
-
-[node name="胡萝卜26" parent="排序层/农作物" unique_id=409005227 instance=ExtResource("41_7ksp3")]
-position = Vector2(318.78, 197.81291)
+[node name="胡萝卜6" parent="排序层/农作物" unique_id=1726844337 instance=ExtResource("41_7ksp3")]
+position = Vector2(400, 200)
 stage = 3
 
-[node name="胡萝卜27" parent="排序层/农作物" unique_id=1992101567 instance=ExtResource("41_7ksp3")]
-position = Vector2(334.803, 197.81291)
+[node name="胡萝卜7" parent="排序层/农作物" unique_id=287028756 instance=ExtResource("41_7ksp3")]
+position = Vector2(420, 200)
 stage = 3
 
-[node name="胡萝卜28" parent="排序层/农作物" unique_id=979731762 instance=ExtResource("41_7ksp3")]
-position = Vector2(350.222, 197.81291)
+[node name="胡萝卜8" parent="排序层/农作物" unique_id=619006278 instance=ExtResource("41_7ksp3")]
+position = Vector2(301, 215)
+stage = 3
+
+[node name="胡萝卜9" parent="排序层/农作物" unique_id=851252867 instance=ExtResource("41_7ksp3")]
+position = Vector2(320, 215)
+stage = 3
+
+[node name="胡萝卜10" parent="排序层/农作物" unique_id=561129182 instance=ExtResource("41_7ksp3")]
+position = Vector2(340, 215)
+stage = 3
+
+[node name="胡萝卜11" parent="排序层/农作物" unique_id=888137488 instance=ExtResource("41_7ksp3")]
+position = Vector2(360, 215)
+stage = 3
+
+[node name="胡萝卜12" parent="排序层/农作物" unique_id=160176684 instance=ExtResource("41_7ksp3")]
+position = Vector2(380, 215)
+stage = 3
+
+[node name="胡萝卜13" parent="排序层/农作物" unique_id=980897679 instance=ExtResource("41_7ksp3")]
+position = Vector2(400, 215)
+stage = 3
+
+[node name="胡萝卜14" parent="排序层/农作物" unique_id=1359489173 instance=ExtResource("41_7ksp3")]
+position = Vector2(420, 215)
+stage = 3
+
+[node name="白萝卜" parent="排序层/农作物" unique_id=644452242 instance=ExtResource("38_l7q8w")]
+position = Vector2(301, 230)
+stage = 3
+
+[node name="白萝卜2" parent="排序层/农作物" unique_id=2067563160 instance=ExtResource("38_l7q8w")]
+position = Vector2(320, 230)
+stage = 3
+
+[node name="白萝卜3" parent="排序层/农作物" unique_id=124005207 instance=ExtResource("38_l7q8w")]
+position = Vector2(340, 230)
+stage = 3
+
+[node name="白萝卜4" parent="排序层/农作物" unique_id=968620815 instance=ExtResource("38_l7q8w")]
+position = Vector2(360, 230)
+stage = 3
+
+[node name="白萝卜5" parent="排序层/农作物" unique_id=612173928 instance=ExtResource("38_l7q8w")]
+position = Vector2(380, 230)
 stage = 2
 
-[node name="胡萝卜29" parent="排序层/农作物" unique_id=890101479 instance=ExtResource("41_7ksp3")]
-position = Vector2(366.901, 197.81291)
+[node name="白萝卜6" parent="排序层/农作物" unique_id=780514692 instance=ExtResource("38_l7q8w")]
+position = Vector2(400, 230)
+stage = 3
+
+[node name="白萝卜7" parent="排序层/农作物" unique_id=289915930 instance=ExtResource("38_l7q8w")]
+position = Vector2(420, 230)
+stage = 3
+
+[node name="白萝卜8" parent="排序层/农作物" unique_id=1544110090 instance=ExtResource("38_l7q8w")]
+position = Vector2(301, 245)
+stage = 3
+
+[node name="白萝卜9" parent="排序层/农作物" unique_id=695911258 instance=ExtResource("38_l7q8w")]
+position = Vector2(320, 245)
 stage = 2
 
-[node name="胡萝卜30" parent="排序层/农作物" unique_id=1911661598 instance=ExtResource("41_7ksp3")]
-position = Vector2(383.123, 197.81291)
-stage = 1
-
-[node name="胡萝卜31" parent="排序层/农作物" unique_id=121253577 instance=ExtResource("41_7ksp3")]
-position = Vector2(398.885, 197.81291)
-
-[node name="胡萝卜32" parent="排序层/农作物" unique_id=1699102867 instance=ExtResource("41_7ksp3")]
-position = Vector2(415.299, 197.81291)
+[node name="白萝卜10" parent="排序层/农作物" unique_id=858387408 instance=ExtResource("38_l7q8w")]
+position = Vector2(340, 245)
 stage = 2
 
-[node name="花椰菜" parent="排序层/农作物" unique_id=1033853063 instance=ExtResource("42_l7q8w")]
-position = Vector2(334.803, 265.84525)
-stage = 1
+[node name="白萝卜11" parent="排序层/农作物" unique_id=2003826804 instance=ExtResource("38_l7q8w")]
+position = Vector2(360, 245)
+stage = 2
 
-[node name="花椰菜2" parent="排序层/农作物" unique_id=1251061603 instance=ExtResource("42_l7q8w")]
-position = Vector2(350.222, 265.84525)
+[node name="白萝卜12" parent="排序层/农作物" unique_id=1669901262 instance=ExtResource("38_l7q8w")]
+position = Vector2(380, 245)
+stage = 2
+
+[node name="白萝卜13" parent="排序层/农作物" unique_id=1987514670 instance=ExtResource("38_l7q8w")]
+position = Vector2(400, 245)
+stage = 3
+
+[node name="白萝卜14" parent="排序层/农作物" unique_id=1557990696 instance=ExtResource("38_l7q8w")]
+position = Vector2(420, 245)
+stage = 3
+
+[node name="紫萝卜" parent="排序层/农作物" unique_id=1439209312 instance=ExtResource("39_40lvm")]
+position = Vector2(301, 260)
+stage = 3
+
+[node name="紫萝卜2" parent="排序层/农作物" unique_id=409918868 instance=ExtResource("39_40lvm")]
+position = Vector2(320, 260)
+stage = 3
+
+[node name="紫萝卜3" parent="排序层/农作物" unique_id=1488102878 instance=ExtResource("39_40lvm")]
+position = Vector2(340, 260)
+stage = 3
+
+[node name="紫萝卜4" parent="排序层/农作物" unique_id=793685475 instance=ExtResource("39_40lvm")]
+position = Vector2(360, 260)
+stage = 2
+
+[node name="紫萝卜5" parent="排序层/农作物" unique_id=1631894090 instance=ExtResource("39_40lvm")]
+position = Vector2(380, 260)
+stage = 3
+
+[node name="紫萝卜6" parent="排序层/农作物" unique_id=1554211147 instance=ExtResource("39_40lvm")]
+position = Vector2(400, 260)
+stage = 2
+
+[node name="紫萝卜7" parent="排序层/农作物" unique_id=1518531029 instance=ExtResource("39_40lvm")]
+position = Vector2(420, 260)
 stage = 3
 
 [node name="Rabbit" parent="排序层" unique_id=671228345 instance=ExtResource("6_6hsba")]
@@ -530,7 +479,7 @@ visible = false
 visible = false
 
 [node name="Sky" parent="Puddle/CanvasLayer/SubViewportReflection" parent_id_path=PackedInt32Array(788995391, 1276117742) index="0" unique_id=1051594638]
-material = SubResource("ShaderMaterial_7ksp3")
+material = SubResource("ShaderMaterial_2an8l")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Puddle/Tree" parent_id_path=PackedInt32Array(788995391, 1734155396) index="4" unique_id=1038083221]
 material = SubResource("ShaderMaterial_ry2vk")
@@ -538,5 +487,15 @@ position = Vector2(40, 56)
 scale = Vector2(1, 1.0325181)
 texture = SubResource("AtlasTexture_0e3nr")
 
+[node name="TipLocationFarmland" parent="." unique_id=1782539982 instance=ExtResource("47_2an8l")]
+unique_name_in_owner = true
+editor_description = "农田提示位置"
+position = Vector2(282.5139, 211.97916)
+
+[node name="CollisionShape2D" parent="TipLocationFarmland/Area2D" parent_id_path=PackedInt32Array(1782539982, 414384833) index="0" unique_id=61097424]
+position = Vector2(76.66885, 17.335266)
+scale = Vector2(7.7321115, 5.166792)
+
 [editable path="WeatherRain"]
 [editable path="Puddle"]
+[editable path="TipLocationFarmland"]
