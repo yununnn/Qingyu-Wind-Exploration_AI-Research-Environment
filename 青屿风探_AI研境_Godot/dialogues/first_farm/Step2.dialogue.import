@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bdhy8qack4tqb"
+path="res://.godot/imported/Step2.dialogue-27fd8b42b1c26144837abb04b9e2a83d.tres"
+
+[deps]
+
+source_file="res://dialogues/first_farm/Step2.dialogue"
+dest_files=["res://.godot/imported/Step2.dialogue-27fd8b42b1c26144837abb04b9e2a83d.tres"]
+
+[params]
+
+defaults=true

@@ -915,7 +915,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rabbit_12_7")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"hoe_down",
 "speed": 8.0
 }, {
@@ -944,7 +944,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rabbit_14_7")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"hoe_left",
 "speed": 8.0
 }, {
@@ -973,7 +973,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rabbit_15_7")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"hoe_right",
 "speed": 8.0
 }, {
@@ -1002,7 +1002,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rabbit_13_7")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"hoe_up",
 "speed": 8.0
 }, {
@@ -1486,8 +1486,9 @@ script = ExtResource("2_rabbit_script")
 [node name="BodySprite" type="AnimatedSprite2D" parent="." unique_id=1499438493]
 position = Vector2(0, -3.33)
 sprite_frames = SubResource("SpriteFrames_0e3nr")
-animation = &"idle_down"
+animation = &"hoe_down"
 autoplay = "idle_down"
+frame_progress = 0.9207953
 offset = Vector2(0, -4.76)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=674164375]

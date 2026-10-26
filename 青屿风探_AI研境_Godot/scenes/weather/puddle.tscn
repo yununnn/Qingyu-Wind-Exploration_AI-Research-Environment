@@ -41,6 +41,7 @@ shader_parameter/root_y = 12.0
 shader_parameter/right_bend = 12.0
 shader_parameter/rebound_ratio = 0.15
 shader_parameter/cycle_seconds = 1.4
+shader_parameter/wind_strength = 0.0
 shader_parameter/refraction_pixels = 1.0
 shader_parameter/waterline_width = 1.0
 shader_parameter/waterline_color = Color(0.72, 0.79, 0.67, 1)
@@ -90,6 +91,7 @@ render_target_update_mode = 4
 material = SubResource("ShaderMaterial_5x8rv")
 
 [node name="Tree" type="Node2D" parent="." unique_id=1734155396]
+visible = false
 position = Vector2(296, 64)
 
 [node name="Sprite2D" type="Sprite2D" parent="Tree" unique_id=156162902]
@@ -124,10 +126,7 @@ editor_description = "水域面积"
 color = Color(0, 0.86939985, 0.87074333, 0.11764706)
 polygon = PackedVector2Array(0, 40, 248, 40, 248, 176, 0, 176)
 
-[node name="WaterArea2" type="Polygon2D" parent="WaterAreas" unique_id=1295615183]
-position = Vector2(176, 56)
+[node name="WaterArea2" type="Polygon2D" parent="WaterAreas" unique_id=390900880]
+editor_description = "水域面积"
 color = Color(0, 0.86939985, 0.87074333, 0.11764706)
-polygon = PackedVector2Array(288, 40, 552, 40, 552, 200, 288, 200)
-
-[node name="WaterArea3" type="Polygon2D" parent="WaterAreas" unique_id=1675891885]
-color = Color(0, 0.86939985, 0.87074333, 0.11764706)
+polygon = PackedVector2Array(0, 40, 248, 40, 248, 176, 0, 176)

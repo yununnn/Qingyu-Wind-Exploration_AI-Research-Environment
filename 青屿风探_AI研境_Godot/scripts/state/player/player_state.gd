@@ -1,7 +1,7 @@
 extends Node
 
-## 玩家状态{正常，无法移动，无法控制}
-enum State { NORMAL, UNMOVE, UNCONTROL }
+## 玩家状态{正常，无法移动，无法控制，收集}
+enum State { NORMAL, UNMOVE, UNCONTROL, COLLECTION }
 ## 当前状态
 var current_state : State = State.NORMAL
 
@@ -38,3 +38,4 @@ func set_mouse_cursor() -> void:
 		Input.CURSOR_ARROW,
 		Vector2.ZERO
 	)
+	

@@ -11,7 +11,7 @@ shader_parameter/band_size = Vector2(2200, 360)
 shader_parameter/pixel_size = 4.0
 shader_parameter/speed = 1.0
 shader_parameter/turbulence = 1.0
-shader_parameter/opacity = 0.2500000037253
+shader_parameter/opacity = 0.10000000149012
 shader_parameter/shadow_color = Color(0.16, 0.23, 0.29, 1)
 shader_parameter/light_color = Color(0.88087404, 0.92114633, 0.93350613, 1)
 shader_parameter/wind_time = -1.0
@@ -39,9 +39,7 @@ shader_parameter/alpha_p = 5.0
 
 [node name="WeatherRain" type="Node2D" unique_id=1633176995]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1477432973]
-
-[node name="Rain" parent="CanvasLayer" unique_id=65213332 instance=ExtResource("1_ocvpq")]
+[node name="Rain" parent="." unique_id=65213332 instance=ExtResource("1_ocvpq")]
 
 [node name="Wind" type="ColorRect" parent="." unique_id=1543157336]
 material = SubResource("ShaderMaterial_tv3u3")

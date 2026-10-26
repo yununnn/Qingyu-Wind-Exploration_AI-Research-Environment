@@ -16,6 +16,9 @@ uniform float rebound_ratio : hint_range(0.0, 0.5, 0.01) = 0.15;
 // 一个循环的时长，单位为秒。
 uniform float cycle_seconds : hint_range(0.2, 5.0, 0.05) = 1.4;
 
+// 风力强度：0 = 完全不动，1 = 全幅摆动。风起时由脚本渐变到这个值。
+uniform float wind_strength : hint_range(0.0, 1.0) = 0.0;
+
 // 每棵树独立的水深，单位为素材局部像素。
 instance uniform float submerge_depth = 0.0;
 // x：局部振幅；y：世界空间频率；z：共享时间相位；w：水域范围遮罩。
@@ -55,7 +58,8 @@ void vertex() {
 
 	float displacement = right_bend
 		* (1.0 - rebound_ratio * rebound)
-		* initial_push;
+		* initial_push
+		* wind_strength;
 
 	// 树根处位移为零，越靠上，向右偏移越大。
 	float height_weight = (root_y - VERTEX.y) / tree_height;
