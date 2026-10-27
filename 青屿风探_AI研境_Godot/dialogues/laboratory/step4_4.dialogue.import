@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cm1d0bxqe3l6w"
+path="res://.godot/imported/step4_4.dialogue-d6ad15e7609b66040f19f3e5f0d5e157.tres"
+
+[deps]
+
+source_file="res://dialogues/laboratory/step4_4.dialogue"
+dest_files=["res://.godot/imported/step4_4.dialogue-d6ad15e7609b66040f19f3e5f0d5e157.tres"]
+
+[params]
+
+defaults=true

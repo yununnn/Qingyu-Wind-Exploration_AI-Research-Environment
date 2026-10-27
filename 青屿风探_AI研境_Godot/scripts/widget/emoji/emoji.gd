@@ -20,7 +20,6 @@ func _show_emoji(emoji_name: String, character: String, show_time: float):
 		# 第一帧隐藏
 	control.modulate.a = 0.0
 	animation_player.play("show_hide")
-	await animation_player.animation_finished
 	# 播放表情动画
 	animated_sprite_2d.play(emoji_name)
 

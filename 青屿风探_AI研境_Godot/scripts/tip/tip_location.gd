@@ -7,18 +7,22 @@ extends Node2D
 signal trigger
 
 func _ready() -> void:
-    if GameState.is_first_farm:
-        area_2d.body_entered.connect(on_tip_location)
-    else:
-        hide()
+    area_2d.body_entered.connect(on_tip_location)
+    hide()
 
 ## 在提示位置上时
 func on_tip_location(body: Node2D) -> void:
     if body.is_in_group("Player"):
         trigger.emit()
-        animation_player.play("hide")
-        # 只执行一次，所以断开
-        area_2d.body_entered.disconnect(on_tip_location)
-        await animation_player.animation_finished
-        hide()
+        if visible != false:
+            animation_player.play("hide")
+            await animation_player.animation_finished
+            hide()
 
+
+func _play_show() -> void:
+    show()
+    animation_player.play_backwards("hide")
+    await animation_player.animation_finished
+    animation_player.play("beat")
+    

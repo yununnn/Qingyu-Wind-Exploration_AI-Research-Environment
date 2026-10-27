@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dtslmsmlj6pkh"
+path="res://.godot/imported/intern_submit.dialogue-d2b1ac23dd16da1d0d12fb895f4932e6.tres"
+
+[deps]
+
+source_file="res://dialogues/laboratory/intern_submit.dialogue"
+dest_files=["res://.godot/imported/intern_submit.dialogue-d2b1ac23dd16da1d0d12fb895f4932e6.tres"]
+
+[params]
+
+defaults=true

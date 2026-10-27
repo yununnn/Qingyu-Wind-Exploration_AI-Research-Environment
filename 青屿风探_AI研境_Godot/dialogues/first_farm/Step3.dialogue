@@ -1,0 +1,5 @@
+~ start
+主角: 好多胡萝卜都被吹走了...[next=1]
+主角: [shake]天气预报怎么不准！我要去投诉他们！[shake][next=1.3]
+do Emoji._show_emoji("主角生气", "主角", 1.5)
+=> END

@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dqdau3uq0n3eq" path="res://scenes/weather/puddle.tscn" id="6_mhalm"]
 [ext_resource type="Shader" uid="uid://bn7qnphrtsw7k" path="res://shaders/sky/sky.gdshader" id="8_0ccrj"]
 [ext_resource type="PackedScene" uid="uid://cuc36b7a8ncsg" path="res://scenes/fram/装饰物/树/木头_中.tscn" id="8_lscsw"]
+[ext_resource type="PackedScene" uid="uid://ctsea0f3htyuk" path="res://scenes/collection_point.tscn" id="8_tq7gw"]
 [ext_resource type="Shader" uid="uid://24w3m3s3mt45" path="res://shaders/weather/rain/tree/tree.gdshader" id="9_3xjet"]
 [ext_resource type="PackedScene" uid="uid://xh16mx0a6fiv" path="res://scenes/fram/装饰物/树/树_中_红.tscn" id="9_ix5gj"]
 [ext_resource type="Texture2D" uid="uid://c706kujj1grr8" path="res://assets/farm/objects/Trees, stumps and bushes.png" id="9_je5cs"]
@@ -62,7 +63,7 @@ generate_mipmaps = false
 noise = SubResource("FastNoiseLite_clouds")
 seamless = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2an8l"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tq7gw"]
 resource_local_to_scene = true
 resource_name = "像素阴天天空"
 shader = ExtResource("8_0ccrj")
@@ -129,7 +130,7 @@ tile_set = ExtResource("2_687ui")
 [node name="Puddle" parent="." unique_id=788995391 instance=ExtResource("6_mhalm")]
 
 [node name="Sky" parent="Puddle/CanvasLayer/SubViewportReflection" parent_id_path=PackedInt32Array(788995391, 1276117742) index="0" unique_id=1051594638]
-material = SubResource("ShaderMaterial_2an8l")
+material = SubResource("ShaderMaterial_tq7gw")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Puddle/Tree" parent_id_path=PackedInt32Array(788995391, 1734155396) index="4" unique_id=1038083221]
 material = SubResource("ShaderMaterial_ry2vk")
@@ -481,22 +482,53 @@ stage = 3
 
 [node name="Rabbit" parent="排序层" unique_id=671228345 instance=ExtResource("6_6hsba")]
 y_sort_enabled = true
-position = Vector2(205, 274)
+position = Vector2(270, 220)
 
 [node name="Boat" parent="." unique_id=641224119 instance=ExtResource("4_3xjet")]
 position = Vector2(205.24089, 285.6594)
 
 [node name="WeatherRain" parent="." unique_id=1073655579 instance=ExtResource("5_84toc")]
 
-[node name="TipLocationFarmland" parent="." unique_id=1782539982 instance=ExtResource("47_2an8l")]
+[node name="TipLocationFarmland" parent="." unique_id=78255571 instance=ExtResource("47_2an8l")]
 unique_name_in_owner = true
 editor_description = "农田提示位置"
 position = Vector2(282.5139, 211.97916)
 
-[node name="CollisionShape2D" parent="TipLocationFarmland/Area2D" parent_id_path=PackedInt32Array(1782539982, 414384833) index="0" unique_id=61097424]
+[node name="CollisionShape2D" parent="TipLocationFarmland/Area2D" parent_id_path=PackedInt32Array(78255571, 414384833) index="0" unique_id=61097424]
 position = Vector2(76.66885, 17.335266)
 scale = Vector2(7.7321115, 5.166792)
+
+[node name="TipLocationBoat" parent="." unique_id=1128918362 instance=ExtResource("47_2an8l")]
+position = Vector2(203.54497, 269.55313)
+
+[node name="CollisionShape2D" parent="TipLocationBoat/Area2D" parent_id_path=PackedInt32Array(1128918362, 414384833) index="0" unique_id=61097424]
+scale = Vector2(1.521043, 1.1777631)
+
+[node name="CollectionPoint" parent="." unique_id=1782539982 instance=ExtResource("8_tq7gw")]
+position = Vector2(371.24762, 224.04149)
+
+[node name="CollectionPoint2" parent="." unique_id=1913200240 instance=ExtResource("8_tq7gw")]
+position = Vector2(367.9811, 122.53948)
+
+[node name="CollectionPoint3" parent="." unique_id=904329351 instance=ExtResource("8_tq7gw")]
+position = Vector2(123.90448, 178.95323)
+
+[node name="NavigationTarget" type="Node2D" parent="." unique_id=2126783507]
+editor_description = "导航目标"
+
+[node name="Target1" type="Node2D" parent="NavigationTarget" unique_id=692978127]
+position = Vector2(233.65945, 216.03188)
+
+[node name="Target2" type="Node2D" parent="NavigationTarget" unique_id=1760202851]
+position = Vector2(229.40497, 184.06572)
+
+[node name="Target3" type="Node2D" parent="NavigationTarget" unique_id=750242882]
+position = Vector2(186.48753, 181.90364)
+
+[node name="Target4" type="Node2D" parent="NavigationTarget" unique_id=1820187904]
+position = Vector2(183.5397, 146.10876)
 
 [editable path="Puddle"]
 [editable path="WeatherRain"]
 [editable path="TipLocationFarmland"]
+[editable path="TipLocationBoat"]

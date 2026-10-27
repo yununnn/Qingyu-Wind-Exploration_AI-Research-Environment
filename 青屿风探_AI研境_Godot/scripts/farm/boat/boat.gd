@@ -11,7 +11,7 @@ func _ready() -> void:
 ## 当有物体进入检测区域时触发
 func _on_body_entered(body: Node2D) -> void:
 	# 只有属于 Player 分组的节点才能触发传送。
-	if body.is_in_group("Player") and not GameState.is_first_farm:
+	if body.is_in_group("Player") and GameState.step >= 3:
 		go_laboratory();
 
 # ## 返回农场

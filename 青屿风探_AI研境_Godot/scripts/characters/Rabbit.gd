@@ -33,8 +33,8 @@ func _physics_process(_delta: float) -> void:
 	# Shift 只改变移动速度与动作；没有方向输入时仍然播放待机动画。
 	## 是否奔跑
 	var is_running : bool = Input.is_action_pressed("run")
-	## 是否收集
-	var is_collection: bool = Input.is_action_pressed("interact")
+	## 是否收集：必须站在成熟作物的范围内，按 E 才播放采集动作
+	var is_collection: bool = Input.is_action_pressed("interact") and has_harvestable_nearby()
 
 	match PlayerState.current_state:
 		# 正常
@@ -74,6 +74,16 @@ func _physics_process(_delta: float) -> void:
 		move_to_navigation_position()
 		
 
+
+
+## 附近是否有可采集的作物（已成熟且在 Area2D 范围内）。
+func has_harvestable_nearby() -> bool:
+	for crop in get_tree().get_nodes_in_group("crop"):
+		if not is_instance_valid(crop):
+			continue
+		if crop.get("player_in_range") and crop.call("is_mature"):
+			return true
+	return false
 
 
 ## 根据输入设置速度，并执行带碰撞的移动。
@@ -141,41 +151,41 @@ func ray_detection(from_position: Vector2, to_position: Vector2) -> Dictionary:
 	## 检测结果
 	var result = space_state.intersect_ray(query)
 
-	## 保存调试数据
-	debug_ray_from = from_position
-	debug_ray_to = to_position
-	debug_ray_has_hit = not result.is_empty()
+	# ## 保存调试数据
+	# debug_ray_from = from_position
+	# debug_ray_to = to_position
+	# debug_ray_has_hit = not result.is_empty()
 
-	if debug_ray_has_hit:
-		debug_ray_hit_position = result["position"]
-	## 请求重新绘制
-	queue_redraw()
+	# if debug_ray_has_hit:
+	# 	debug_ray_hit_position = result["position"]
+	# ## 请求重新绘制
+	# queue_redraw()
 
 	return result
 	
-## 射线调试绘制
-var debug_ray_from: Vector2
-var debug_ray_to: Vector2
-var debug_ray_hit_position: Vector2
-var debug_ray_has_hit: bool = false
+# ## 射线调试绘制
+# var debug_ray_from: Vector2
+# var debug_ray_to: Vector2
+# var debug_ray_hit_position: Vector2
+# var debug_ray_has_hit: bool = false
 
-## 绘制调试射线
-func _draw() -> void:
-	## 从全局坐标转换为当前节点的局部坐标
-	var start := to_local(debug_ray_from)
-	var end := to_local(debug_ray_to)
+# ## 绘制调试射线
+# func _draw() -> void:
+# 	## 从全局坐标转换为当前节点的局部坐标
+# 	var start := to_local(debug_ray_from)
+# 	var end := to_local(debug_ray_to)
 
-	## 绘制射线起点
-	draw_circle(start, 3.0, Color.CYAN)
+# 	## 绘制射线起点
+# 	draw_circle(start, 3.0, Color.CYAN)
 
-	if debug_ray_has_hit:
-		## 命中：绿色线段从起点延伸到碰撞位置
-		var hit := to_local(debug_ray_hit_position)
-		draw_line(start, hit, Color.LIME_GREEN, 2.0)
-		draw_circle(hit, 4.0, Color.RED)
-	else:
-		## 未命中：红色线段延伸到射线终点
-		draw_line(start, end, Color.RED, 2.0)
+# 	if debug_ray_has_hit:
+# 		## 命中：绿色线段从起点延伸到碰撞位置
+# 		var hit := to_local(debug_ray_hit_position)
+# 		draw_line(start, hit, Color.LIME_GREEN, 2.0)
+# 		draw_circle(hit, 4.0, Color.RED)
+# 	else:
+# 		## 未命中：红色线段延伸到射线终点
+# 		draw_line(start, end, Color.RED, 2.0)
 
 
 ## 内部调用：移动到导航位置
@@ -185,9 +195,12 @@ func move_to_navigation_position() -> void:
 
 	# 导航结束后不再移动
 	if not navigation_agent.is_navigation_finished():
-		# 获取移动到导航位置所面朝的方向，需要进行本地、归一化处理
-		var direction: Vector2 = to_local(navigation_agent.get_next_path_position()).normalized().round()
-		# 开始移动
-		update_movement(direction)
-		update_animation(direction)
+		# 移动用真实方向，不能取整：取整后斜向长度为 1.414，速度会忽快忽慢，
+		# 加上路径点每帧变化，方向会在 (1,0) 和 (1,1) 之间跳，看起来就像抽搐。
+		var move_direction: Vector2 = (navigation_agent.get_next_path_position() - global_position).normalized()
+		# 动画朝向仍按四方向取整，避免动画频繁切换。
+		var face_direction: Vector2 = move_direction.round()
+
+		update_movement(move_direction)
+		update_animation(face_direction)
 	

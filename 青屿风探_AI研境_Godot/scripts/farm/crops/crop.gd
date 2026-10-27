@@ -63,6 +63,8 @@ var _harvest_progress := 0.0
 
 
 func _ready() -> void:
+	# 加入 crop 组，玩家靠它判断附近有没有可采集的作物
+	add_to_group("crop")
 	_apply_stage()
 	_set_outline(false)
 	_set_ring_visible(false)
@@ -219,17 +221,20 @@ func _spawn_drop() -> void:
 	if atlas == null:
 		return
 
-	var drop := Sprite2D.new()
-	drop.texture = atlas
-	drop.region_enabled = true
-	drop.region_rect = drop_region
+	var drop_scene := load("res://scenes/farm/drop.tscn") as PackedScene
+	if drop_scene == null:
+		return
+
+	var drop := drop_scene.instantiate()
+	drop.atlas = atlas
+	drop.drop_region = drop_region
 	drop.z_index = z_index
 	parent.add_child(drop)
 	drop.global_position = global_position
 
 	# 弹跳：先上抛 10px 再落回。
 	# 用本地 position:y 而不是 global_position:y —— 后者是计算属性，Tween 写入不稳定。
-	var base_y := drop.position.y
+	var base_y: float = drop.position.y
 	var tween := drop.create_tween()
 	tween.tween_property(drop, "position:y", base_y - 10.0, 0.16).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	tween.tween_property(drop, "position:y", base_y, 0.24).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)

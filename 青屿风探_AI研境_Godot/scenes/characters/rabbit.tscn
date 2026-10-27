@@ -1513,5 +1513,5 @@ editor_draw_limits = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1580448580]
 path_desired_distance = 5.0
-avoidance_enabled = true
-debug_enabled = true
+avoidance_enabled = false
+debug_enabled = false

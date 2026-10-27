@@ -48,7 +48,7 @@ frame_progress = 0.594428
 
 [node name="Detection" type="Area2D" parent="." unique_id=1314102106]
 editor_description = "检测范围"
-collision_layer = 16
+collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection" unique_id=301706209]

@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var tip_location_farmland: Node2D = %TipLocationFarmland
+@onready var tip_location_boat: Node2D = $TipLocationBoat
 ## 农田里的所有作物
 @onready var crops_root: Node2D = $排序层/农作物
 ## 雨天效果（雨、风、雾）
@@ -9,6 +10,14 @@ extends Node2D
 @onready var puddle: Node2D = $Puddle
 ## 场景里的树
 @onready var trees_root: Node2D = $排序层/树木
+## 玩家节点
+@onready var player: Node2D = $排序层/Rabbit
+## 导航目标容器，子节点就是要依次走到的点
+@onready var navigation_target: Node2D = $NavigationTarget
+
+@onready var collection_point: Node2D = $CollectionPoint
+@onready var collection_point_2: Node2D = $CollectionPoint2
+@onready var collection_point_3: Node2D = $CollectionPoint3
 
 #region 天气参数（都是「最终要到达」的值，按需改）
 
@@ -50,17 +59,28 @@ var _harvested: int = 0
 ## 步骤 2 是否已经触发过
 var _step2_started: bool = false
 
+## 已收集的天气数据点数量
+var _collected_count: int = 0
+## 步骤 6 是否已经触发过
+var _step6_started: bool = false
+
 ## 会随风摇摆的树（只挂 tree.gdshader，不做水位）
 var _sway_trees: Array[Sprite2D] = []
 
 
 func _ready() -> void:
+	# 生成导航区域（供玩家自动行走）
+	_bake_navigation()
 	# 天气和积水先全部关掉
 	_setup_weather_initial()
 	# 监听作物的收获信号
 	_connect_crops()
+	# 监听天气数据收集点
+	_connect_collection_points()
 	# 给场景里的树套上摇摆材质
 	_setup_sway_trees()
+	# 
+	tip_location_boat.hide()
 
 	if GameState.is_first_farm:
 		# 设置位置
@@ -99,22 +119,32 @@ func _ready() -> void:
 			"移动：WASD
 			奔跑：Shift"
 		)
+
+		tip_location_farmland._play_show()
 		# 触发事件绑定到步骤1
 		tip_location_farmland.trigger.connect(_Step1)
+		GameState.is_first_farm = false
 
 	else:
 		# 设置位置
 		FunctionLibrary.set_player_position(Vector2(205.0, 274.0))
 		# 初始朝向
 		FunctionLibrary.set_player_Initial_direction("up")
+		_remove_random_crops(15, 1)
 
 		# 转场效果
 		IrisTransition.open_from_black(0.9)
 		await IrisTransition.tween_finished
 
+		if GameState.step == 4:
+			_Step5()
+
+
 
 ## 步骤 1
 func _Step1() -> void:
+	# 触发事件解绑
+	tip_location_farmland.trigger.disconnect(_Step1)
 	GameState.step = 1
 	PlayerState.current_state = PlayerState.State.UNMOVE
 
@@ -128,16 +158,60 @@ func _Step1() -> void:
 ## 步骤 2：收两个作物后触发，天气转坏
 func _Step2() -> void:
 	GameState.step = 2
+	# 无法移动
 	PlayerState.current_state = PlayerState.State.UNMOVE
+	# 隐藏面板
 	TaskPanel._hide_task_panel()
 	TipAction._hide_tip()
 	# 帷幕落下（升起由后续流程处理）
 	await Curtain._curtain_show()
-
+	# 天气渐强、积水蔓延
+	_start_storm()
+	# 播放对话
 	await _say("res://dialogues/first_farm/Step2.dialogue")
 
-	# 天气渐强、积水蔓延
-	await _start_storm()
+	# 沿 NavigationTarget 的子节点依次移动
+	_move_along_targets()
+	await get_tree().create_timer(2).timeout
+	# 黑幕，讲述暴风雨结束后
+	TextIntro.play(
+		"暴风雨结束后[speed=0.3]...",
+		0.25, 0.5, 0.5, 3.0
+	)
+	await get_tree().create_timer(1).timeout
+	# 设置位置、朝向
+	FunctionLibrary.set_player_position(Vector2(270.0, 220.0))
+	FunctionLibrary.set_player_Initial_direction("right")
+	
+	# 停止风雨
+	_stop_storm()
+	_remove_random_crops(15, 1)
+	_clear_drops()
+	await TextIntro.finished
+	
+	_Step3()
+
+
+## 步骤 3
+func _Step3() -> void:
+	GameState.step = 3
+	# 播放对话
+	await _say("res://dialogues/first_farm/Step3.dialogue")
+	# 帷幕升起
+	await Curtain._curtain_hide()
+	PlayerState.current_state = PlayerState.State.NORMAL
+	# 出现任务面板
+	TaskPanel._change_task("乘坐小船，前往天气局")
+	tip_location_boat._play_show()
+
+
+## 步骤5
+func _Step5() -> void:
+	TaskPanel._change_task("前往指定地点，持续按“X”收集数据")
+	collection_point._play_show()
+	collection_point_2._play_show()
+	collection_point_3._play_show()
+	
 
 
 ## 播放一段对话，播完返回。
@@ -148,6 +222,55 @@ func _say(dialogue_path: String) -> void:
 		"start"
 	)
 	await DialogueManager.dialogue_ended
+
+
+## 生成导航区域，让玩家能沿 NavigationTarget 自动行走。
+## 直接给 NavigationPolygon 填顶点和面，避免 make_polygons_from_outlines 在 4.x 的兼容问题。
+## 场景里已经有 NavigationRegion2D 就跳过。
+func _bake_navigation() -> void:
+	if get_node_or_null("NavigationRegion2D") != null:
+		return
+
+	var region := NavigationRegion2D.new()
+	region.name = "NavigationRegion2D"
+	region.enabled = true
+	add_child(region)
+
+	# 覆盖农田的矩形
+	var corners := PackedVector2Array([
+		Vector2(80.0, 60.0),
+		Vector2(520.0, 60.0),
+		Vector2(520.0, 340.0),
+		Vector2(80.0, 340.0),
+	])
+
+	var polygon := NavigationPolygon.new()
+	polygon.agent_radius = 6.0
+	polygon.vertices = corners
+	polygon.add_polygon(PackedInt32Array([0, 1, 2, 3]))
+	region.navigation_polygon = polygon
+
+
+## 让玩家沿 NavigationTarget 下子节点的顺序依次走过去。
+## 直接复用玩家脚本里的 _move_to_navigation_position，靠它的 _is_navigating 判断是否走完。
+func _move_along_targets() -> void:
+	if player == null or navigation_target == null:
+		return
+
+	for child in navigation_target.get_children():
+		if not (child is Node2D):
+			continue
+		var goal := (child as Node2D).global_position
+
+		player.call("_move_to_navigation_position", goal)
+
+		# call 之后 _is_navigating 已被置 true，等它变回 false 就是到点了
+		var waited := 0.0
+		while waited < 15.0:
+			await get_tree().physics_frame
+			waited += get_physics_process_delta_time()
+			if not player.get("_is_navigating"):
+				break
 
 
 #region 作物计数
@@ -163,14 +286,189 @@ func _connect_crops() -> void:
 			child.harvested.connect(_on_crop_harvested)
 
 
-## 作物收获回调：不管哪种萝卜，满 2 个就进入步骤 2
+## 作物收获回调：收满 2 个就进入风暴剧情（第 2 步）。
+## 只在第 6 步之前生效 —— 后面"回农场收胡萝卜"那一段不应该再触发风暴。
 func _on_crop_harvested(crop: Node2D) -> void:
 	if _step2_started or crop == null:
+		return
+	if GameState.step >= 6:
 		return
 	_harvested += 1
 	if _harvested >= 2:
 		_step2_started = true
 		_Step2()
+
+#endregion
+
+
+#region 天气数据收集
+
+## 监听场景里所有收集点。
+func _connect_collection_points() -> void:
+	for cp in get_tree().get_nodes_in_group("collection_point"):
+		if not cp.has_signal("collected"):
+			continue
+		if not cp.collected.is_connected(_on_collection_point_collected):
+			cp.collected.connect(_on_collection_point_collected)
+
+	# 场景里的收集点如果有后加入的，等一帧再补连一次
+	await get_tree().process_frame
+	for cp in get_tree().get_nodes_in_group("collection_point"):
+		if not cp.has_signal("collected"):
+			continue
+		if not cp.collected.is_connected(_on_collection_point_collected):
+			cp.collected.connect(_on_collection_point_collected)
+
+
+## 某个收集点收完后回调，集齐三个触发步骤 6。
+func _on_collection_point_collected() -> void:
+	if _step6_started:
+		return
+	_collected_count += 1
+	print("[Farm] 天气数据已收集 ", _collected_count, " / 3")
+
+	if _collected_count >= 3:
+		_step6_started = true
+		_step6()
+
+
+## 步骤 6：三处天气数据都收集完后触发。
+func _step6() -> void:
+	GameState.step = 6
+
+	# 记下这一关要收多少个成熟胡萝卜（后面放箱子要按这个数判断完成）
+	GameState.carrots_required = 0
+	if crops_root != null:
+		for child in crops_root.get_children():
+			if not child.name.begins_with("胡萝卜"):
+				continue
+			if child.has_method("is_mature") and child.call("is_mature"):
+				GameState.carrots_required += 1
+	print("[Farm] 需要收集的成熟胡萝卜 = ", GameState.carrots_required)
+
+	# 任务面板更新
+	TaskPanel._change_task("前往气象局提交数据")
+	# 恢复玩家控制
+	PlayerState.current_state = PlayerState.State.NORMAL
+	TipAction._change_tip(
+		"移动：WASD
+		奔跑：Shift"
+	)
+
+#endregion
+
+
+#region 作物增删
+
+## 删除场景中的一部分胡萝卜。
+## count 要删除的数量，传 <= 0 表示全部删掉。
+## 删除后剩下的胡萝卜不受影响，收获计数也不变。
+func _remove_carrots(count: int = 1) -> void:
+	if crops_root == null:
+		return
+
+	# 先收集所有还活着的胡萝卜
+	var carrots: Array[Node] = []
+	for child in crops_root.get_children():
+		if child.name.begins_with("胡萝卜"):
+			carrots.append(child)
+
+	var total := carrots.size()
+	var to_remove := total if count <= 0 else mini(count, total)
+
+	# 立即从场景里移走，避免本帧内还被射线或信号碰到
+	for i in range(to_remove):
+		var carrot := carrots[i]
+		if not is_instance_valid(carrot):
+			continue
+		crops_root.remove_child(carrot)
+		carrot.queue_free()
+
+	print("[Farm] 删除胡萝卜 ", to_remove, " / ", total)
+
+
+## 随机删除场景中的作物（胡萝卜、白萝卜、紫萝卜都算）。
+## count      要删除的总数。
+## seed_value 随机种子；传 0 表示自动生成。
+## 返回实际使用的种子 —— 拿它再调一次就能复刻同样的删除结果。
+func _remove_random_crops(count: int, seed_value: int = 0) -> int:
+	if crops_root == null or count <= 0:
+		return seed_value
+
+	# 收集全部作物，顺序沿用场景里 get_children() 的顺序，保证可复现
+	var all: Array[Node] = []
+	for child in crops_root.get_children():
+		if not (child is Node2D):
+			continue
+		if _is_crop(child):
+			all.append(child)
+
+	var total := all.size()
+	if total == 0:
+		print("[Farm] 场景里已经没有作物了")
+		return seed_value
+
+	var to_remove := mini(count, total)
+
+	# 决定种子
+	var used_seed := seed_value
+	if used_seed == 0:
+		used_seed = randi()
+
+	# 用指定种子做 Fisher-Yates 洗牌
+	var rng := RandomNumberGenerator.new()
+	rng.seed = used_seed
+
+	var order: Array[int] = []
+	for i in range(total):
+		order.append(i)
+
+	for i in range(total - 1, 0, -1):
+		var j := rng.randi_range(0, i)
+		var tmp := order[i]
+		order[i] = order[j]
+		order[j] = tmp
+
+	# 按洗好的顺序删前 to_remove 个
+	for k in range(to_remove):
+		var crop := all[order[k]]
+		if not is_instance_valid(crop):
+			continue
+		crops_root.remove_child(crop)
+		crop.queue_free()
+
+	print("[Farm] 随机删除 ", to_remove, " / ", total, "  种子 = ", used_seed)
+	return used_seed
+
+
+
+## 判断节点是不是作物（胡萝卜 / 白萝卜 / 紫萝卜）。
+func _is_crop(node: Node) -> bool:
+	var n := node.name
+	if n.begins_with("胡萝卜"):
+		return true
+	if n.begins_with("白萝卜"):
+		return true
+	if n.begins_with("紫萝卜"):
+		return true
+	return false
+
+
+## 清除场景里所有掉落物。
+## 掉落物是作物收获后弹出来的 Sprite2D，带 group "drop"。
+func _clear_drops() -> void:
+	var drops := get_tree().get_nodes_in_group("drop")
+	var count := 0
+	for drop in drops:
+		if not is_instance_valid(drop):
+			continue
+		var parent := drop.get_parent()
+		if parent != null:
+			parent.remove_child(drop)
+		drop.queue_free()
+		count += 1
+	print("[Farm] 清除掉落物 ", count, " 个")
+
 
 #endregion
 
@@ -285,6 +583,15 @@ func _start_storm() -> void:
 	weather_rain.visible = true
 	puddle.visible = true
 
+	# 恢复水波纹（之前 _stop_storm 关掉过）
+	var rise_water := puddle.get("water_material") as ShaderMaterial
+	if rise_water != null:
+		rise_water.set_shader_parameter("ripple_opacity", 0.38)
+	var rise_ripple := puddle.get_node_or_null("CanvasLayer/SubViewportRipple") as SubViewport
+	if rise_ripple != null:
+		rise_ripple.process_mode = Node.PROCESS_MODE_INHERIT
+		rise_ripple.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+
 	var rain := _find_rain()
 	var splash := _find_splash()
 	var duration := storm_duration
@@ -338,6 +645,97 @@ func _start_storm() -> void:
 
 	if splash != null:
 		splash.emitting = true
+
+
+## 雨停、风停，但积水保留。
+## duration 传 <= 0 时用 storm_duration。
+func _stop_storm(duration: float = -1.0) -> void:
+	if weather_rain == null:
+		return
+
+	var d: float = duration if duration > 0.0 else storm_duration
+
+	var rain := _find_rain()
+	var rain_from := 0.0
+	if rain != null:
+		rain_from = rain.amount_ratio
+
+	var wind_from := _float_param(_wind_material, "opacity")
+	var fog1_from := _float_param(_fog_material, "density")
+	var fog2_alpha_from := _float_param(_fog2_material, "alpha_p")
+	var fog2_strength_from := _float_param(_fog2_material, "strength")
+
+	var tween := create_tween()
+	tween.set_parallel(true)
+
+	# 雨：雨量收回到 0
+	if rain != null:
+		tween.tween_method(_set_rain_ratio, rain_from, 0.0, d)
+
+	# 风停
+	if _wind_material != null:
+		tween.tween_method(
+			func(v: float) -> void: _wind_material.set_shader_parameter("opacity", v),
+			wind_from, 0.0, d
+		)
+
+	# 树停止摇摆：从当前幅度收回 0
+	if not _sway_trees.is_empty():
+		var sway_sample := _sway_trees[0].material as ShaderMaterial
+		var sway_from := _float_param(sway_sample, "wind_strength")
+		for sway_tree in _sway_trees:
+			var sway_mat := sway_tree.material as ShaderMaterial
+			if sway_mat == null:
+				continue
+			tween.tween_method(
+				func(v: float) -> void: sway_mat.set_shader_parameter("wind_strength", v),
+				sway_from, 0.0, d
+			)
+
+	# 水雾散掉
+	if _fog_material != null:
+		tween.tween_method(
+			func(v: float) -> void: _fog_material.set_shader_parameter("density", v),
+			fog1_from, 0.0, d
+		)
+
+	if _fog2_material != null:
+		tween.tween_method(
+			func(v: float) -> void: _fog2_material.set_shader_parameter("alpha_p", v),
+			fog2_alpha_from, 100.0, d
+		)
+		tween.tween_method(
+			func(v: float) -> void: _fog2_material.set_shader_parameter("strength", v),
+			fog2_strength_from, 2.0, d
+		)
+
+	# 积水保留，但把水波纹关掉（雨停了就不该再有雨点打在水面上的涟漪）
+	var water_mat := puddle.get("water_material") as ShaderMaterial
+	if water_mat != null:
+		water_mat.set_shader_parameter("ripple_opacity", 0.0)
+	# 涟漪粒子也停掉，省性能（SubViewport 没有 visible，用渲染模式控制）
+	var ripple_viewport := puddle.get_node_or_null("CanvasLayer/SubViewportRipple") as SubViewport
+	if ripple_viewport != null:
+		ripple_viewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
+		ripple_viewport.process_mode = Node.PROCESS_MODE_DISABLED
+
+	await tween.finished
+
+	# 雨彻底停掉、天气层隐藏
+	if rain != null:
+		rain.amount_ratio = 0.0
+		rain.emitting = false
+	weather_rain.visible = false
+
+
+## 读某个材质上的 float 参数，取不到就当 0。
+func _float_param(mat: ShaderMaterial, param: String) -> float:
+	if mat == null:
+		return 0.0
+	var value = mat.get_shader_parameter(param)
+	if value is float:
+		return value
+	return 0.0
 
 
 ## 雨量渐变（给 tween_method 用）。

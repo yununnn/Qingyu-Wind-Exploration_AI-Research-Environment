@@ -432,4 +432,4 @@ debug_color = Color(0.9882353, 0, 0.32156864, 0.41960785)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1277385765]
 path_desired_distance = 10.0
-debug_enabled = true
+debug_enabled = false

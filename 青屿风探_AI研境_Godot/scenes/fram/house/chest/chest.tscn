@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://7sp8sa8tskec" path="res://scripts/farm/house/chest/chest.gd" id="1_axf4t"]
 [ext_resource type="Texture2D" uid="uid://b1b0rf8jw5scc" path="res://assets/house/Chest.png" id="2_q5l12"]
+[ext_resource type="Shader" path="res://shaders/outline/outline.gdshader" id="3_shader"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_786gs"]
 atlas = ExtResource("2_q5l12")
@@ -46,6 +47,13 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_outline"]
+resource_local_to_scene = true
+shader = ExtResource("3_shader")
+shader_parameter/outline_color = Color(0, 0, 0, 0)
+shader_parameter/outline_size = 1.0
+shader_parameter/alpha_threshold = 0.3
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0h6ib"]
 size = Vector2(16.28, 9.661835)
 
@@ -57,6 +65,7 @@ collision_mask = 2
 script = ExtResource("1_axf4t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=331837870]
+material = SubResource("ShaderMaterial_outline")
 sprite_frames = SubResource("SpriteFrames_0e3nr")
 animation = &"normal"
 offset = Vector2(0, -6)

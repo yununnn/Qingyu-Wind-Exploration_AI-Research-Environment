@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b6751minpspt7" path="res://assets/laboratory/动画_控制室_服务器.png" id="7_e8o22"]
 [ext_resource type="PackedScene" uid="uid://de4042nkt7q28" path="res://scenes/characters/rabbit.tscn" id="9_i04fv"]
 [ext_resource type="PackedScene" uid="uid://yuv01q6ad5br" path="res://scenes/laboratory/door.tscn" id="10_j2o5o"]
+[ext_resource type="PackedScene" uid="uid://dewngupr6fnka" path="res://scenes/tip/tip_location.tscn" id="11_nwdle"]
 
 [sub_resource type="Environment" id="Environment_nwdle"]
 background_mode = 3
@@ -273,16 +274,6 @@ region = Rect2(128, 320, 16, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e3nr"]
 size = Vector2(16, 14)
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_0e3nr"]
-vertices = PackedVector2Array(92, 149, 79, 149, 79, 90, 92, 90)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(69, 159, 102, 159, 102, 80, 69, 80)])
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_tv3u3"]
-vertices = PackedVector2Array(92, 95.5625, 38.382813, 93.296875, 25.632813, 53.703125, 92, 52.21875)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(12, 44, 102, 42, 102, 106, 31, 103)])
 
 [node name="Laboratory" type="Node2D" unique_id=751390667]
 editor_description = "实验室"
@@ -557,22 +548,23 @@ scale = Vector2(1.5599976, 2.8000002)
 [node name="CollisionShape2D" parent="Scene/Door" index="0" unique_id=2021501780]
 scale = Vector2(1, 0.8142875)
 
-[node name="NavigationLayer" type="Node2D" parent="." unique_id=1829169949]
-editor_description = "导航层"
+[node name="NavigationTarget" type="Node2D" parent="." unique_id=351331776]
+editor_description = "导航目标"
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="NavigationLayer" unique_id=1615779327]
-navigation_polygon = SubResource("NavigationPolygon_0e3nr")
+[node name="Target1" type="Node2D" parent="NavigationTarget" unique_id=1513753813]
+position = Vector2(78, 87)
 
-[node name="NavigationRegion2D2" type="NavigationRegion2D" parent="NavigationLayer" unique_id=961560894]
-navigation_polygon = SubResource("NavigationPolygon_tv3u3")
+[node name="Target2" type="Node2D" parent="NavigationTarget" unique_id=26079361]
+position = Vector2(83, 77)
 
-[node name="PlayerMoveLocation" type="Node2D" parent="NavigationLayer" unique_id=1611012591]
-editor_description = "玩家移动位置"
-position = Vector2(85, 87)
+[node name="Target3" type="Node2D" parent="NavigationTarget" unique_id=539950081]
+position = Vector2(108, 64)
 
-[node name="DirectorMoveLocation" type="Node2D" parent="NavigationLayer" unique_id=1572973622]
-editor_description = "主任移动位置"
-position = Vector2(85, 69)
+[node name="Target4" type="Node2D" parent="NavigationTarget" unique_id=1064388413]
+position = Vector2(108, 64)
+
+[node name="TipLocation" parent="." unique_id=1782539982 instance=ExtResource("11_nwdle")]
+position = Vector2(86, 154)
 
 [editable path="Scene/Decoration/椅子/椅子2_实习生之椅/Intern"]
 [editable path="Scene/Decoration/Rabbit"]

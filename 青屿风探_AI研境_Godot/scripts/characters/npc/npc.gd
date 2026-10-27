@@ -76,6 +76,10 @@ func update_facing_direction(input_direction: Vector2) -> void:
 func _physics_process(_delta: float) -> void:
 	if _is_navigating:
 		move_to_navigation_position()
+	else:
+		# 停止移动，播放待机
+		velocity = Vector2.ZERO
+		update_animation(Vector2.ZERO)
 
 ## 外部调用：移动到导航位置
 func _move_to_navigation_position(target_position: Vector2) -> void:
@@ -88,9 +92,7 @@ func _move_to_navigation_position(target_position: Vector2) -> void:
 	await navigation_agent.navigation_finished
 
 	_is_navigating = false
-	# 停止移动，播放待机
-	velocity = Vector2.ZERO
-	update_animation(Vector2.ZERO)
+	
 
 ## 内部调用：移动到导航位置
 func move_to_navigation_position() -> void:

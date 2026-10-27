@@ -1,0 +1,25 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/farm/drop.gd" id="1_drop"]
+[ext_resource type="Shader" path="res://shaders/outline/outline.gdshader" id="2_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_outline"]
+resource_local_to_scene = true
+shader = ExtResource("2_shader")
+shader_parameter/outline_color = Color(0, 0, 0, 0)
+shader_parameter/outline_size = 1.0
+shader_parameter/alpha_threshold = 0.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_drop"]
+radius = 10.0
+
+[node name="Drop" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_drop")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_outline")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_drop")

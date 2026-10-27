@@ -112,7 +112,7 @@ interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/director/director_first_meeting.dialogue", "res://dialogues/first_farm/first.dialogue", "res://dialogues/first_farm/Step1.dialogue", "res://dialogues/first_farm/Step2.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/director/director_first_meeting.dialogue", "res://dialogues/first_farm/first.dialogue", "res://dialogues/first_farm/Step1.dialogue", "res://dialogues/first_farm/Step2.dialogue", "res://dialogues/first_farm/Step3.dialogue", "res://dialogues/laboratory/step4_2.dialogue", "res://dialogues/laboratory/step4_3.dialogue", "res://dialogues/laboratory/step4_4.dialogue", "res://dialogues/laboratory/step4.dialogue", "res://dialogues/laboratory/intern_submit.dialogue")
 
 [layer_names]
 
