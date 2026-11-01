@@ -1,0 +1,131 @@
+[
+  {
+    "candidate": "crisp_type_01.wav",
+    "file": "sfx/text_tick_01.wav",
+    "author": "Original procedural sound design for this project",
+    "license": "Project original; no third-party samples",
+    "source_page": "tools/audio/approved_candidates.json",
+    "processing": "Approved candidate 01; exact WAV; runtime -5 dB",
+    "approval": "Human user approved in chat on 2026-10-28"
+  },
+  {
+    "candidate": "crisp_type_02.wav",
+    "file": "sfx/text_tick_02.wav",
+    "author": "Original procedural sound design for this project",
+    "license": "Project original; no third-party samples",
+    "source_page": "tools/audio/approved_candidates.json",
+    "processing": "Approved candidate 01; exact WAV; runtime -5 dB",
+    "approval": "Human user approved in chat on 2026-10-28"
+  },
+  {
+    "candidate": "crisp_type_03.wav",
+    "file": "sfx/text_tick_03.wav",
+    "author": "Original procedural sound design for this project",
+    "license": "Project original; no third-party samples",
+    "source_page": "tools/audio/approved_candidates.json",
+    "processing": "Approved candidate 01; exact WAV; runtime -5 dB",
+    "approval": "Human user approved in chat on 2026-10-28"
+  },
+  {
+    "candidate": "crisp_type_04.wav",
+    "file": "sfx/text_tick_04.wav",
+    "author": "Original procedural sound design for this project",
+    "license": "Project original; no third-party samples",
+    "source_page": "tools/audio/approved_candidates.json",
+    "processing": "Approved candidate 01; exact WAV; runtime -5 dB",
+    "approval": "Human user approved in chat on 2026-10-28"
+  },
+  {
+    "candidate": "bubble_open_v1.wav",
+    "file": "sfx/bubble_open.wav",
+    "author": "Original procedural sound design for this project",
+    "license": "Project original; no third-party samples",
+    "source_page": "tools/audio/approved_candidates.json",
+    "processing": "Approved candidate 02; exact WAV; runtime -4 dB",
+    "approval": "Human user approved in chat on 2026-10-28"
+  },
+  {
+    "candidate": "bubble_close_v1.wav",
+    "file": "sfx/bubble_close.wav",
+    "author": "Original procedural sound design for this project",
+    "license": "Project original; no third-party samples",
+    "source_page": "tools/audio/approved_candidates.json",
+    "processing": "Approved candidate 02; exact WAV; runtime -6 dB",
+    "approval": "Human user approved in chat on 2026-10-28"
+  },
+  {
+    "candidate": "harvest_work_v3_light.wav",
+    "file": "sfx/harvest_work.wav",
+    "author": "Kenney + original procedural texture",
+    "license": "CC0-1.0 source; original processing",
+    "source_page": "https://kenney.nl/assets/rpg-audio",
+    "processing": "User finally selected candidate 03B (light leaf); cloth3.ogg plus filtered noise, no impacts; runtime -2 dB",
+    "approval": "Human user approved in chat on 2026-10-28"
+  },
+  {
+    "candidate": "pickup_soft_pop_01.wav",
+    "file": "sfx/pickup_01.wav",
+    "author": "Original procedural sound design for this project",
+    "license": "Project original; no third-party samples",
+    "source_page": "tools/audio/approved_candidates.json",
+    "processing": "User approved candidate 04; exact WAV; runtime -5 dB",
+    "approval": "Human user approved in chat on 2026-10-28"
+  },
+  {
+    "candidate": "pickup_soft_pop_02.wav",
+    "file": "sfx/pickup_02.wav",
+    "author": "Original procedural sound design for this project",
+    "license": "Project original; no third-party samples",
+    "source_page": "tools/audio/approved_candidates.json",
+    "processing": "User approved candidate 04; exact WAV; runtime -5 dB",
+    "approval": "Human user approved in chat on 2026-10-28"
+  },
+  {
+    "candidate": "pickup_soft_pop_03.wav",
+    "file": "sfx/pickup_03.wav",
+    "author": "Original procedural sound design for this project",
+    "license": "Project original; no third-party samples",
+    "source_page": "tools/audio/approved_candidates.json",
+    "processing": "User approved candidate 04; exact WAV; runtime -5 dB",
+    "approval": "Human user approved in chat on 2026-10-28"
+  },
+  {
+    "candidate": "rain_droplets_v3.ogg",
+    "file": "ambience/rain.ogg",
+    "author": "The_Toefur + reelworldstudio",
+    "license": "CC0-1.0",
+    "source_page": "https://freesound.org/people/The_Toefur/sounds/509344/",
+    "additional_source_pages": [
+      "https://freesound.org/people/reelworldstudio/sounds/161127/"
+    ],
+    "processing": "User approved 05B final 7s; close rain impacts over softer bed; 28s cyclic loop; rain gain factor remains 0.9",
+    "approval": "Human user approved in chat on 2026-10-28"
+  },
+  {
+    "candidate": "chest_open_creak_v3.wav",
+    "file": "sfx/chest_open.wav",
+    "author": "steprock",
+    "license": "CC0-1.0",
+    "source_page": "https://freesound.org/people/steprock/sounds/771164/",
+    "processing": "User approved 06B hinge squeak; runtime -3 dB",
+    "approval": "Human user approved in chat on 2026-10-28"
+  },
+  {
+    "candidate": "chest_close_light_v3.wav",
+    "file": "sfx/chest_close.wav",
+    "author": "Sheyvan; recordings by Eva Lorente and Dominik Reinicke; edited by Philipp Grzemba",
+    "license": "CC0-1.0",
+    "source_page": "https://freesound.org/people/Sheyvan/sounds/475294/",
+    "processing": "User approved 06B softened wood settle; runtime -4 dB",
+    "approval": "Human user approved in chat on 2026-10-28"
+  },
+  {
+    "candidate": "boat_drift_v2.ogg",
+    "file": "ambience/boat_water.ogg",
+    "author": "myLoop",
+    "license": "CC0-1.0",
+    "source_page": "https://freesound.org/people/myLoop/sounds/851577/",
+    "processing": "User approved 07; lake water at sailboat hull with soft wood; 12s cyclic loop; factor0.9; old separate creak removed",
+    "approval": "Human user approved in chat on 2026-10-28"
+  }
+]

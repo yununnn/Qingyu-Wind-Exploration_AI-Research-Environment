@@ -1,0 +1,851 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started 项目初始化 (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | 正在扫描文件结构……[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | 正在加载全局类名……[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | 正在校验 GDExtension……[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | 正在创建自动加载脚本……[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | 正在初始化插件……[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | 正在启动文件扫描……[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started 正在扫描动作…… (7 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | 01_farm.png[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | 02_storm.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | 03_after_storm.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | 04_office.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | 05_data_complete.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | 06_warning.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | audio_preview.ogg[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started 正在导入或重新导入资产 (7 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  12% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  25% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  37% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  50% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  62% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[  75% ] [90m[1mreimport[22m | 正在准备重新导入文件……[39m[0m
+[   0% ] [90m[1mreimport[22m | 正在执行重新导入的前置操作……[39m[0m
+[   0% ] [90m[1mreimport[22m | audio_preview.ogg[39m[0m
+[  12% ] [90m[1mreimport[22m | audio_preview.ogg[39m[0m
+[  25% ] [90m[1mreimport[22m | 01_farm.png[39m[0m
+[  37% ] [90m[1mreimport[22m | 02_storm.png[39m[0m
+[  50% ] [90m[1mreimport[22m | 03_after_storm.png[39m[0m
+[  62% ] [90m[1mreimport[22m | 04_office.png[39m[0m
+[  75% ] [90m[1mreimport[22m | 05_data_complete.png[39m[0m
+[  87% ] [90m[1mreimport[22m | 正在结束资产导入……[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started 正在导入或重新导入资产 (7 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | 正在执行重新导入的后置操作……[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1msavepack[22m | Started 打包中 (102 steps)[39m[0m
+[   2% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/compilation.gdc[39m[0m
+[   2% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/compiled_line.gdc[39m[0m
+[   2% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/compiler.gdc[39m[0m
+[   3% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/compiler_regex.gdc[39m[0m
+[   3% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/compiler_result.gdc[39m[0m
+[   3% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/expression_parser.gdc[39m[0m
+[   3% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/resolved_goto_data.gdc[39m[0m
+[   4% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/resolved_line_data.gdc[39m[0m
+[   4% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/resolved_tag_data.gdc[39m[0m
+[   4% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/tree_line.gdc[39m[0m
+ERROR: No loader found for resource: res://addons/dialogue_manager/example_balloon/ExampleBalloon.cs (expected type: Script)
+   at: _load (core/io/resource_loader.cpp:332)
+ERROR: No loader found for resource: res://addons/dialogue_manager/nodes/dialogue_label/DialogueLabel.cs (expected type: Script)
+   at: _load (core/io/resource_loader.cpp:332)
+ERROR: Parse Error: File unrecognized. [Resource file res://addons/dialogue_manager/nodes/dialogue_label/DialogueLabel.tscn:18]
+   at: _parse_node_tag (scene/resources/resource_format_text.cpp:293)
+ERROR: Failed loading resource: res://addons/dialogue_manager/nodes/dialogue_label/DialogueLabel.tscn.
+   at: _load (core/io/resource_loader.cpp:317)
+ERROR: No loader found for resource: res://addons/dialogue_manager/nodes/responses_menu/DialogueResponsesMenu.cs (expected type: Script)
+   at: _load (core/io/resource_loader.cpp:332)
+ERROR: Parse Error: File unrecognized. [Resource file res://addons/dialogue_manager/example_balloon/ExampleBalloon.tscn:116]
+   at: _parse_node_tag (scene/resources/resource_format_text.cpp:293)
+ERROR: Failed loading resource: res://addons/dialogue_manager/example_balloon/ExampleBalloon.tscn.
+   at: _load (core/io/resource_loader.cpp:317)
+ERROR: Condition "ps.is_null()" is true. Returning: p_path
+   at: _export_customize (editor/export/editor_export_platform.cpp:1068)
+[  11% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/example_balloon/ExampleBalloon.tscn[39m[0m
+[  11% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/example_balloon/example_balloon.gdc[39m[0m
+[  11% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-57fc9b32a4ae3d4a3041b46baf4b8f92-example_balloon.scn[39m[0m
+ERROR: No loader found for resource: res://addons/dialogue_manager/example_balloon/ExampleBalloon.cs (expected type: Script)
+   at: _load (core/io/resource_loader.cpp:332)
+ERROR: No loader found for resource: res://addons/dialogue_manager/nodes/dialogue_label/DialogueLabel.cs (expected type: Script)
+   at: _load (core/io/resource_loader.cpp:332)
+ERROR: Parse Error: File unrecognized. [Resource file res://addons/dialogue_manager/nodes/dialogue_label/DialogueLabel.tscn:18]
+   at: _parse_node_tag (scene/resources/resource_format_text.cpp:293)
+ERROR: Failed loading resource: res://addons/dialogue_manager/nodes/dialogue_label/DialogueLabel.tscn.
+   at: _load (core/io/resource_loader.cpp:317)
+ERROR: No loader found for resource: res://addons/dialogue_manager/nodes/responses_menu/DialogueResponsesMenu.cs (expected type: Script)
+   at: _load (core/io/resource_loader.cpp:332)
+ERROR: Parse Error: File unrecognized. [Resource file res://addons/dialogue_manager/example_balloon/SmallExampleBalloon.tscn:115]
+   at: _parse_node_tag (scene/resources/resource_format_text.cpp:293)
+ERROR: Failed loading resource: res://addons/dialogue_manager/example_balloon/SmallExampleBalloon.tscn.
+   at: _load (core/io/resource_loader.cpp:317)
+ERROR: Condition "ps.is_null()" is true. Returning: p_path
+   at: _export_customize (editor/export/editor_export_platform.cpp:1068)
+[  11% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/example_balloon/SmallExampleBalloon.tscn[39m[0m
+[  12% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-25872080cd204f02261b5746b425708f-small_example_balloon.scn[39m[0m
+[  12% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/l10n/en.po[39m[0m
+[  12% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/l10n/es.po[39m[0m
+[  12% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/l10n/uk.po[39m[0m
+[  13% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/l10n/zh.po[39m[0m
+[  13% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/l10n/zh_TW.po[39m[0m
+[  13% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_2d.gdc[39m[0m
+[  13% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/dialogue_actionable_2d.svg-fab4e58d6b3980b100fb8a5494b4d5cb.ctex[39m[0m
+[  13% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_2d.svg.import[39m[0m
+[  13% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_3d.gdc[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/dialogue_actionable_3d.svg-66fe4924d1964b29285ae978ab731ec3.ctex[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_3d.svg.import[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/context/dialogue_state_context.gdc[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/dialogue_state_context.svg-767b17bec3f66ee3adfc460e2805a08f.ctex[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/context/dialogue_state_context.svg.import[39m[0m
+ERROR: No loader found for resource: res://addons/dialogue_manager/nodes/dialogue_label/DialogueLabel.cs (expected type: Script)
+   at: _load (core/io/resource_loader.cpp:332)
+ERROR: Parse Error: File unrecognized. [Resource file res://addons/dialogue_manager/nodes/dialogue_label/DialogueLabel.tscn:18]
+   at: _parse_node_tag (scene/resources/resource_format_text.cpp:293)
+ERROR: Failed loading resource: res://addons/dialogue_manager/nodes/dialogue_label/DialogueLabel.tscn.
+   at: _load (core/io/resource_loader.cpp:317)
+ERROR: Condition "ps.is_null()" is true. Returning: p_path
+   at: _export_customize (editor/export/editor_export_platform.cpp:1068)
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/dialogue_label/DialogueLabel.tscn[39m[0m
+[  15% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.gdc[39m[0m
+[  15% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/dialogue_label.svg-d4dcce28fb3dfdb414d1a2c4579fb6a5.ctex[39m[0m
+[  15% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.svg.import[39m[0m
+[  15% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-f17cdb592963b4d3f609d8b86d4cd429-dialogue_label.scn[39m[0m
+[  15% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/marker/dialogue_marker_2d.gdc[39m[0m
+[  16% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/dialogue_marker_2d.svg-1eedb01d2a05819be5ce0e675c93eeab.ctex[39m[0m
+[  16% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/marker/dialogue_marker_2d.svg.import[39m[0m
+[  16% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/marker/dialogue_marker_3d.gdc[39m[0m
+[  16% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/dialogue_marker_3d.svg-f68ab9ede59096854a7c6ee123dd8e4e.ctex[39m[0m
+[  16% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/marker/dialogue_marker_3d.svg.import[39m[0m
+[  16% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gdc[39m[0m
+[  16% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/dialogue_responses_menu.svg-c2f1aeac68c19756dc5732e31dba2439.ctex[39m[0m
+[  16% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.svg.import[39m[0m
+[  17% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/utilities/builtins.gdc[39m[0m
+[  17% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/utilities/dialogue_cache.gdc[39m[0m
+[  17% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/utilities/error.gdc[39m[0m
+[  17% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/utilities/theme_values.gdc[39m[0m
+[  18% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/utilities/translations.gdc[39m[0m
+[  18% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/utilities/waiter.gdc[39m[0m
+[  19% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/constants.gdc[39m[0m
+[  20% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/debugger_plugin.gdc[39m[0m
+[  20% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/dialogue_line.gdc[39m[0m
+[  20% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/dialogue_manager.gdc[39m[0m
+[  20% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/dialogue_processor.gdc[39m[0m
+[  21% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/dialogue_resource.gdc[39m[0m
+[  21% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/dialogue_response.gdc[39m[0m
+[  21% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/editor_translation_parser_plugin.gdc[39m[0m
+[  21% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/export_plugin.gdc[39m[0m
+[  22% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/import_plugin.gdc[39m[0m
+[  22% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/inspector_plugin.gdc[39m[0m
+[  22% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/plugin.gdc[39m[0m
+[  22% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/settings.gdc[39m[0m
+[  22% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/test_scene.gdc[39m[0m
+[  23% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-74a175fe1e216df3bdf79c5c27a2ac2c-test_scene.scn[39m[0m
+[  23% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/boat_water.ogg-eacc69e529ccf876b3fdd4d0be4a4fca.oggvorbisstr[39m[0m
+[  23% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/ambience/boat_water.ogg.import[39m[0m
+[  23% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/equipment.ogg-95a0b39905625c50b1d7b5d4a143d70f.oggvorbisstr[39m[0m
+[  23% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/ambience/equipment.ogg.import[39m[0m
+[  23% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/island_wind.ogg-ade8dbb5039a0da42299f78f6dd079c8.oggvorbisstr[39m[0m
+[  23% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/ambience/island_wind.ogg.import[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/rain.ogg-2bd44c8358e37cb3c0cbede67d283885.oggvorbisstr[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/ambience/rain.ogg.import[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/shore.ogg-3e0839e2bb2401438cc0be9a71fb312f.oggvorbisstr[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/ambience/shore.ogg.import[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/storm_wind.ogg-a535524f891f9768c2ade760d262371f.oggvorbisstr[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/ambience/storm_wind.ogg.import[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/forecast_office.ogg-3f90717357b609cfc263c8f040e4a833.oggvorbisstr[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/music/forecast_office.ogg.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/island_morning.ogg-aa7f759756e721cd7d5a387727dd4cd6.oggvorbisstr[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/music/island_morning.ogg.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/prepare_again.ogg-734946d8d1c638cc94296bc0b94cfef1.oggvorbisstr[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/music/prepare_again.ogg.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/ready.ogg-33eae6493e9229f8c2cb85047b67bcdb.oggvorbisstr[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/music/ready.ogg.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/angry.wav-d8934bc4c42ab6b6525bcc75abae419f.sample[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/angry.wav.import[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/awkward.wav-a01f0ce9089e57a07c79e66d80c5c9f7.sample[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/awkward.wav.import[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/bird_01.wav-88fe79d7d9538cf92fee2389a9e99249.sample[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/bird_01.wav.import[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/bird_02.wav-98d6f688c290d18624837c57f8733ea1.sample[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/bird_02.wav.import[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/boat_departure.wav-c69542ee0e9a67491233626aaa2c9bb4.sample[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/boat_departure.wav.import[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/chest_close.wav-fdfcbafead8c74c9a846c16080991973.sample[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/chest_close.wav.import[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/chest_open.wav-689d673a31dd2e0d6cb0fc278d307b3e.sample[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/chest_open.wav.import[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/data_absorb.wav-7b9a9e3e75cde35ecfcf257f615143a7.sample[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/data_absorb.wav.import[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/data_all.wav-b6791414868c3aa0c4b18f5a52d6de5e.sample[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/data_all.wav.import[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/data_done.wav-f32528299cc13d9d84428ae9fa34055c.sample[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/data_done.wav.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/data_open.wav-873721b67c12587daebd972da65e5e78.sample[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/data_open.wav.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/deposit_01.wav-f5320c9b02371dc94c30eeb8e2e245e0.sample[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/deposit_01.wav.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/deposit_02.wav-790164472a8d2fa46fbf2614bff0746f.sample[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/deposit_02.wav.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/door_close.wav-6c8d4ba105f064a73657c14ce72d81b3.sample[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/door_close.wav.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/door_open.wav-69b6678189c02bd6142786d7e7f8bb19.sample[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/door_open.wav.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/happy.wav-10b45efff3bab8fb154ce0f8d3fd6ff6.sample[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/happy.wav.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/harvest_01.wav-e12a3522469f9b5b6426e5901db7c3dc.sample[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/harvest_01.wav.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/harvest_02.wav-63d3aeafce607bb34446fa79ef20404f.sample[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/harvest_02.wav.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/harvest_03.wav-f7b323a7c12e7c5fadc7f4f142450e04.sample[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/harvest_03.wav.import[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/harvest_work.wav-39f6f7b4b6f84b8d435f39bf8a153272.sample[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/harvest_work.wav.import[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/keyboard.wav-211415f76abf4af90662838980671065.sample[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/keyboard.wav.import[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/land_01.wav-843aeaebdd839e27d65e30ad97bf7684.sample[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/land_01.wav.import[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/land_02.wav-fa6d6a47ec883b1cb29f409d45e00ef5.sample[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/land_02.wav.import[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/pickup_01.wav-1fd9df69b46c3d5e73ff28bc8702fc0d.sample[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/pickup_01.wav.import[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/pickup_02.wav-499bd90c77a57628510e1c27185091f7.sample[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/pickup_02.wav.import[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/pickup_03.wav-06544a2f2fb5457c55388e65d6ee5c8c.sample[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/pickup_03.wav.import[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/step_hard_01.wav-a8775e6330bd842a82608739b1fd859b.sample[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/step_hard_01.wav.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/step_hard_02.wav-ddad3f3c6ca095b7e3caf3d57d73cb98.sample[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/step_hard_02.wav.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/step_hard_03.wav-871a569ae4932dbd4c60ea5c984b0a4a.sample[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/step_hard_03.wav.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/step_soft_01.wav-b1bee4afe3f9fb9ae5e8177da9770649.sample[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/step_soft_01.wav.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/step_soft_02.wav-98ba5736cf6bc525a020570f15612fba.sample[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/step_soft_02.wav.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/step_soft_03.wav-51ede53979d31f9188d26c2795aae396.sample[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/step_soft_03.wav.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/step_soft_04.wav-55372e17a1336a0284d27ad8d1fbbef2.sample[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/step_soft_04.wav.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/step_wood_01.wav-f30760ecb15b9da3f289f7674645245c.sample[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/step_wood_01.wav.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/step_wood_02.wav-9fe480b5cfb151efbfcd7d1401138be4.sample[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/step_wood_02.wav.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/step_wood_03.wav-9f941d52ea08e213ddb54ae4de24305a.sample[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/step_wood_03.wav.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/surprised.wav-101ee138b2ae58970ec0dbdc836de085.sample[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/surprised.wav.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/task.wav-612652cb0c7a9bd3e74a4f47e66f4fb1.sample[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/task.wav.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/throw.wav-b12e4b2ada84ba4eb4541348939f9d43.sample[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/throw.wav.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/warning.wav-03ad075d51732c2095d7bd348ad43842.sample[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/sfx/warning.wav.import[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/manifest.json[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/source_archives.json[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/professor_idle.png-c9a236c4a3de58d5e05276d6f863c649.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://assets/characters/Director/professor_idle.png.import[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/主任06.png-e655932031726fe89c50a2461193f1dd.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://assets/characters/Director/主任06.png.import[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/预制角色_05.png-50f0847e2b930b7ec6f850f72a057e60.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://assets/characters/intern/预制角色_05.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/预制角色_17.png-1d37545fc8af6fc3c129db38a8a9294f.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://assets/characters/intern/预制角色_17.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Basic Charakter Actions.png-7e26d36b8ee2571c0af01b11e4a0c942.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://assets/characters/rabbit/Basic Charakter Actions.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Basic Charakter Spritesheet.png-26dc071a07df892ed2ca0a983765cbcc.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://assets/characters/rabbit/Basic Charakter Spritesheet.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Premium Charakter Spritesheet.png-571df7fa856f6277eab4cc9f22367993.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://assets/characters/rabbit/Premium Charakter Spritesheet.png.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Tools.png-65649b2efbd397e26cd4ebbff9eab670.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://assets/characters/rabbit/Tools.png.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/water from wateringcan frames.png-b7bf89d3542d50ebbbbd3889e15c7191.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://assets/characters/rabbit/water from wateringcan frames.png.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Fence gates animation sprites .png-e679e0efa6b140fc4ca7c1275f54d3cd.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/building_parts/Fence gates animation sprites .png.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Fences.png-fc1c080b0b93b505f8193d0763ef37b4.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/building_parts/Fences.png.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Mailbox Animation Frames.png-f9f1ed5880dc74d6873e2851efba07c9.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/building_parts/Mailbox Animation Frames.png.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Paths.png-3b1720b98e596165d2e960510ba553e4.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/building_parts/Paths.png.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/STONE PATH.png-7575c9b2ffbb1143d6882a621b65f02f.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/building_parts/STONE PATH.png.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Wood Bridge.png-05f3cc4bd2ffb5ede0e7a23d4b93752a.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/building_parts/Wood Bridge.png.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/All items.png-0fbd77597c4fbc9144fd39d44bbf16ff.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/items/All items.png.import[39m[0m
+[  38% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Egg items.png-2718391715c4547eb8264b61ebfa2942.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/items/Egg items.png.import[39m[0m
+[  38% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Farming Plants items.png-0b7e79f4612c97146fd9d2ef2d3fdb25.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/items/Farming Plants items.png.import[39m[0m
+[  38% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/fruit and berries items.png-dfdbc6e5759b755ff59115c19a81cdb8.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/items/fruit and berries items.png.import[39m[0m
+[  38% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/item shadow.png-048016046ae99403580a8deb1f8d3cfe.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/items/item shadow.png.import[39m[0m
+[  39% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Milk and grass item Simple.png-6e82211ee8e6595f9f4b63c9bcf7abd3.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/items/Milk and grass item Simple.png.import[39m[0m
+[  39% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Milk.png-cbc544380bd687481e3bf19beeed1cef.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/items/Milk.png.import[39m[0m
+[  39% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/tools and meterials.png-96b40ab9ae5a01a313577d52bd733ff7.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/items/tools and meterials.png.import[39m[0m
+[  39% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/农作物物品_UnOutline.png-c0ea6ae19cc0450a8b90b789b2c3ef70.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/items/农作物物品_UnOutline.png.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Barn structures.png-695aef307e0721edaa6986e3ff637848.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/objects/Barn structures.png.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Boats.png-e7cac3612225694200a3675a89335f3c.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/objects/Boats.png.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Farming Plants.png-9db2dc666dda7a88ca76100e7f432f05.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/objects/Farming Plants.png.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Mushrooms, Flowers, Stones.png-d57667a3445d4297bc264e553a74d86f.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/objects/Mushrooms, Flowers, Stones.png.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Piknik basket.png-c377496770a4b170250f2a6ab0adac7a.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/objects/Piknik basket.png.import[39m[0m
+[  41% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Piknik blanket.png-8c064111c22904da4d15f9c16963bbcd.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/objects/Piknik blanket.png.import[39m[0m
+[  41% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/signs.png-94cd984ba2dec673901a2b7d9a129870.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/objects/signs.png.import[39m[0m
+[  41% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Trees, stumps and bushes.png-97780a0943d725f225a5771c59f51dff.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/objects/Trees, stumps and bushes.png.import[39m[0m
+[  41% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Water well.png-fc2feb032b5065671b1c1c1baadd387b.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/objects/Water well.png.import[39m[0m
+[  42% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/work station.png-058a99073749987a5a52d92d7b494658.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/objects/work station.png.import[39m[0m
+[  42% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Bush_Tiles.png-cf93ca562aca722174425f57806c54b1.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/New tiles/Bush_Tiles.png.import[39m[0m
+[  42% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Darker_Grass_Hills_Tiles_v2.png-bfbff1063872b7a56782b881abe79eec.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/New tiles/Darker_Grass_Hills_Tiles_v2.png.import[39m[0m
+[  42% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Darker_Grass_Hill_Tiles_Slopes_v2.png-a7f3ea9f39f17ac79f14cc810591506e.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/New tiles/Darker_Grass_Hill_Tiles_Slopes_v2.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Darker_Grass_Tiles_v2.png-01385f6b6ea7bba6b5152c3329b2698f.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/New tiles/Darker_Grass_Tiles_v2.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Darker_Grass_Tile_Layers2.png-90c5435f4279ad083ba990c6f6e2a771.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/New tiles/Darker_Grass_Tile_Layers2.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Darker_Grass_Tile_Layers.png-a57ada0d005c2a2e2d2b51f5d24f0e14.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/New tiles/Darker_Grass_Tile_Layers.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Darker_Soil_Ground_Tiles.png-b2f6e9768f4110d827ef4139e548a74d.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/New tiles/Darker_Soil_Ground_Tiles.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Grass_Hill_Tiles_Slopes v.2.png-2f433473a9f9594e38cc75f4b6f89b9c.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/New tiles/Grass_Hill_Tiles_Slopes v.2.png.import[39m[0m
+[  44% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Grass_Hill_Tiles_v2.png-b2520532829936350ea9a0a76fdc26b5.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/New tiles/Grass_Hill_Tiles_v2.png.import[39m[0m
+[  44% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Grass_tiles_v2.png-17de33066cfe2fa9d9a80c5b73f99ebe.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/New tiles/Grass_tiles_v2.png.import[39m[0m
+[  44% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Grass_Tile_layers2.png-68cee939b7804405034be38e06720308.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/New tiles/Grass_Tile_layers2.png.import[39m[0m
+[  44% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Grass_Tile_Layers.png-31de22f140c93318783db4400fdbe2ba.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/New tiles/Grass_Tile_Layers.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Soil_Ground_Tiles.png-980c50581e1b43417037ebc705fd8ef9.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/New tiles/Soil_Ground_Tiles.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Stone_Ground_Tiles.png-ca3230aaf5ed7e57a16795edf9e3eec4.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/New tiles/Stone_Ground_Tiles.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Grass.png-0cc1d1a2e23e311eeeb8836dff085bc2.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/Old tiles/Grass.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Hills.png-7479f903d17055387144d31651417a34.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/Old tiles/Hills.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Tilled Dirt.png-d5378283f2b21a60acbf52e442eb4fa2.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/Old tiles/Tilled Dirt.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Water.png-670d60d2c72512f39d0b535efd83271b.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://assets/farm/tilesets/ground_tiles/water/Water.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Basic Furniture.png-fd636392b326170ae77acb3d7af554dd.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://assets/house/Basic Furniture.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Chest.png-3e036fce660bd3cf3df3f97cc5f07d95.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://assets/house/Chest.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/door animation sprites.png-f4a5d4c80df6b16e9557cde5cb7a803d.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://assets/house/door animation sprites.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Wooden House.png-128bc6261f779515089b99e1032dd324.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | 正在保存文件：res://assets/house/Wooden House.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/18_监狱_无阴影.png-62084c480028215eb0385fc6bf52855a.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | 正在保存文件：res://assets/laboratory/18_监狱_无阴影.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/19_医院_无阴影.png-0ad41193ac32e1b59de89144a9631c94.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | 正在保存文件：res://assets/laboratory/19_医院_无阴影.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/动画_医院_屏幕_彩色.png-f131c86b6005a9d0323c7afa7b19d36f.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | 正在保存文件：res://assets/laboratory/动画_医院_屏幕_彩色.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/动画_控制室_facebook_滚动.png-4958484ea53581f6d9912ad9a0c4435f.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://assets/laboratory/动画_控制室_facebook_滚动.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/动画_控制室_屏幕.png-7cc1029ce6040349781805ea11c6d53d.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://assets/laboratory/动画_控制室_屏幕.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/动画_控制室_服务器.png-0b5c3fef7fdd115a188e2f372d332c74.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://assets/laboratory/动画_控制室_服务器.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/动画_音箱.png-413477ac77c4ec864b745d964e5c66d8.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://assets/laboratory/动画_音箱.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/房间搭建_地板_16x16.png-8f284a56216abc0ca04f5d4a5cc09029.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | 正在保存文件：res://assets/laboratory/房间搭建_地板_16x16.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/房间搭建_墙面_16x16.png-dcc0e1f0a8aa8f79e7731e8d1717a267.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | 正在保存文件：res://assets/laboratory/房间搭建_墙面_16x16.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/房间搭建_边框_16x16.png-b46495ddb58019339b8f4e2a5dcf3db1.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | 正在保存文件：res://assets/laboratory/房间搭建_边框_16x16.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Arrow Mouse icon 1.png-7325d92e90b9af92a300da19e78b7832.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | 正在保存文件：res://assets/mouse_sprites/Arrow Mouse icon 1.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Arrow Mouse icon 2.png-fd7336d5ed40f67df9edf585a1721d8e.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://assets/mouse_sprites/Arrow Mouse icon 2.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Arrow Mouse icon 3.png-71c55713c6ead7b55d29146e8329c880.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://assets/mouse_sprites/Arrow Mouse icon 3.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Catpaw holding Mouse icon.png-6655b5d56e1e572641095c5979de9d03.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://assets/mouse_sprites/Catpaw holding Mouse icon.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Catpaw Mouse icon.png-8edd955497cc49d1c745c1708f5d74e9.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://assets/mouse_sprites/Catpaw Mouse icon.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Catpaw pointing Mouse icon.png-1b1105d586c0e6bcb62868b2ece6fa49.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://assets/mouse_sprites/Catpaw pointing Mouse icon.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Triangle Mouse icon 1.png-19e13789e680b0eaafee4f21c40f9f48.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://assets/mouse_sprites/Triangle Mouse icon 1.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Triangle Mouse icon 2.png-55603523c55febde2f249afdee7454f9.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://assets/mouse_sprites/Triangle Mouse icon 2.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Triangle Mouse icon 3.png-312232c489ca3210dce6618e274326ce.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://assets/mouse_sprites/Triangle Mouse icon 3.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Triangle small Mouse icon 1.png-48daae140f0827620eea8e33901f04fd.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://assets/mouse_sprites/Triangle small Mouse icon 1.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Triangle small Mouse icon 2.png-6d3319eebe3e0d12510da4d15b1c4a37.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | 正在保存文件：res://assets/mouse_sprites/Triangle small Mouse icon 2.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Triangle small Mouse icon 3.png-2ecd55f69852b3b6eafa0c49c571570b.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | 正在保存文件：res://assets/mouse_sprites/Triangle small Mouse icon 3.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/ripple.png-5a0676dc5acef75ffcb01bd445b00d2d.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | 正在保存文件：res://assets/water/ripple/ripple.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Teemo premium emote animations sprite sheet-export.png-486aaf5442c3c1b0b4c4e7a7f1f236d9.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | 正在保存文件：res://assets/widget/bubble/emotes/Teemo premium emote animations sprite sheet-export.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/dialog box big.png-f0997f2296f27a1380ce3af2cda31633.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://assets/widget/bubble/dialog box big.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Sprite-0001.png-6ed3f4367dbe3a43351ca9b0b600195f.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://assets/widget/bubble/Sprite-0001.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/界面_16x16.png-0463f9a9ab573abf2a862282bae4e870.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://assets/widget/bubble/界面_16x16.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/界面_思考_表情_动画_16x16.png-d07707f0ebca5eeeff0cda75fc98e56a.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://assets/widget/bubble/界面_思考_表情_动画_16x16.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/ALL UI ASSETS on one sheet.png-5f0d79a00bc7816b957ae777de564323.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://assets/widget/task_panel/ALL UI ASSETS on one sheet.png.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Stamina circle with white outline sprite sheet .png-a28cc1c9942e1b5df50aa9c5e0cf75c4.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://assets/widget/Stamina circle with white outline sprite sheet .png.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/director_first_meeting.dialogue-4f3dc25542eed3d264f80d772e4770a3.tres[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://dialogues/director/director_first_meeting.dialogue.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/first.dialogue-ca1e93848fc8cbf74dee5f0194bdfbc3.tres[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://dialogues/first_farm/first.dialogue.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Step1.dialogue-99c9a1d879efbfbaecf10de37d7aa093.tres[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://dialogues/first_farm/Step1.dialogue.import[39m[0m
+[  55% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Step2.dialogue-27fd8b42b1c26144837abb04b9e2a83d.tres[39m[0m
+[  55% ] [90m[1msavepack[22m | 正在保存文件：res://dialogues/first_farm/Step2.dialogue.import[39m[0m
+[  55% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Step3.dialogue-c3d15c06af38d9e315a34f3b28ee5b17.tres[39m[0m
+[  55% ] [90m[1msavepack[22m | 正在保存文件：res://dialogues/first_farm/Step3.dialogue.import[39m[0m
+[  55% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/intern_submit.dialogue-d2b1ac23dd16da1d0d12fb895f4932e6.tres[39m[0m
+[  55% ] [90m[1msavepack[22m | 正在保存文件：res://dialogues/laboratory/intern_submit.dialogue.import[39m[0m
+[  55% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/step4.dialogue-9916d8d50f96281bfc7dee94c4f63201.tres[39m[0m
+[  55% ] [90m[1msavepack[22m | 正在保存文件：res://dialogues/laboratory/step4.dialogue.import[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/step4_2.dialogue-91750b3a80504e079317306392c8a3c4.tres[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://dialogues/laboratory/step4_2.dialogue.import[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/step4_3.dialogue-ee2ac38dd8ef50566618bb01ee21e39e.tres[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://dialogues/laboratory/step4_3.dialogue.import[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/step4_4.dialogue-d6ad15e7609b66040f19f3e5f0d5e157.tres[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://dialogues/laboratory/step4_4.dialogue.import[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/licenses/impact-sounds-official-0.txt[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/licenses/50-rpg-sound-effects-0.txt[39m[0m
+[  57% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/ATTRIBUTION.txt[39m[0m
+[  57% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | 正在保存文件：res://icon.svg.import[39m[0m
+[  57% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res[39m[0m
+[  57% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-c65bd74a855037980cbc3a5cd4e5eb12-building_parts_tile_set.res[39m[0m
+[  58% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-11c603c05674d330ca24fde35b830855-laboratory_tile_set.res[39m[0m
+[  58% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-49291fba5517427ab179deea5d60a871-house_tile_set.res[39m[0m
+[  58% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-754d8826c4e626888eeb142bd5024bf2-farm_tile_set.res[39m[0m
+[  58% ] [90m[1msavepack[22m | 正在保存文件：res://assets/audio/licenses/interface-sounds-official-0.txt[39m[0m
+[  59% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-a2cd8d91bcaf8f1144881aa1db1fd435-director.scn[39m[0m
+[  59% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-17b052c6ec7aa7661decc5c4ee1027db-intern.scn[39m[0m
+[  59% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-69269755a8327f465f5372ec5417c62b-rabbit.scn[39m[0m
+[  59% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/data_props/data_prop.gdc[39m[0m
+[  59% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-fb6861e4448f57df2d48e41c6d83b819-data_prop.scn[39m[0m
+[  60% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-f0e1a59fe1435da9ba5e5bec8c991150-drop.scn[39m[0m
+[  60% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-5b3e658daa4b84b716ba7395d973cb05-boat.scn[39m[0m
+[  60% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-85a16456077d066e2e64921fbfce54e6-chest.scn[39m[0m
+[  60% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-fc2248f280527757e4f728628efc30a0-door.scn[39m[0m
+[  61% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-316228486181b986876446dd0281c6f1-house.scn[39m[0m
+[  61% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-793155bf0b8673b8d8c2bef0249ef210-白萝卜.scn[39m[0m
+[  61% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-0648a1cf969f10a583838e1a7d243a1d-紫萝卜.scn[39m[0m
+[  61% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-70648209c6fd7cd245bb771d7480cf46-胡萝卜.scn[39m[0m
+[  62% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-d3eb8456ccb5a7143c766b82af44fac5-工作台.scn[39m[0m
+[  62% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-6d2aea510d2718bb8f38a0590044d096-干草堆_中.scn[39m[0m
+[  62% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-d6ac2396c0e42bdd90c3a8b4f8bae5ac-干草堆_小.scn[39m[0m
+[  62% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-ad5d52d0011a46b67a4ae6f9d6a3c832-木箱.scn[39m[0m
+[  62% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-cd2f1786056f5fbfbd2b23dcd95f0711-木箱_双.scn[39m[0m
+[  63% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-8b425b7167649343715a1493b3679d50-水井.scn[39m[0m
+[  63% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-c2bbdca0b44317da7c0dbff719a3f694-稻草捆_横.scn[39m[0m
+[  63% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-50ae56ccffbc5d250e215d339a64f9fc-稻草捆_竖.scn[39m[0m
+[  63% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-be0cd0442c3ca0bcca840a5bdcc93d18-木头_中.scn[39m[0m
+[  64% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-79661aa4747c7c17e57b5bb47b835ab7-木头_小.scn[39m[0m
+[  64% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-4d8e4cd5ee410c02784ef9b4e793efaa-木桩_中.scn[39m[0m
+[  64% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-559225331d7c5475a5f008ee9cebae8f-木桩_大.scn[39m[0m
+[  64% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-21e9a8c3292bffd94d32d9c69cc62c55-木桩_小_1.scn[39m[0m
+[  65% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-1a36803ee719fcb0a4c8ba1a1cb289fb-木桩_小_2.scn[39m[0m
+[  65% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-e92ce5409cac7cf28d37682c11588c43-树_中.scn[39m[0m
+[  65% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-b8192aa227eb08610e70a63942514bed-树_中_橙.scn[39m[0m
+[  65% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-9ed90e570b67c24e5e4e85314efd22a9-树_中_粉.scn[39m[0m
+[  65% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-7013d17bca9f697bc7248440a34be39b-树_中_红.scn[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-c2740355d11a1724b99e33571af0b7d5-树_中_绿.scn[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-d414d1290cfe9c623c2dfa52f61221ca-树_大.scn[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-a93cd34c70e49e64f07393ce6ccc608c-树_小.scn[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-ce1ffe007a005e41c12965ff70b15e3f-树丛_中.scn[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-a89a75eb612456f82a44e89020b288c4-树丛_中_紫.scn[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-1b8e793349c74c54d8aecb8cf5a728fd-树丛_中_红.scn[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-64b3120a446e876c097bee5a81c7e15a-树丛_中_蓝.scn[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-2308c7ba9badc840a0cf3f75e598f57b-树丛_小.scn[39m[0m
+[  67% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-de31ed313d6b4dc9cc45cc3c9cf3c3bb-牌子_01_空白.scn[39m[0m
+[  67% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-c289a06b98c68d49aab32c039c93d9c8-牌子_02_黄果.scn[39m[0m
+[  67% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-d96f04693e3c11c1f92678d2da4df9c1-牌子_03_胡萝卜.scn[39m[0m
+[  67% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-7d40317ca474d2072445292a050a5bf9-牌子_04_卷心菜.scn[39m[0m
+[  67% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-a76716b3db65da8353315d4d3f8c0c05-牌子_05_甜菜.scn[39m[0m
+[  68% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-2de4895c6b53fbbea9a5c51530e3bf61-牌子_06_茄子.scn[39m[0m
+[  68% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-9b3c1bba5c30f5ffda2186c652173e53-牌子_07_水桶.scn[39m[0m
+[  68% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-3cdc4f7009f68dedb591757f76136ae7-牌子_08_绿苗.scn[39m[0m
+[  68% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-7fb02d5e1d62463b213fd0f9cb68bfb1-牌子_09_玉米.scn[39m[0m
+[  69% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-7ba1847f6b41516c1fd00c324240301b-牌子_10_南瓜.scn[39m[0m
+[  69% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-114101221f9bc8adc30c3f5d761f74e5-牌子_11_白萝卜.scn[39m[0m
+[  69% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-a3d3e17dc5c25f13b71b815620d6b378-牌子_12_粉花.scn[39m[0m
+[  69% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-669cdd1526015d5ffd489334c305460e-牌子_13_紫萝卜.scn[39m[0m
+[  70% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-177fe116eb11d1ba97d82f8b0921c090-牌子_14_蓝星.scn[39m[0m
+[  70% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-ac52aa3bb3eb7c6bc668dbbeb64f1ac5-牌子_15_豆荚.scn[39m[0m
+[  70% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-cf96f44ebae1fd29e369a18ab42499e3-牌子_16_爱心.scn[39m[0m
+[  70% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-8675380735a15966a3d29c6356f34976-牌子_17_黄果2.scn[39m[0m
+[  70% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-f945d31d66f8173f5e221ff9c105dc78-牌子_18_绿菜.scn[39m[0m
+[  71% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-ec4b1390f3afd5980303a7051d266f70-牌子_19_粉爱心.scn[39m[0m
+[  71% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-e2dd1d553036ef3e2eb7e774e9d7c572-牌子_20_粉蘑菇.scn[39m[0m
+[  71% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-809d12332a1e9a8599b77a679adebd8e-牌子_21_紫蘑菇.scn[39m[0m
+[  71% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-be4421afdeaa89953858c599e4bbfb9c-牌子_22_红蘑菇.scn[39m[0m
+[  72% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-5f745658fdfc6c26ddf3ec22a4579761-牌子_23_紫花.scn[39m[0m
+[  72% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-1ef25507753fb742a184e801afa02384-牌子_24_蓝花.scn[39m[0m
+[  72% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-dece88548361e634c88ce53d44390d90-石头_中1.scn[39m[0m
+[  72% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-b9578891c7fc205889752093bf06d2b2-石头_中2.scn[39m[0m
+[  73% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-02cd06902cf4e6254ae23e0de38e5879-石头_大.scn[39m[0m
+[  73% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-21c1905648ff96d61aedb3a2a6cba47c-石头_小1.scn[39m[0m
+[  73% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-bee07d90641bac477f009be06d94ee52-石头_小2.scn[39m[0m
+[  73% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-d064a85bebc7dcfcb08680668b92aaa0-石头_小3.scn[39m[0m
+[  74% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-fd2c15aaa4b8b7a598b9a7b07bafdc6a-石头_小4.scn[39m[0m
+[  74% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-6e2d2c07a7b1ed8b123c6355d49310d0-石头_扁1.scn[39m[0m
+[  74% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-8a5abdfb7768d0c200e4ecdede0481d9-石头_扁2.scn[39m[0m
+[  74% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-3d587606b149ed0fcad36b3126d4d84c-向日葵.scn[39m[0m
+[  74% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-d0bb3a370969d049eb1a5a182a5f862c-花_猫脸粉.scn[39m[0m
+[  75% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-acc1bc7868e0a82abd3681de0b1cb054-花_猫脸蓝.scn[39m[0m
+[  75% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-dbd4b83034a3744aa4bd50902d550d88-花_白1.scn[39m[0m
+[  75% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-f00868a336c6306a7a7f3ccef961fe31-花_白2.scn[39m[0m
+[  75% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-209288406dc1489e0ecd406644b7e8b0-花_白3.scn[39m[0m
+[  76% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-a48bac52ae229d1e8138d2e639fdd2ed-花_粉1.scn[39m[0m
+[  76% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-9e75e5da698313964e49a290b8458720-花_粉2.scn[39m[0m
+[  76% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-deec1632d8a728ff4be6cf302cd51990-花_粉3.scn[39m[0m
+[  76% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-81829b5945861533d1918eb24beb3160-花_粉4.scn[39m[0m
+[  77% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-7de8a6a7a8e566c43b3f9c94a17590b6-花_紫1.scn[39m[0m
+[  77% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-51e8e6dcfea05d3178de2d43c2d8808e-花_紫2.scn[39m[0m
+[  77% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-403da4df19833b03902e145852479429-花_紫3.scn[39m[0m
+[  77% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-2fd651259025ff976a641920e46fa18a-花_蓝1.scn[39m[0m
+[  77% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-b78e0c8482b7d82587a009b71c785d75-花_蓝2.scn[39m[0m
+[  78% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-da556ec4f22688a9da5ff905f89b9606-花_蓝3.scn[39m[0m
+[  78% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-7f67571129e53a61ffd8af4f2911d704-花_蓝4.scn[39m[0m
+[  78% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-1118ef7fd79c3229503dbe42a531b3e8-花_蓝5.scn[39m[0m
+[  78% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-8ad3f30cb46cbdac19b0f8c9821d2eca-花_蓝6.scn[39m[0m
+[  79% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-ed776ea4d709fff0a5f411e447df13ac-花_蓝7.scn[39m[0m
+[  79% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-8eb5c8aa15e56cba8d13a6e4d1f77e1c-花_黄1.scn[39m[0m
+[  79% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-fb3a8fb0a677709cf409828c477844f6-花_黄2.scn[39m[0m
+[  79% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-8cfa2387d2a530dba28efefbe8100def-花_黄3.scn[39m[0m
+[  80% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-1f9bde12082b0a09e204538df8f46046-草_1.scn[39m[0m
+[  80% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-95a27abe761b5291a451b005559fb227-草_2.scn[39m[0m
+[  80% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-1315bd34c67d179d59b780d4886f0d7b-草_3.scn[39m[0m
+[  80% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-dd93ab01a6dfe3a49ca3e63c5c12a971-蘑菇_粉1.scn[39m[0m
+[  80% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-df0a28f880b1e0692cf0459d82ce7d32-蘑菇_粉2.scn[39m[0m
+[  81% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-654aa0e5e50f5b41b895b3e1bd263396-蘑菇_紫1.scn[39m[0m
+[  81% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-a87c136f391e880f1c2dfc2a06e9c579-蘑菇_紫2.scn[39m[0m
+[  81% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-2148baf9115717227b24705d4bc1a5a4-蘑菇_紫3.scn[39m[0m
+[  81% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-7288e9fd8a60f50abbd52f156adb9f69-蘑菇_紫4.scn[39m[0m
+[  82% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-b356319c0796a408fcc0130cf0ff41f1-蘑菇_骷髅.scn[39m[0m
+[  82% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-773f63cc47f3b33d13da3cb1ef21f29d-farm.scn[39m[0m
+[  82% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-db1b6919af12764a06ae27ca16dcf826-kettle.scn[39m[0m
+[  82% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-4093c5aa5e17591d7a13bd1d750d383b-puddle.scn[39m[0m
+[  83% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-27a24e031867ff4b9519c2ef74fa65f0-sky.scn[39m[0m
+[  83% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-71c28fd8da86a32bca03af5dac318065-door.scn[39m[0m
+[  83% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-59a78633c6b6fb0507c62fdff9f6b378-laboratory.scn[39m[0m
+[  83% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-4c8415027fd03d28f62dab45cbdaa97f-tip_action.scn[39m[0m
+[  83% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-fb19aaa63f01d6f5e98f9e78b0d8cc17-tip_location.scn[39m[0m
+[  84% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-9b1030564e4c6ce124fb9cc4b0d2c873-black_transition.scn[39m[0m
+[  84% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-cc8765e60a9b6992661c7a3b856a2377-iris_transition.scn[39m[0m
+[  84% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-183b5b718f9936abc4f893e3b6e7d61a-transition_animation.scn[39m[0m
+[  84% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/weather/puddle.gdc[39m[0m
+[  85% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-8066fa18804c8a2fff8908fd9ded41ae-puddle.scn[39m[0m
+[  85% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-e4c3c7f3cc615d1d5ed4ed984dee65cc-rain.scn[39m[0m
+[  85% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-60af3806fd7dd34e649b94e72c1057b9-ripple.scn[39m[0m
+[  85% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-911c8de26877d64b94be47fca5a98cee-weather_rain.scn[39m[0m
+[  86% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-f07a7a314dc78cb3863359a82d2b150a-curtain.scn[39m[0m
+[  86% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-01f1de12979cdc811cd64b7af0702881-balloon.scn[39m[0m
+[  86% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-2b5fc5c879b91c87f936d2fcaf39dede-emoji.scn[39m[0m
+[  86% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-603b85ae5f6447ebd05c319ba0bfa4fc-task_panel.scn[39m[0m
+[  86% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-3c24236e04f6303c9517ecad1e362a54-text_intro.scn[39m[0m
+[  87% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-6382fcdf13fe1cff77a69ea89e120b00-collection_point.scn[39m[0m
+[  87% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/audio/audio_manager.gdc[39m[0m
+[  87% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/audio/footsteps.gdc[39m[0m
+[  87% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/characters/npc/director.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/characters/npc/intern.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/characters/npc/npc.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/characters/rabbit.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/farm/boat/boat.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/farm/crops/crop.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/farm/house/chest/chest.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/farm/house/door/door.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/farm/house/house.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/farm/drop.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/farm/farm.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/laboratory/door/door.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/laboratory/laboratory.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/state/npc/npc_state.gdc[39m[0m
+[  91% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/state/player/player_state.gdc[39m[0m
+[  91% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/state/game_state.gdc[39m[0m
+[  91% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/tip/tip_action.gdc[39m[0m
+[  91% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/tip/tip_location.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/transition/black_transition.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/transition/iris_transition.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/transition/transition_animation.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/widget/curtain/curtain.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/widget/dialogue/balloon.gdc[39m[0m
+[  93% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/widget/emoji/emoji.gdc[39m[0m
+[  93% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/widget/task_panel.gdc[39m[0m
+[  93% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/widget/text_intro.gdc[39m[0m
+[  93% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/collection_point.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/function_library.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | 正在保存文件：res://shaders/outline/outline.gdshader[39m[0m
+[  94% ] [90m[1msavepack[22m | 正在保存文件：res://shaders/sky/sky.gdshader[39m[0m
+[  94% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-35437406b5e361938e35df305b97466f-sky_material.res[39m[0m
+[  95% ] [90m[1msavepack[22m | 正在保存文件：res://shaders/tests/波纹测试2.gdshader[39m[0m
+[  95% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-91975ed74bddb3a369accc0dba1fa41e-波纹测试.res[39m[0m
+[  95% ] [90m[1msavepack[22m | 正在保存文件：res://shaders/transition/iris_transition.gdshader[39m[0m
+[  95% ] [90m[1msavepack[22m | 正在保存文件：res://shaders/weather/rain/puddle/puddle.gdshader[39m[0m
+[  95% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-cc672dad0274c3444e5285839cc849a1-puddle_material.res[39m[0m
+[  96% ] [90m[1msavepack[22m | 正在保存文件：res://shaders/weather/rain/ripple/ripple.gdshader[39m[0m
+[  96% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-73d689fc0964722269c1e4ae05d5bfd6-ripple_material.res[39m[0m
+[  96% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-b92f71890468d49490fdab35d5d63e9e-ripple_particle_material.res[39m[0m
+[  96% ] [90m[1msavepack[22m | 正在保存文件：res://shaders/weather/rain/tree/tree.gdshader[39m[0m
+[  97% ] [90m[1msavepack[22m | 正在保存文件：res://shaders/weather/rain/water_fog/water_fog1.gdshader[39m[0m
+[  97% ] [90m[1msavepack[22m | 正在保存文件：res://shaders/weather/rain/water_fog/water_fog2.gdshader[39m[0m
+[  97% ] [90m[1msavepack[22m | 正在保存文件：res://shaders/weather/rain/wind/storm_wind.gdshader[39m[0m
+[  97% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-39bfe96c8b77efe855b7aef1ad41a79b-rain_particle_material.res[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-973ce1e3f6d124601b9cf131b49452d3-Splash_particle_material.res[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/WenQuanYi.Bitmap.Song.12px.ttf-810659396e63a873b7fc9f99e4539fb3.fontdata[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://themes/WenQuanYi.Bitmap.Song.12px.ttf.import[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-0592df525de4316228a9d1f82627348b-任务面板_主题.res[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-2c22e76788230bdb6fa80678bcf5c232-黄色木板_主题.res[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/compilation.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/compiled_line.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/compiler.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/compiler_regex.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/compiler_result.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/expression_parser.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/resolved_goto_data.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/resolved_line_data.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/resolved_tag_data.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/compiler/tree_line.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/example_balloon/example_balloon.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/example_balloon/example_balloon.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/example_balloon/small_example_balloon.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_2d.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_3d.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/context/dialogue_state_context.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/marker/dialogue_marker_2d.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/marker/dialogue_marker_3d.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/utilities/builtins.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/utilities/dialogue_cache.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/utilities/error.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/utilities/theme_values.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/utilities/translations.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/utilities/waiter.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/constants.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/debugger_plugin.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/dialogue_line.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/dialogue_manager.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/dialogue_processor.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/dialogue_resource.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/dialogue_response.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/editor_translation_parser_plugin.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/export_plugin.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/import_plugin.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/inspector_plugin.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/plugin.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/settings.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/test_scene.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/dialogue_manager/test_scene.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://default_bus_layout.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://tile_set/building_parts_tile_set.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://tile_set/laboratory_tile_set.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://tile_set/house_tile_set.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://tile_set/farm_tile_set.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/characters/director.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/characters/intern.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/characters/rabbit.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/data_props/data_prop.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/data_props/data_prop.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/farm/drop.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/boat/boat.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/house/chest/chest.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/house/door/door.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/house/house.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/农作物/白萝卜.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/农作物/紫萝卜.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/农作物/胡萝卜.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/建筑/工作台.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/建筑/干草堆_中.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/建筑/干草堆_小.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/建筑/木箱.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/建筑/木箱_双.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/建筑/水井.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/建筑/稻草捆_横.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/建筑/稻草捆_竖.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/木头_中.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/木头_小.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/木桩_中.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/木桩_大.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/木桩_小_1.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/木桩_小_2.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/树_中.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/树_中_橙.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/树_中_粉.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/树_中_红.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/树_中_绿.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/树_大.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/树_小.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/树丛_中.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/树丛_中_紫.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/树丛_中_红.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/树丛_中_蓝.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/树/树丛_小.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_01_空白.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_02_黄果.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_03_胡萝卜.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_04_卷心菜.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_05_甜菜.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_06_茄子.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_07_水桶.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_08_绿苗.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_09_玉米.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_10_南瓜.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_11_白萝卜.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_12_粉花.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_13_紫萝卜.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_14_蓝星.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_15_豆荚.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_16_爱心.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_17_黄果2.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_18_绿菜.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_19_粉爱心.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_20_粉蘑菇.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_21_紫蘑菇.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_22_红蘑菇.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_23_紫花.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/牌子/牌子_24_蓝花.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/石头/石头_中1.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/石头/石头_中2.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/石头/石头_大.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/石头/石头_小1.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/石头/石头_小2.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/石头/石头_小3.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/石头/石头_小4.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/石头/石头_扁1.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/石头/石头_扁2.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/向日葵.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_猫脸粉.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_猫脸蓝.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_白1.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_白2.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_白3.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_粉1.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_粉2.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_粉3.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_粉4.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_紫1.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_紫2.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_紫3.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_蓝1.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_蓝2.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_蓝3.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_蓝4.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_蓝5.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_蓝6.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_蓝7.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_黄1.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_黄2.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/花_黄3.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/草_1.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/草_2.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/花草/草_3.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/蘑菇/蘑菇_粉1.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/蘑菇/蘑菇_粉2.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/蘑菇/蘑菇_紫1.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/蘑菇/蘑菇_紫2.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/蘑菇/蘑菇_紫3.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/蘑菇/蘑菇_紫4.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/装饰物/蘑菇/蘑菇_骷髅.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/farm.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/kettle.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/puddle.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/fram/sky.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/laboratory/door.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/laboratory/laboratory.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/tip/tip_action.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/tip/tip_location.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/transition/black_transition.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/transition/iris_transition.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/transition/transition_animation.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/weather/puddle.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/weather/puddle.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/weather/rain.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/weather/ripple.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/weather/weather_rain.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/widget/curtain/curtain.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/widget/dialogue/balloon.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/widget/emoji/emoji.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/widget/task_panel.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/widget/text_intro.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/collection_point.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/audio/audio_manager.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/audio/footsteps.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/characters/npc/director.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/characters/npc/intern.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/characters/npc/npc.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/characters/rabbit.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/farm/boat/boat.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/farm/crops/crop.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/farm/house/chest/chest.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/farm/house/door/door.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/farm/house/house.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/farm/drop.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/farm/farm.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/laboratory/door/door.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/laboratory/laboratory.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/state/npc/npc_state.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/state/player/player_state.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/state/game_state.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/tip/tip_action.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/tip/tip_location.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/transition/black_transition.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/transition/iris_transition.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/transition/transition_animation.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/widget/curtain/curtain.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/widget/dialogue/balloon.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/widget/emoji/emoji.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/widget/task_panel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/widget/text_intro.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/collection_point.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/function_library.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://shaders/sky/sky_material.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://shaders/tests/波纹测试.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://shaders/weather/rain/puddle/puddle_material.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://shaders/weather/rain/ripple/ripple_material.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://shaders/weather/rain/ripple/ripple_particle_material.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://shaders/weather/rain/rain_particle_material.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://shaders/weather/rain/Splash_particle_material.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://themes/任务面板_主题.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://themes/黄色木板_主题.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/global_script_class_cache.cfg[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://icon.svg[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/uid_cache.bin[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m

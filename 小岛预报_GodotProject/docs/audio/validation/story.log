@@ -1,0 +1,44 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 5070
+
+AUDIO_CHECK PASS story opening and first dialogue finish
+AUDIO_CHECK PASS farmland area triggers tutorial
+AUDIO_CHECK PASS harvest tutorial dialogue finishes
+AUDIO_CHECK PASS two harvests trigger actual storm tween
+[Farm] 随机删除 15 / 33  种子 = 1
+[Farm] 清除掉落物 2 个
+AUDIO_CHECK PASS storm and complaint preparation finish
+AUDIO_CHECK PASS boat area performs actual scene transition
+AUDIO_CHECK PASS laboratory story reaches awkward pause
+AUDIO_CHECK PASS director explanation finishes
+[Farm] 随机删除 15 / 35  种子 = 1
+AUDIO_CHECK PASS laboratory exit returns to farm
+[Farm] 天气数据已收集 1 / 3
+[Farm] 天气数据已收集 2 / 3
+[Farm] 天气数据已收集 3 / 3
+[Farm] 需要收集的成熟胡萝卜 = 9
+AUDIO_CHECK PASS all three data points complete through X input
+AUDIO_CHECK PASS last data point uses one all-complete cue
+AUDIO_CHECK PASS second boat visit reaches laboratory
+AUDIO_CHECK PASS player reaches intern interaction range without overlapping chair
+AUDIO_CHECK PASS actual intern dialogue reaches future storm warning
+[Farm] 随机删除 15 / 35  种子 = 1
+AUDIO_CHECK PASS return to farm for advance harvest
+AUDIO_CHECK PASS advance harvest has no present rain
+[掉落物] 拾取胡萝卜，身上共 1 个
+[掉落物] 拾取胡萝卜，身上共 2 个
+[掉落物] 拾取胡萝卜，身上共 3 个
+[掉落物] 拾取胡萝卜，身上共 4 个
+[掉落物] 拾取胡萝卜，身上共 5 个
+[掉落物] 拾取胡萝卜，身上共 6 个
+[掉落物] 拾取胡萝卜，身上共 7 个
+[掉落物] 拾取胡萝卜，身上共 8 个
+[掉落物] 拾取胡萝卜，身上共 9 个
+AUDIO_CHECK PASS actual harvest and pickup collect required carrots
+[箱子] 放入 9 个，箱子共 9 / 9
+AUDIO_CHECK PASS actual deposit starts ending music
+AUDIO_VALIDATION {"audio_driver":"WASAPI","checks":18,"cues":{"angry":2,"awkward":1,"bird":3,"boat_departure":4,"chest_open":1,"data_absorb":3,"data_all":1,"data_done":2,"data_open":3,"deposit":3,"door_close":2,"door_open":2,"happy":1,"harvest":11,"harvest_work":18,"keyboard":1,"land":11,"music_ending":1,"music_farm":1,"music_field":2,"music_lab":2,"pickup":9,"step_hard":9,"step_soft":21,"surprised":1,"task":6,"throw":1,"warning":1},"failures":[],"mix_frames":523776,"mix_peak":0.234552353620529,"mode":"story with interaction-point positioning","renderer":"forward_plus"}
+WARNING: 11 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 10 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

@@ -1,0 +1,11 @@
+{
+	"checks": 11,
+	"cues": {
+		"bird": 1,
+		"bubble_close": 1,
+		"bubble_open": 1,
+		"music_farm": 1,
+		"text_tick": 78
+	},
+	"failures": []
+}

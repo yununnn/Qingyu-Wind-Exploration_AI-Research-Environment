@@ -1,0 +1,22 @@
+[
+  {
+    "file": "scripts/audio/audio_manager.gd",
+    "sha256": "885e689dc4f48721289583706025df5bfe855f81713969be5a300e3f3a925d89"
+  },
+  {
+    "file": "scripts/audio/footsteps.gd",
+    "sha256": "23740040aa61a1fdf515a0284a72a7ffdc0f7d12ed9e0c7117e9844c3264704b"
+  },
+  {
+    "file": "default_bus_layout.tres",
+    "sha256": "a284bdc6c0c6e7c5e4f5295e90fef85714e50175891d444f4b3d05730fe1c6a4"
+  },
+  {
+    "file": "project.godot",
+    "sha256": "38dd2229259c0e328207f984cb46a45fa54d3bf2225cb8c936dba4b31b2f289e"
+  },
+  {
+    "file": "export_presets.cfg",
+    "sha256": "345b8ed8cb289fd642afde81b82d0d00c04f771e3fadfd60b757b29ce65131e5"
+  }
+]

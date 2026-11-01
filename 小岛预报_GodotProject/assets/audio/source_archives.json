@@ -1,0 +1,77 @@
+[
+  {
+    "file": "Carefree.mp3",
+    "bytes": 6566713,
+    "sha256": "8433b770a630d9b1594fd484442c677907ece899a4d149954cd2e74fd733e311"
+  },
+  {
+    "file": "Local Forecast - Elevator.mp3",
+    "bytes": 7570404,
+    "sha256": "8c46b44e65324bc339fbbc3e770611d671f6c74a40f3ec8dd50332c082b25cc9"
+  },
+  {
+    "file": "Easy Lemon.mp3",
+    "bytes": 5057420,
+    "sha256": "2486b8ecfe4575f9ab31613a2c03c2ee45e6e5280301d05b4dd7237c9e1c2531"
+  },
+  {
+    "file": "wind.mp3",
+    "bytes": 945984,
+    "sha256": "b8962b2e82563d6a864c3215147e975633af5f27205f07cd2d3639584d6e715b"
+  },
+  {
+    "file": "waves.mp3",
+    "bytes": 4107072,
+    "sha256": "fd505dbd43cb1c3508f884279bf5d3e060bb14f2bc3d9b4cce334eb7a75b5d7f"
+  },
+  {
+    "file": "rain.mp3",
+    "bytes": 3170376,
+    "sha256": "5ed2766fdba8e92ce4090d90b901b3617e79d430745f82b4c5a22e55df1aef12"
+  },
+  {
+    "file": "bird.mp3",
+    "bytes": 236363,
+    "sha256": "eca485ebf2c8c39622c541246f56762826907ceb43c3fc7e19dfbc11c1759d56"
+  },
+  {
+    "file": "impact-sounds-official.zip",
+    "bytes": 800850,
+    "sha256": "029d734af1582474edf3a694d1b0cebc97c1c152f2f39fa34d4c2bafc5de77f8"
+  },
+  {
+    "file": "interface-sounds-official.zip",
+    "bytes": 834536,
+    "sha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232"
+  },
+  {
+    "file": "50-rpg-sound-effects.zip",
+    "bytes": 690952,
+    "sha256": "3ae398ad63e293f9c450bda22d5d81c3af69c74df66fc1400f33c012c0bbc231"
+  },
+  {
+    "file": "auditions_round2/rain_drops_source.mp3",
+    "bytes": 885320,
+    "sha256": "fd53fa7d41418eee74f8f031e22bb9543af8089ca3cf8551f1013a64ab3c9eef"
+  },
+  {
+    "file": "auditions_round2/heavy_rain_source.mp3",
+    "bytes": 603504,
+    "sha256": "4c4cf1bd6d2de16d162cc0a33511207aeca02a92dbe72d36af9bf3515ec1ccc2"
+  },
+  {
+    "file": "auditions_round2/chest_creak_source.mp3",
+    "bytes": 27792,
+    "sha256": "59dafdee19c73dcb9a2fb03ce2efee9fe683acb972e779d1db102a0651445874"
+  },
+  {
+    "file": "auditions_round2/wooden_box_source.mp3",
+    "bytes": 239184,
+    "sha256": "5e5bac482cc4d52339d8ee6b84d835c73dee89589b0d4668c6b88bed62b8efc5"
+  },
+  {
+    "file": "auditions_round2/boat_drift_source.mp3",
+    "bytes": 2492952,
+    "sha256": "562fd63232980ac9ed25d3f1af1722624982ff3a558b4c13f5d9c678da8da038"
+  }
+]

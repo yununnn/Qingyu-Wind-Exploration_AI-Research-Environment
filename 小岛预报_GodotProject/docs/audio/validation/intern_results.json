@@ -1,0 +1,14 @@
+{
+	"audio_driver": "WASAPI",
+	"checks": 3,
+	"cues": {
+		"music_lab": 1,
+		"task": 1,
+		"warning": 1
+	},
+	"failures": [],
+	"mix_frames": 523776,
+	"mix_peak": 0.137486129999161,
+	"mode": "story with interaction-point positioning",
+	"renderer": "forward_plus"
+}

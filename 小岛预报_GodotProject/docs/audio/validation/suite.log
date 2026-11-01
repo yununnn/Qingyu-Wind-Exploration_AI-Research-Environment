@@ -1,0 +1,41 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 5070
+
+AUDIO_CHECK PASS all 50 audio assets load with nonzero duration
+AUDIO_CHECK PASS Master + Music/Ambience/SFX/UI buses
+AUDIO_CHECK PASS same music request preserves playback position
+AUDIO_CHECK PASS real mixer produces non-silent output
+AUDIO_CHECK PASS rapid music changes leave one playing track after crossfade
+AUDIO_CHECK PASS rain follows weather strength 0.0
+AUDIO_CHECK PASS rain follows weather strength 0.25
+AUDIO_CHECK PASS rain follows weather strength 0.75
+AUDIO_CHECK PASS rain follows weather strength 1.0
+AUDIO_CHECK PASS rain follows weather strength 0.4
+AUDIO_CHECK PASS rain follows weather strength 0.0
+AUDIO_CHECK PASS zero weather strength stops wind and rain
+AUDIO_CHECK PASS dialogue ducks music 4 dB
+AUDIO_CHECK PASS awkward pause applies extra 10 dB duck
+AUDIO_CHECK PASS dialogue music level restores
+AUDIO_CHECK PASS warning cue does not block the dialogue line
+AUDIO_CHECK PASS actual player movement emits footstep cues
+AUDIO_CHECK PASS standing still emits no footsteps
+AUDIO_CHECK PASS holding direction against a wall emits no footsteps
+AUDIO_CHECK PASS actual movement plays wood surface footsteps
+AUDIO_CHECK PASS actual movement plays hard surface footsteps
+AUDIO_CHECK PASS cancelled harvest stops loop without completing
+AUDIO_CHECK PASS completed harvest emits once and frees crop
+AUDIO_CHECK PASS drop landing sound survives crop deletion
+AUDIO_CHECK PASS locked pickup emits no success sound
+[掉落物] 拾取胡萝卜，身上共 1 个
+AUDIO_CHECK PASS successful pickup increments count and plays once
+[箱子] 放入 20 个，箱子共 20 / 0
+AUDIO_CHECK PASS repeated deposit request deposits each carrot once
+AUDIO_CHECK PASS 20 carrot landings are rate limited
+AUDIO_CHECK PASS rapid door crossings retain latest open state with one cue
+AUDIO_CHECK PASS rapid chest crossings retain latest open state
+AUDIO_CHECK PASS repeated door close does not replay its cue
+AUDIO_CHECK PASS data completion suppresses duplicate task cue
+AUDIO_CHECK PASS scene cleanup removes source loops and world one-shots
+AUDIO_CHECK PASS future storm warning does not cause rain on return
+AUDIO_CHECK PASS captured output remains below limiter ceiling
+AUDIO_VALIDATION {"audio_driver":"WASAPI","checks":35,"cues":{"chest_close":2,"chest_open":2,"data_all":1,"deposit":7,"door_close":1,"door_open":1,"harvest":2,"harvest_work":3,"land":1,"music_farm":1,"music_field":2,"music_lab":1,"pickup":1,"step_hard":2,"step_soft":4,"step_wood":3,"throw":1,"warning":1},"failures":[],"mix_frames":600576,"mix_peak":0.522600471973419,"mode":"suite","renderer":"forward_plus"}

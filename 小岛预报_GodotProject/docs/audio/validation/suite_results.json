@@ -1,0 +1,29 @@
+{
+	"audio_driver": "WASAPI",
+	"checks": 35,
+	"cues": {
+		"chest_close": 2,
+		"chest_open": 2,
+		"data_all": 1,
+		"deposit": 7,
+		"door_close": 1,
+		"door_open": 1,
+		"harvest": 2,
+		"harvest_work": 3,
+		"land": 1,
+		"music_farm": 1,
+		"music_field": 2,
+		"music_lab": 1,
+		"pickup": 1,
+		"step_hard": 2,
+		"step_soft": 4,
+		"step_wood": 3,
+		"throw": 1,
+		"warning": 1
+	},
+	"failures": [],
+	"mix_frames": 600576,
+	"mix_peak": 0.522600471973419,
+	"mode": "suite",
+	"renderer": "forward_plus"
+}

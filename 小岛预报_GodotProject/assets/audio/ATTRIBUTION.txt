@@ -1,0 +1,57 @@
+青屿风探_AI研境 — AUDIO CREDITS / 音频署名
+
+Music by Kevin MacLeod (incompetech.com):
+
+"Carefree" Kevin MacLeod (incompetech.com)
+https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400037
+
+"Local Forecast - Elevator" Kevin MacLeod (incompetech.com)
+https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1300012
+
+"Easy Lemon" Kevin MacLeod (incompetech.com)
+https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1200076
+
+All three music recordings are licensed under Creative Commons: By Attribution 4.0 License
+https://creativecommons.org/licenses/by/4.0/
+Changes: excerpts edited into loops, cyclic crossfades, equalization, gain adjustment and OGG encoding.
+The Chinese scene cue names are project labels, not the original track titles.
+
+Sound effects by Kenney (CC0 1.0):
+Impact Sounds — https://kenney.nl/assets/impact-sounds
+Interface Sounds — https://kenney.nl/assets/interface-sounds
+RPG Audio — https://kenney.nl/assets/rpg-audio
+RPG Audio download mirror by the author: https://opengameart.org/content/50-rpg-sound-effects
+Changes: selections trimmed, filtered, gain adjusted, converted to mono WAV; short textures looped.
+Original pack license texts are retained in licenses/.
+
+Environmental recordings from Freesound, all individually verified as CC0 1.0:
+"Ambiance_Wind_Forest_Trees_Loop_01.wav" by Nox_Sound
+https://freesound.org/people/Nox_Sound/sounds/530908/
+"Calm ocean waves" by SamsterBirdies
+https://freesound.org/people/SamsterBirdies/sounds/578524/
+"Single bird" by organicmanpl
+https://freesound.org/people/organicmanpl/sounds/518749/
+License: https://creativecommons.org/publicdomain/zero/1.0/
+Changes: Freesound HQ MP3 preview sources; edited/filtered into 30s loops or short bird phrases;
+wind source also used for storm wind, waves source also used for boat water; WAV/OGG encoding.
+
+The ending motif, equipment hum, pickup chimes, data cues, task cue, emotion cues and warning
+are original procedural sound design created for this project with no third-party samples.
+Their synthesis is reproducible with tools/audio/build_audio.py.
+
+For per-file duration, original filename, source page, processing and SHA-256, see manifest.json.
+Checked: 2026-10-28.
+
+Round-two approved additions (CC0 1.0):
+"Intense rain drops" by The_Toefur — https://freesound.org/people/The_Toefur/sounds/509344/
+"Heavy rain.wav" by reelworldstudio — https://freesound.org/people/reelworldstudio/sounds/161127/
+"Treasure Chest Open" by steprock — https://freesound.org/people/steprock/sounds/771164/
+"Wooden Box: Open / Close 2 (Compilation)" by Sheyvan — https://freesound.org/people/Sheyvan/sounds/475294/
+Recordings by Eva Lorente and Dominik Reinicke; edited by Philipp Grzemba.
+Changes: HQ preview excerpts, filtering, cyclic rain mix, gain, WAV/OGG encoding.
+The approved typing ticks, balloon sounds and pickup pops are original procedural sound design.
+The approved harvest texture combines Kenney cloth3 with original filtered noise.
+
+"Ammersee Sailboat Cabin ~ Gentle Lake Waves from Inside" by myLoop
+https://freesound.org/people/myLoop/sounds/851577/ — CC0 1.0
+Changes: HQ preview excerpt, filtering, 12-second cyclic loop, gain and OGG encoding.

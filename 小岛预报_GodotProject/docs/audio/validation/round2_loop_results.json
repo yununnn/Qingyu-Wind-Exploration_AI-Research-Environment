@@ -1,0 +1,42 @@
+{
+	"driver": "WASAPI",
+	"loops": {
+		"data_absorb": {
+			"audition_reference": {
+				"frames": 31232,
+				"peak": 0.150128930807114,
+				"rms": 0.0458035029197832
+			},
+			"passed": true,
+			"playing": {
+				"frames": 30720,
+				"peak": 0.150128930807114,
+				"rms": 0.0457090526974972
+			},
+			"stopped": {
+				"frames": 13312,
+				"peak": 0.0,
+				"rms": 0.0
+			}
+		},
+		"harvest_work": {
+			"audition_reference": {
+				"frames": 31232,
+				"peak": 0.196624532341957,
+				"rms": 0.0279031207253227
+			},
+			"passed": true,
+			"playing": {
+				"frames": 31232,
+				"peak": 0.196624532341957,
+				"rms": 0.0279031207253227
+			},
+			"stopped": {
+				"frames": 12800,
+				"peak": 0.0,
+				"rms": 0.0
+			}
+		}
+	},
+	"passed": true
+}

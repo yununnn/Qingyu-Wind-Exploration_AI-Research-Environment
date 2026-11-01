@@ -1,0 +1,11 @@
+{
+  "revision": "round2",
+  "all_requested_sounds_auditioned_and_approved": true,
+  "active_audio_files": 55,
+  "functional_suite_passed": 35,
+  "text_and_balloon_checks_passed": 11,
+  "loop_output_matches_audition": true,
+  "ending_without_credit_overlay": true,
+  "material_reference": "Minecraft-like clarity; licensed field recordings and original tones, no Minecraft game assets",
+  "mix_peak": 0.492908477783203
+}

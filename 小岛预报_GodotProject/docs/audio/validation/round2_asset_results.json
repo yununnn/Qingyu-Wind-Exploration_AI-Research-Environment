@@ -1,0 +1,387 @@
+[
+  {
+    "file": "music/island_morning.ogg",
+    "seconds": 80.0,
+    "peak_dbfs": -4.88,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "music/forecast_office.ogg",
+    "seconds": 93.65853,
+    "peak_dbfs": -5.06,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "music/prepare_again.ogg",
+    "seconds": 93.65853,
+    "peak_dbfs": -5.13,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "ambience/island_wind.ogg",
+    "seconds": 30.0,
+    "peak_dbfs": -11.3,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "ambience/shore.ogg",
+    "seconds": 30.0,
+    "peak_dbfs": -10.06,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "ambience/storm_wind.ogg",
+    "seconds": 30.0,
+    "peak_dbfs": -10.16,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "ambience/equipment.ogg",
+    "seconds": 29.0,
+    "peak_dbfs": -16.95,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/step_soft_01.wav",
+    "seconds": 0.77467,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/step_soft_02.wav",
+    "seconds": 0.6707,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/step_soft_03.wav",
+    "seconds": 0.68955,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/step_soft_04.wav",
+    "seconds": 0.66642,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/step_wood_01.wav",
+    "seconds": 0.27138,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/step_wood_02.wav",
+    "seconds": 0.24866,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/step_wood_03.wav",
+    "seconds": 0.24848,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/step_hard_01.wav",
+    "seconds": 0.10302,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/step_hard_02.wav",
+    "seconds": 0.10474,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/step_hard_03.wav",
+    "seconds": 0.10989,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/harvest_01.wav",
+    "seconds": 0.6,
+    "peak_dbfs": -9.17,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/harvest_02.wav",
+    "seconds": 0.41508,
+    "peak_dbfs": -9.78,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/harvest_03.wav",
+    "seconds": 0.47658,
+    "peak_dbfs": -9.62,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/land_01.wav",
+    "seconds": 0.1151,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/deposit_01.wav",
+    "seconds": 0.2627,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/land_02.wav",
+    "seconds": 0.18039,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/deposit_02.wav",
+    "seconds": 0.2627,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/door_open.wav",
+    "seconds": 0.65,
+    "peak_dbfs": -9.2,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/door_close.wav",
+    "seconds": 0.65,
+    "peak_dbfs": -8.7,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/throw.wav",
+    "seconds": 0.65,
+    "peak_dbfs": -8.05,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/data_open.wav",
+    "seconds": 0.45,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/data_done.wav",
+    "seconds": 0.65,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/data_all.wav",
+    "seconds": 0.9,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/task.wav",
+    "seconds": 0.4,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/warning.wav",
+    "seconds": 0.9,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/happy.wav",
+    "seconds": 0.5,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/surprised.wav",
+    "seconds": 0.3,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/angry.wav",
+    "seconds": 0.34998,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/awkward.wav",
+    "seconds": 0.45,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/data_absorb.wav",
+    "seconds": 1.0,
+    "peak_dbfs": -14.47,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/keyboard.wav",
+    "seconds": 0.69998,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/bird_01.wav",
+    "seconds": 0.59565,
+    "peak_dbfs": -16.92,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/bird_02.wav",
+    "seconds": 2.0,
+    "peak_dbfs": -16.17,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "music/ready.ogg",
+    "seconds": 5.2,
+    "peak_dbfs": -10.81,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/text_tick_01.wav",
+    "seconds": 0.05499,
+    "peak_dbfs": -9.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/text_tick_02.wav",
+    "seconds": 0.05499,
+    "peak_dbfs": -9.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/text_tick_03.wav",
+    "seconds": 0.05499,
+    "peak_dbfs": -9.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/text_tick_04.wav",
+    "seconds": 0.05499,
+    "peak_dbfs": -9.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/bubble_open.wav",
+    "seconds": 0.14,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/bubble_close.wav",
+    "seconds": 0.14,
+    "peak_dbfs": -8.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/harvest_work.wav",
+    "seconds": 0.8,
+    "peak_dbfs": -12.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/pickup_01.wav",
+    "seconds": 0.10499,
+    "peak_dbfs": -9.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/pickup_02.wav",
+    "seconds": 0.10499,
+    "peak_dbfs": -9.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/pickup_03.wav",
+    "seconds": 0.10499,
+    "peak_dbfs": -9.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "ambience/rain.ogg",
+    "seconds": 28.0,
+    "peak_dbfs": -6.89,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/chest_open.wav",
+    "seconds": 0.85,
+    "peak_dbfs": -10.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "sfx/chest_close.wav",
+    "seconds": 0.32,
+    "peak_dbfs": -11.0,
+    "clipped_samples": 0,
+    "hash_matches": true
+  },
+  {
+    "file": "ambience/boat_water.ogg",
+    "seconds": 12.0,
+    "peak_dbfs": -7.89,
+    "clipped_samples": 0,
+    "hash_matches": true
+  }
+]
